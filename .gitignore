@@ -162,6 +162,10 @@ cython_debug/
 
 # Own
 Database/
+PMED/dataset/raw-data
+PMED/dataset/np-dataset/
+PMCD/dataset/raw-data
+PMCD/dataset/np-dataset/
 *.csv
 *.xlsx
 *.npy
