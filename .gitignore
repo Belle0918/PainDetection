@@ -161,6 +161,7 @@ cython_debug/
 
 
 # Own
+Database/
 *.csv
 *.xlsx
 *.npy

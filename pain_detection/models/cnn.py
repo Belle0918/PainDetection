@@ -1,45 +1,11 @@
 """
-Baseline models for pain detection.
+Early-fusion 1D-CNN baseline.
 
-Two paradigms:
-  1. Feature-based  – extract tabular features, then train Random Forest or SVM.
-  2. End-to-end     – 1D-CNN trained directly on raw signal windows (requires PyTorch).
+All modalities are concatenated along the channel dimension and processed
+by a single shared backbone.  Input shape: (N, T, C).
 """
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
 
-
-# ── Feature-based baselines ────────────────────────────────────────────────────
-
-def build_rf(n_estimators: int = 200, random_state: int = 42) -> Pipeline:
-    return Pipeline([
-        ("scaler", StandardScaler()),
-        ("clf",    RandomForestClassifier(
-            n_estimators=n_estimators,
-            class_weight="balanced",
-            random_state=random_state,
-            n_jobs=-1,
-        )),
-    ])
-
-
-def build_svm(C: float = 1.0, random_state: int = 42) -> Pipeline:
-    return Pipeline([
-        ("scaler", StandardScaler()),
-        ("clf",    SVC(
-            C=C,
-            kernel="rbf",
-            class_weight="balanced",
-            probability=True,
-            random_state=random_state,
-        )),
-    ])
-
-
-# ── 1D-CNN (PyTorch) ───────────────────────────────────────────────────────────
 
 def _torch_available() -> bool:
     try:
@@ -52,10 +18,10 @@ def _torch_available() -> bool:
 class CNN1D:
     """Thin wrapper around a PyTorch 1D-CNN.
 
-    The architecture uses depthwise-separable-style 1D convolutions followed by
-    global average pooling, making it agnostic to input length T.
+    The architecture uses 1D convolutions followed by global average pooling,
+    making it agnostic to input length T.
 
-    Input shape: (N, C, T)   — channels-first as required by PyTorch Conv1d.
+    Input shape to fit/predict: (N, T, C)  — time-first, converted internally.
     """
 
     def __init__(
@@ -72,7 +38,7 @@ class CNN1D:
         random_state: int = 42,
     ):
         if not _torch_available():
-            raise ImportError("PyTorch is required for CNN1D. Install with: pip install torch")
+            raise ImportError("PyTorch is required for CNN1D.")
 
         import torch
         import torch.nn as nn
@@ -94,7 +60,7 @@ class CNN1D:
                 nn.Dropout(dropout),
             ]
             in_ch = out_ch
-        layers.append(nn.AdaptiveAvgPool1d(1))   # global average → (N, filters[-1], 1)
+        layers.append(nn.AdaptiveAvgPool1d(1))
 
         self.backbone = nn.Sequential(*layers).to(self.device)
         self.head = nn.Linear(filters[-1], n_classes).to(self.device)
@@ -106,26 +72,19 @@ class CNN1D:
         return self.head(feat)
 
     def fit(self, X: np.ndarray, y: np.ndarray):
-        """
-        X : (N, T, C) raw windows
-        y : (N,) integer class labels
-        """
+        """X : (N, T, C) raw windows;  y : (N,) integer labels."""
         import torch
         import torch.nn as nn
         from torch.utils.data import DataLoader, TensorDataset
 
-        # (N, T, C) → (N, C, T)
         X_t = np.transpose(X, (0, 2, 1)).astype(np.float32)
         y_t = y.astype(np.int64)
 
-        # Per-channel z-score normalisation using training stats
         self._mean = X_t.mean(axis=(0, 2), keepdims=True)
         self._std  = X_t.std(axis=(0, 2), keepdims=True) + 1e-8
         X_t = (X_t - self._mean) / self._std
 
-        ds = TensorDataset(
-            torch.tensor(X_t), torch.tensor(y_t)
-        )
+        ds = TensorDataset(torch.tensor(X_t), torch.tensor(y_t))
         loader = DataLoader(ds, batch_size=self.batch_size, shuffle=True)
 
         params = list(self.backbone.parameters()) + list(self.head.parameters())

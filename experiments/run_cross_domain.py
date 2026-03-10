@@ -16,6 +16,10 @@ python run_cross_domain.py --model rf
 python run_cross_domain.py --model svm --scheme binary
 python run_cross_domain.py --model rf  --scheme 3class --also-within
 """
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import argparse
 import numpy as np
 

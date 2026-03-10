@@ -26,8 +26,11 @@ python run_baseline.py --dataset pmcd --scheme 3class --model rf
 # PMED, 1D-CNN on raw windows (requires torch)
 python run_baseline.py --dataset pmed --scheme binary --model cnn
 """
-import argparse
 import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+import argparse
 import numpy as np
 
 from pain_detection.config import PMED_SENSORS, PMCD_SENSORS
