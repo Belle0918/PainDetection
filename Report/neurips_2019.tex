@@ -3,8 +3,8 @@
 % Pass options to natbib before loading neurips_2019
 \PassOptionsToPackage{numbers, compress}{natbib}
 
-% Load neurips_2019 style -- camera-ready version
-\usepackage[final]{neurips_2019}
+% Load neurips_2019 style -- preprint version
+\usepackage[preprint]{neurips_2019}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,7 +20,7 @@
 \usepackage{xcolor}
 \usepackage{enumitem}
 
-\title{From Experimental to Clinical Pain Recognition: Context-Aware Physiological Deep Learning on the PainMonit Dataset}
+\title{Cross-Context Physiological Pain Recognition on the PainMonit Dataset}
 
 \author{%
   Fuyu Xing \\
@@ -41,25 +41,24 @@
 \maketitle
 
 \begin{abstract}
-Reliable pain assessment remains a major challenge in healthcare because current practice relies heavily on self-report, which is infeasible for continuous monitoring or for patients with impaired communication. In this work, we study automated pain recognition using the publicly available PainMonit Database, which contains both experimentally induced heat pain (PMED) and clinically observed physiotherapy pain (PMCD) recorded from 104 participants. Inspired by recent work showing that data representation is a first-order factor in model performance~\citep{zhang2026same}, we frame pain recognition as a \emph{representation-sensitive} problem: the same underlying physiological pain response manifests under two distinct data contexts---controlled laboratory stimuli versus noisy clinical sessions---and model effectiveness depends critically on this contextual shift. We propose a modality-specific encoder with attention-based fusion architecture that processes blood volume pulse (BVP), electrodermal activity (EDA), electromyography (EMG), and respiration signals through dedicated temporal encoders before combining them via cross-modal attention. To bridge the gap between experimental and clinical pain, we further introduce a transfer learning pipeline that pretrains the shared encoder on PMED and fine-tunes on PMCD. Through diagnostic evaluation splits along four dimensions---signal modality, pain context, label quality, and class balance---we benchmark deep learning models against classical baselines and analyze when and why different approaches succeed or fail across the experimental-to-clinical spectrum.
+Reliable pain assessment remains challenging because clinical practice depends heavily on self-report, which is not feasible for continuous monitoring or for patients with impaired communication. We study automated pain recognition on the PainMonit Database, which contains both experimentally induced heat pain (PMED) and clinically observed physiotherapy pain (PMCD) from 104 participants. We formulate the task as cross-context physiological time-series classification and examine whether representations learned under controlled experimental conditions transfer to noisier clinical settings. Our main model uses modality-specific temporal encoders with attention-based fusion over blood volume pulse, electrodermal activity, electromyography, and respiration. We compare classical feature-based baselines, neural sequence models, and transfer learning strategies under subject-independent evaluation, and include an exploratory LLM-based baseline for comparison. Our analysis focuses on modality contribution, context shift, and class imbalance in order to assess the value of multimodal fusion and experimental-to-clinical transfer for physiological pain recognition.
 \end{abstract}
 
 %% ============================================================
 \section{Introduction}
 %% ============================================================
 
-Pain is a subjective experience that is notoriously difficult to measure objectively. The clinical gold standard---self-reported scales such as the Numerical Rating Scale (NRS)---is unreliable for patients with cognitive impairments, neonates, or those under sedation~\citep{finley1998measurement}. Moreover, self-reports provide only discrete snapshots rather than continuous monitoring. This has motivated a growing body of work on \emph{automated pain recognition} from behavioral and physiological signals~\citep{gruss2015pain,walter2013biovid,werner2019twofold}.
+Pain is inherently subjective and difficult to assess objectively. In clinical practice, the standard approach remains self-reported scales such as the Numerical Rating Scale (NRS), but these are unavailable or unreliable for patients with impaired communication, cognitive limitations, or sedation~\citep{finley1998measurement}. They also provide only intermittent measurements rather than continuous monitoring. These limitations have motivated growing interest in automated pain recognition from behavioral and physiological signals~\citep{gruss2015pain,walter2013biovid,werner2019twofold}.
 
-Most prior work has focused on a single data context: either controlled laboratory pain~\citep{walter2013biovid,gruss2019multimodal} or naturalistic clinical settings~\citep{gouverneur2024painmonit}. Models trained in one context are rarely evaluated in the other, leaving their cross-context robustness unknown. This mirrors a broader trend in machine learning where models are optimized for a fixed data condition without systematic study of how \emph{the same underlying phenomenon under different data representations} affects performance.
+Most prior work studies pain recognition within a single setting, either controlled laboratory experiments~\citep{walter2013biovid,gruss2019multimodal} or naturalistic clinical environments~\citep{gouverneur2024painmonit}. As a result, it remains unclear whether models learned in one context generalize to the other. The PainMonit Database~\citep{gouverneur2024painmonit} is well suited to this question because it contains comparable physiological modalities in two distinct settings: experimentally induced heat pain (PMED) and clinical physiotherapy pain (PMCD). PMED offers cleaner labels and controlled stimuli, whereas PMCD reflects real-world noise, weaker supervision, and greater variability.
 
-A recent controlled study on Table Question Answering~\citep{zhang2026same} demonstrated that holding semantic content constant while varying data representation reveals dramatic performance shifts across model families: SQL-based methods excel on structured inputs but collapse on semi-structured ones, while hybrid approaches that combine symbolic execution with neural reasoning prove most robust. We draw an explicit analogy to pain recognition: the PainMonit Database~\citep{gouverneur2024painmonit} provides the same physiological modalities recorded under two distinct contexts---experimentally induced heat pain (PMED, clean labels, controlled stimuli) and clinical physiotherapy pain (PMCD, weak labels, naturalistic noise). Just as \citet{zhang2026same} found that no single Table QA method excels across all data representations, we hypothesize that no single pain recognition approach will dominate across both experimental and clinical contexts, and that a representation-aware design---combining modality-specific encoding, attention fusion, and cross-context transfer---is needed.
+We study physiological pain recognition across these two settings. Our main model uses modality-specific temporal encoders with attention-based fusion to capture complementary information across physiological channels. We compare classical feature-based models, neural sequence models, and transfer learning strategies within a unified subject-independent evaluation framework. Our goal is not only to improve predictive performance, but also to characterize which modeling choices remain reliable as supervision becomes weaker and the data become more clinically realistic.
 
 Our contributions are as follows:
 \begin{enumerate}[leftmargin=*]
-    \item We benchmark deep learning models for physiological pain recognition on PainMonit, comparing unimodal and multimodal architectures against classical baselines on both PMED and PMCD.
-    \item We propose a modality-specific encoder with attention-based fusion (Model~B) that processes each physiological channel through a dedicated temporal encoder and combines them via learned attention weights.
-    \item We study cross-context transfer learning (Model~C) from experimental to clinical pain, testing whether representations learned from controlled heat stimuli generalize to real physiotherapy sessions.
-    \item We conduct diagnostic evaluation along four dimensions---modality contribution, pain context, label quality, and class balance---inspired by the fine-grained diagnostic framework of~\citet{zhang2026same}.
+    \item We benchmark classical and neural methods for physiological pain recognition on PainMonit under subject-independent evaluation across both experimental and clinical settings.
+    \item We propose a modality-specific encoder with attention-based fusion and study transfer learning from PMED to PMCD.
+    \item We analyze modality contribution, context shift, and class imbalance in cross-context pain recognition.
 \end{enumerate}
 
 %% ============================================================
@@ -70,43 +69,39 @@ Our contributions are as follows:
 
 Pain assessment has evolved from purely self-report-based methods to automated systems leveraging machine learning. Early approaches used handcrafted features with classical classifiers such as SVMs and Random Forests~\citep{gruss2015pain,breiman2001random}. Deep learning has since enabled end-to-end learning from raw signals: CNNs and LSTMs~\citep{hochreiter1997lstm} have been applied to facial action units~\citep{rodriguez2017deep}, physiological time series~\citep{thiam2019exploring,kessler2019pain}, and multimodal fusion of video, audio, and biosignals~\citep{salekin2019multichannel,werner2019twofold}.
 
-\citet{wang2019recurrent} combined surface EMG and body movement using recurrent neural networks for detecting chronic pain protective behavior. \citet{feighelstein2023deep} integrated facial regions and body posture in a two-step deep learning framework. \citet{werner2019twofold} introduced the first approach addressing multimodality in both sensor inputs and stimulation types. \citet{lopez2017multi} proposed multi-task neural networks for personalized pain recognition from physiological signals. However, most studies evaluate within a single data context and do not assess whether learned representations transfer across experimental and clinical settings.
+\citet{wang2019recurrent} combined surface EMG and body movement using recurrent neural networks for detecting chronic pain protective behavior. \citet{werner2019twofold} introduced the first approach addressing multimodality in both sensor inputs and stimulation types. \citet{lopez2017multi} proposed multi-task neural networks for personalized pain recognition from physiological signals. However, most studies evaluate within a single data context and do not assess whether learned representations transfer across experimental and clinical settings.
 
 \subsection{Pain Databases}
 
-Several multimodal pain databases have been developed. The BioVid Heat Pain Database~\citep{walter2013biovid} provided synchronized video and biosignals across thermal pain intensities, establishing a foundational benchmark. The SenseEmotion Database~\citep{velana2016senseemotion} expanded the scope to body movement and facial expressions. The X-ITE Database~\citep{gruss2019multimodal} further introduced thermal and electrical pain with synchronized audio for paralinguistic analysis. However, all of these datasets capture only laboratory-induced pain.
+Several multimodal pain databases have been developed. The BioVid Heat Pain Database~\citep{walter2013biovid} provided synchronized video and biosignals across thermal pain intensities. The SenseEmotion Database~\citep{velana2016senseemotion} expanded the scope to body movement and facial expressions. The X-ITE Database~\citep{gruss2019multimodal} further introduced thermal and electrical pain with synchronized audio. However, all of these datasets capture only laboratory-induced pain.
 
 The PainMonit Database~\citep{gouverneur2024painmonit} is unique in providing \emph{both} experimental (PMED) and clinical (PMCD) physiological recordings within a single dataset, enabling controlled study of cross-context transfer---a gap that prior databases cannot address.
 
-\subsection{Representation-Aware Evaluation}
+\subsection{Cross-Context Generalization}
 
-\citet{zhang2026same} recently demonstrated in Table QA that data representation is a first-order performance driver. By constructing paired structured and semi-structured versions of the same tables, they showed that SQL-based methods drop 30--45\% on semi-structured inputs, LLMs lose only approximately 3.5\%, and hybrid methods are most robust. Their diagnostic benchmark decomposed difficulty along table size, joins, query complexity, and schema quality. We adapt this philosophy to pain recognition: our ``representations'' are the experimental versus clinical data contexts, and our diagnostic dimensions are modality, context, label quality, and class balance.
+A central challenge in automated pain recognition is generalization across data collection settings. Models developed on controlled laboratory datasets benefit from cleaner supervision and more stable signal quality, whereas clinical data introduce weaker labels, missing information, and broader physiological variability. The PainMonit Database is particularly valuable because it enables evaluation across both contexts within a single benchmark~\citep{gouverneur2024painmonit}. Our work builds on this setting by studying not only overall accuracy, but also whether representations learned in the experimental subset remain useful in the clinical subset.
+
+\subsection{LLMs for Clinical Data Interpretation}
+
+Large language models have been applied to clinical reasoning tasks~\citep{singhal2023medpalm,nori2023gpt4medicine}, and recent work has shown that tabular data can be serialized into text for LLM-based classification~\citep{hegselmann2023tabllm,liu2024timellm}. We include an LLM-based baseline that converts extracted physiological features into textual summaries and prompts the model to predict pain labels. This comparison serves as an exploratory reference for text-based reasoning under limited supervision.
 
 %% ============================================================
 \section{Dataset}
 %% ============================================================
 
-We use the PainMonit Database~\citep{gouverneur2024painmonit}, a publicly accessible physiological signal dataset for automated pain recognition released under an academic-only Data Usage Agreement. It contains two complementary subsets spanning 104 participants total.
+We use the PainMonit Database, a publicly available physiological signal dataset for automated pain recognition~\citep{gouverneur2024painmonit}. It contains two complementary subsets spanning 104 participants total.
 
-\subsection{PMED: Experimental Pain Subset}
+\paragraph{PMED (Experimental).} Recordings from 55 healthy participants subjected to controlled heat pain stimuli at graded intensities. Available signals include blood volume pulse (BVP), electrodermal activity (EDA from two devices: Empatica E4 and RespiBAN), skin temperature, ECG, EMG, and respiration. Continuous pain ratings are provided through the Computerized Visual Analog Scale (CoVAS).
 
-The PainMonit Experimental Dataset (PMED) contains recordings from 55 healthy participants subjected to controlled heat pain stimuli at graded intensities in a laboratory setting. Physiological modalities include blood volume pulse (BVP), electrodermal activity (EDA), skin temperature, electrocardiogram (ECG), electromyogram (EMG), inter-beat interval (IBI), heart rate (HR), and respiration. Continuous pain ratings are available via the Computerized Visual Analog Scale (CoVAS), providing fine-grained temporal labels.
+\paragraph{PMCD (Clinical).} Recordings from 49 patients during physiotherapy sessions. Available signals include BVP (two devices), EDA (two devices), EMG, respiration, skin temperature, and grip force. Pain labels are derived from discrete NRS self-reports mapped to 4-second windows with 50\% overlap.
 
-PMED offers a \textbf{clean, well-supervised} setting: controlled stimuli, precise temporal alignment, and reliable labels. This makes it analogous to ``structured tables with clean schemas'' in the Table QA framework of~\citet{zhang2026same}---the ideal condition where models can achieve peak accuracy.
+\paragraph{Modality selection.} We select four shared modalities for our main experiments: BVP, EDA, EMG, and respiration ($M=4$). We use only the Empatica E4 EDA channel, which is recorded at the wrist where sweat gland density is higher than the chest-mounted RespiBAN alternative. We exclude skin temperature from the primary modality set because PMED uses heat stimuli: temperature may allow models to detect the applied stimulus rather than infer pain-related physiology. This may yield overly optimistic estimates of PMED performance while offering limited transfer value for PMCD, where pain is mechanically induced. The effect of including temperature is examined in the ablation study.
 
-\subsection{PMCD: Clinical Pain Subset}
-
-The PainMonit Clinical Dataset (PMCD) contains recordings from 49 patients during real physiotherapy sessions. Modalities include BVP, EDA, EMG, respiration, skin temperature, and grip force from wearable sensors. Pain labels are derived from discrete NRS self-reports mapped to 4-second windows with 50\% overlap.
-
-PMCD introduces \textbf{real-world challenges}: sparse self-reports yield weak labels with large unlabeled intervals, class distribution is imbalanced (1443 no-pain, 1527 moderate, 485 severe segments), and physiological responses reflect naturalistic variability. This parallels the ``semi-structured tables with noisy schemas'' condition where SQL-based methods collapse in~\citet{zhang2026same}.
-
-\subsection{Cross-Context Comparison}
-
-The coexistence of PMED and PMCD within a single database, sharing overlapping physiological modalities but differing in data context, creates a natural controlled comparison. Content (physiological pain responses) is held approximately constant while representation (experimental vs.\ clinical recording conditions) varies---directly mirroring the paired structured/semi-structured evaluation design of~\citet{zhang2026same}. Table~\ref{tab:dataset_comparison} summarizes the two subsets.
+Table~\ref{tab:dataset_comparison} summarizes the two subsets.
 
 \begin{table}[t]
 \centering
-\caption{Comparison of PMED and PMCD subsets in the PainMonit Database.}
+\caption{Comparison of the two subsets in the PainMonit Database.}
 \label{tab:dataset_comparison}
 \small
 \begin{tabular}{@{}lcc@{}}
@@ -117,11 +112,10 @@ Participants & 55 healthy & 49 clinical \\
 Pain type & Heat stimuli (controlled) & Physiotherapy (naturalistic) \\
 Label source & CoVAS (continuous) & NRS (discrete, sparse) \\
 Label quality & Clean, time-aligned & Weak, class-imbalanced \\
-Shared modalities & BVP, EDA, EMG, Resp, Temp & BVP, EDA, EMG, Resp, Temp \\
-Additional signals & ECG, IBI, HR & Grip force \\
+Shared modalities (used) & BVP, EDA (E4), EMG, Resp & BVP, EDA (E4), EMG, Resp \\
+Excluded shared & Temp (stimulus confound) & Temp (weak pain correlation) \\
+Additional signals & ECG, IBI, HR, EDA (RB) & Grip force, BVP (RB), EDA (RB) \\
 Segmentation & Stimulus-aligned epochs & 4s windows, 50\% overlap \\
-\midrule
-\textit{Analogy to~\citep{zhang2026same}} & \textit{Structured, clean schema} & \textit{Semi-structured, noisy schema} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -132,207 +126,216 @@ Segmentation & Stimulus-aligned epochs & 4s windows, 50\% overlap \\
 
 \subsection{Problem Formulation}
 
-We formulate automated pain recognition as a subject-independent time-series classification problem. For PMED, we define a binary classification task: \textbf{no pain vs.\ high pain}, aligning with the baseline reported by the dataset authors~\citep{gouverneur2024painmonit}. For PMCD, we define a three-class task: \textbf{no pain vs.\ moderate pain vs.\ severe pain}, as well as binary variants (no pain vs.\ pain; no pain vs.\ severe pain).
+We formulate automated pain recognition as a subject-independent time-series classification problem. On PMED, we focus on binary classification (no pain vs.\ high pain), where supervision is clean and class boundaries are reliable. On PMCD, we consider three-class classification (no pain, moderate, severe) and binary variants (no pain vs.\ pain; no pain vs.\ severe).
 
-Given a windowed multichannel physiological input $\mathbf{X} = [\mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \ldots, \mathbf{x}^{(M)}]$ where $\mathbf{x}^{(m)} \in \mathbb{R}^{T \times d_m}$ is the signal from modality $m$ with $T$ time steps and $d_m$ channels, the goal is to predict a pain label $y \in \{0, 1, \ldots, K-1\}$.
+Given a windowed multichannel input $\mathbf{X} = [\mathbf{x}^{(1)}, \ldots, \mathbf{x}^{(M)}]$ where $\mathbf{x}^{(m)} \in \mathbb{R}^{T \times d_m}$ is the signal from modality $m$, the goal is to predict a pain label $y \in \{0, 1, \ldots, K-1\}$.
 
-\subsection{Model A: Early-Fusion Baseline}
+\subsection{Early-Fusion Baseline}
 
-As a simple deep learning baseline, we concatenate all physiological channels along the feature dimension and process them with a single temporal backbone:
+As a neural baseline, we concatenate all physiological channels along the feature dimension and process them with a single temporal backbone:
 \begin{equation}
     \mathbf{x}_{\text{concat}} = [\mathbf{x}^{(1)} \| \mathbf{x}^{(2)} \| \cdots \| \mathbf{x}^{(M)}] \in \mathbb{R}^{T \times D}, \quad D = \textstyle\sum_{m} d_m
 \end{equation}
-The backbone may be a 1D-CNN or TCN~\citep{bai2018tcn}, followed by global average pooling and a classification head. This approach treats all modalities uniformly and does not model cross-modal interactions explicitly.
+The backbone is a 1D-CNN or TCN~\citep{bai2018tcn}, followed by global average pooling and a classification head. This approach treats all modalities uniformly.
 
-\subsection{Model B: Modality-Specific Encoders with Attention Fusion}
+\subsection{Attention-Fusion Model}
 
 Our primary architecture processes each physiological modality through a dedicated temporal encoder before fusing representations via learned attention.
 
 \paragraph{Modality-specific encoders.}
-Each physiological channel $\mathbf{x}^{(m)}$ is processed by an independent temporal encoder $f_{\theta_m}$ that captures modality-specific temporal dynamics:
+Each channel $\mathbf{x}^{(m)}$ is processed by an independent temporal encoder $f_{\theta_m}$:
 \begin{equation}
     \mathbf{h}^{(m)} = f_{\theta_m}(\mathbf{x}^{(m)}) \in \mathbb{R}^{d}
 \end{equation}
-where $d$ is a shared latent dimension. The encoders $f_{\theta_m}$ can be instantiated as 1D-CNN blocks (stacked convolutional layers with batch normalization and pooling), TCN~\citep{bai2018tcn} (dilated causal convolutions for long-range dependencies), or Transformer encoders~\citep{vaswani2017attention} (multi-head self-attention over temporal positions).
+where $d$ is a shared latent dimension. The encoders can be instantiated as 1D-CNN blocks, TCN~\citep{bai2018tcn}, or Transformer encoders~\citep{vaswani2017attention}.
 
 \paragraph{Attention-based fusion.}
-Rather than simple concatenation, we employ a cross-modal attention mechanism to learn the relative importance of each modality. Given modality representations $\{\mathbf{h}^{(1)}, \ldots, \mathbf{h}^{(M)}\}$, we compute attention weights:
+We compute attention weights over modality representations $\{\mathbf{h}^{(1)}, \ldots, \mathbf{h}^{(M)}\}$:
 \begin{equation}
-    \alpha_m = \frac{\exp\!\bigl(\mathbf{w}^\top \tanh(\mathbf{W}_a \mathbf{h}^{(m)} + \mathbf{b}_a)\bigr)}{\sum_{j=1}^{M} \exp\!\bigl(\mathbf{w}^\top \tanh(\mathbf{W}_a \mathbf{h}^{(j)} + \mathbf{b}_a)\bigr)}
-\end{equation}
-The fused representation is:
-\begin{equation}
+    \alpha_m = \frac{\exp\!\bigl(\mathbf{w}^\top \tanh(\mathbf{W}_a \mathbf{h}^{(m)} + \mathbf{b}_a)\bigr)}{\sum_{j=1}^{M} \exp\!\bigl(\mathbf{w}^\top \tanh(\mathbf{W}_a \mathbf{h}^{(j)} + \mathbf{b}_a)\bigr)}, \qquad
     \mathbf{z} = \sum_{m=1}^{M} \alpha_m \, \mathbf{h}^{(m)}
 \end{equation}
+The fused representation $\mathbf{z}$ is passed through a two-layer MLP with ReLU and dropout:
+$\hat{y} = \mathrm{softmax}(\mathrm{MLP}(\mathbf{z}))$.
+The learned weights $\alpha_m$ provide a simple measure of modality importance.
 
-\paragraph{Classification head.}
-The fused representation is passed through a two-layer MLP with ReLU activation and dropout:
-\begin{equation}
-    \hat{y} = \mathrm{softmax}(\mathrm{MLP}(\mathbf{z}))
-\end{equation}
+\subsection{Cross-Context Transfer Learning}
 
-This design enables \emph{interpretable modality contribution analysis}: the learned attention weights $\alpha_m$ reveal which physiological channels are most informative for pain recognition, analogous to how hybrid methods in~\citet{zhang2026same} route different sub-problems to SQL or LLM components based on input characteristics.
-
-\subsection{Model C: Cross-Context Transfer Learning}
-
-Inspired by the finding in~\citet{zhang2026same} that models trained on one data representation (structured tables) often fail on another (semi-structured tables), we explicitly study whether pain representations transfer across contexts.
+We test whether representations learned in the controlled PMED setting transfer to the more variable PMCD setting.
 
 \paragraph{Stage 1: Pretraining on PMED.}
-We train the full Model~B architecture on PMED binary classification (no pain vs.\ high pain). PMED provides clean labels and controlled conditions, allowing the modality-specific encoders to learn robust physiological pain representations without the noise introduced by clinical settings.
+We train the attention-fusion model on PMED binary classification (no pain vs.\ high pain), where clean labels and controlled conditions allow the encoders to learn physiological pain representations without clinical noise.
 
 \paragraph{Stage 2: Fine-tuning on PMCD.}
-We transfer the pretrained modality encoders to PMCD, replacing only the classification head. Two fine-tuning strategies are compared:
+We transfer the pretrained encoders to PMCD, replacing the classification head. We compare two strategies:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Frozen encoder}: only the classification head and fusion layer are updated, testing whether PMED representations are directly useful for clinical pain.
-    \item \textbf{Full fine-tuning}: all parameters are updated with a reduced learning rate, allowing adaptation to the clinical domain while retaining experimental knowledge.
+    \item \textbf{Frozen encoder}: only the classification head and fusion layer are updated.
+    \item \textbf{Full fine-tuning}: all parameters are updated with a reduced learning rate.
 \end{itemize}
+We also consider a multi-task variant with shared encoders and task-specific classification heads as an optional comparison~\citep{lopez2017multi}.
 
-\paragraph{Multi-task variant.}
-As an alternative to sequential transfer, we also explore a multi-task learning setup~\citep{lopez2017multi} where PMED and PMCD share the same modality encoders and fusion module but have separate classification heads. The joint loss is:
-\begin{equation}
-    \mathcal{L}_{\mathrm{MTL}} = \lambda \,\mathcal{L}_{\mathrm{PMED}} + (1 - \lambda)\, \mathcal{L}_{\mathrm{PMCD}}
-\end{equation}
-where $\lambda$ controls the relative weighting between experimental and clinical tasks.
+\subsection{Loss Function}
 
-\subsection{Diagnostic Evaluation Framework}
+We use cross-entropy loss for standard classification. To address class imbalance in PMCD (severe pain: 485 vs.\ no pain: 1443 segments), we additionally consider class-weighted cross-entropy and focal loss~\citep{lin2017focal}: $\mathcal{L}_{\mathrm{focal}} = -\alpha_t (1 - p_t)^\gamma \log(p_t)$.
 
-Drawing from the diagnostic split methodology of~\citet{zhang2026same}, we evaluate along four controlled dimensions rather than relying solely on aggregate accuracy. Table~\ref{tab:diagnostic_dims} summarizes these dimensions.
+%% ============================================================
+\section{Experimental Setup}
+\label{sec:baselines}
+%% ============================================================
+
+\subsection{Baselines}
+
+\paragraph{Classical feature-based models.}
+We extract 16 statistical, temporal, and spectral features per sensor (mean, standard deviation, range, spectral entropy, dominant frequency, etc.) and train Random Forest~\citep{breiman2001random}, SVM, and Logistic Regression classifiers. These align with the baselines reported by the dataset authors~\citep{gouverneur2024painmonit}.
+
+\paragraph{LLM-based baseline.}
+As an exploratory comparison, we serialize the extracted features into a structured text prompt and query a pretrained LLM to classify the pain level under zero-shot and few-shot ($k=3$--$5$ examples per class) settings. This baseline tests whether LLM world knowledge provides useful signal under weak supervision.
+
+\paragraph{Summary.}
+Table~\ref{tab:model_taxonomy} summarizes all methods.
 
 \begin{table}[t]
 \centering
-\caption{Diagnostic evaluation dimensions, inspired by the factor-isolation approach in~\citet{zhang2026same}.}
+\caption{Methods compared in this study.}
+\label{tab:model_taxonomy}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Method family} & \textbf{Model} & \textbf{Role} \\
+\midrule
+Classical feature-based & RF / SVM / LR & Non-neural baseline \\
+Early-fusion neural & 1D-CNN / TCN & Simple neural baseline \\
+Attention-fusion neural & Modality-specific encoders + attention & Main approach \\
+Transfer learning & Attention-fusion pretrained on PMED & Cross-context generalization \\
+LLM-based & Prompted LLM (zero/few-shot) & Exploratory baseline \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Evaluation Protocol}
+
+We report balanced accuracy, macro F1-score, and per-class recall. Balanced accuracy and macro F1 are essential because PMCD is class-imbalanced. All experiments use leave-one-subject-out (LOSO) cross-validation following~\citet{gouverneur2024painmonit} to prevent subject leakage.
+
+We evaluate along four diagnostic dimensions (Table~\ref{tab:diagnostic_dims}) to better understand which factors are associated with performance differences.
+
+\begin{table}[t]
+\centering
+\caption{Diagnostic evaluation dimensions.}
 \label{tab:diagnostic_dims}
 \small
 \begin{tabular}{@{}llp{6.2cm}@{}}
 \toprule
-\textbf{Dimension} & \textbf{Splits} & \textbf{Rationale} \\
+\textbf{Dimension} & \textbf{Splits} & \textbf{Question} \\
 \midrule
-Modality & Unimodal / Multimodal & Which channels contribute most? Does fusion always help? \\
-Pain context & PMED / PMCD & How does context shift affect each model family? \\
-Label quality & Clean (PMED) / Weak (PMCD) & Do deep models degrade under sparse, noisy labels? \\
+Modality & Unimodal / Multimodal & Which channels contribute most? Does fusion help? \\
+Pain context & PMED / PMCD & How does context shift affect each method? \\
+Label quality & Clean (PMED) / Weak (PMCD) & Do models degrade under sparse, noisy labels? \\
 Class balance & Balanced / Imbalanced & How sensitive are models to the skewed PMCD distribution? \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-This mirrors how~\citet{zhang2026same} isolated the effects of table size, joins, query complexity, and schema quality. By varying one dimension at a time, we can attribute performance changes to specific factors rather than conflating them.
-
-\subsection{Loss Function}
-
-For standard classification, we use cross-entropy loss. To address class imbalance in PMCD (severe pain: 485 vs.\ no pain: 1443 segments), we additionally consider class-weighted cross-entropy (weights inversely proportional to class frequency) and focal loss~\citep{lin2017focal}: $\mathcal{L}_{\mathrm{focal}} = -\alpha_t (1 - p_t)^\gamma \log(p_t)$, which down-weights easy examples to focus on hard, underrepresented cases.
-
-%% ============================================================
-\section{Baselines}
-%% ============================================================
-
-We consider both classical and deep learning baselines to measure the benefits of our proposed architecture.
-
-\subsection{Classical Baselines}
-
-\textbf{Random Forest with handcrafted features.}
-We directly replicate the baseline protocol reported with the PainMonit dataset~\citep{gouverneur2024painmonit,breiman2001random}. This includes statistical features (mean, standard deviation, percentiles, signal derivatives) extracted from each physiological channel, evaluated under leave-one-subject-out (LOSO) cross-validation. The dataset authors report up to 91\%+ accuracy on PMED high-pain binary classification and 81.00\% on PMCD no-pain-vs-severe classification.
-
-\textbf{Logistic Regression / SVM.}
-We apply simpler classical classifiers using the same handcrafted features to establish a lower performance bound.
-
-\textbf{Late-fusion RF.}
-Features from all modalities are concatenated before Random Forest classification, providing a classical multimodal fusion baseline.
-
-\subsection{Deep Learning Baselines}
-
-\textbf{1D-CNN (early fusion).}
-All channels are concatenated along the feature dimension and processed by a single convolutional backbone (i.e., Model~A described above).
-
-\textbf{LSTM / BiLSTM}~\citep{hochreiter1997lstm}\textbf{.}
-Sequential processing of the multivariate time series, capturing temporal dependencies through recurrent gates.
-
-\textbf{TCN}~\citep{bai2018tcn}\textbf{.}
-Dilated causal convolutions for efficient long-range temporal modeling without recurrence.
-
-\textbf{Transformer encoder}~\citep{vaswani2017attention}\textbf{.}
-Multi-head self-attention over the temporal dimension of concatenated physiological signals, capturing global dependencies.
-
-These baselines span from classical feature engineering to end-to-end deep learning. Drawing an analogy to the model taxonomy in~\citet{zhang2026same}: classical ML methods (like NL2SQL in their study) may excel under clean PMED conditions but degrade under noisy PMCD data; end-to-end deep models (analogous to LLMs) offer flexibility but may lack precision; our hybrid attention-fusion approach (Model~B) aims to combine the best of both.
-
-%% ============================================================
-\section{Experimental Setup}
-%% ============================================================
-
-\subsection{Research Questions}
-
-Aligned with our diagnostic framework, we organize experiments around five research questions:
-
-\begin{description}[leftmargin=0pt, labelindent=0pt]
-    \item[RQ1. Context sensitivity:] How does model accuracy change between PMED (clean, experimental) and PMCD (noisy, clinical) for the same model architecture?
-    \item[RQ2. Modality contribution:] Does multimodal fusion consistently outperform unimodal baselines, and which modalities contribute most?
-    \item[RQ3. Cross-context transfer:] Can representations pretrained on PMED improve PMCD performance compared to training from scratch?
-    \item[RQ4. Class imbalance robustness:] How do models handle the skewed label distribution in PMCD?
-    \item[RQ5. Deep learning vs.\ classical:] Under what conditions do deep learning models outperform the Random Forest baselines reported by the dataset authors~\citep{gouverneur2024painmonit}?
-\end{description}
-
-\subsection{Evaluation Protocol}
-
-\paragraph{Metrics.} We report balanced accuracy, macro F1-score, and per-class recall. Balanced accuracy and macro F1 are essential because PMCD is heavily imbalanced. We also present confusion matrices for qualitative error analysis.
-
-\paragraph{Subject-independent evaluation.} All experiments use Leave-One-Subject-Out (LOSO) cross-validation, following the protocol established by the dataset authors~\citep{gouverneur2024painmonit}. This prevents subject leakage and provides a realistic estimate of generalization to unseen individuals.
-
-\paragraph{Experimental order.} We structure experiments to build understanding incrementally: (1) PMED binary classification (no pain vs.\ high pain) to establish deep learning performance on clean data; (2) PMCD 3-class classification (no pain / moderate / severe) to evaluate on clinical data; (3) unimodal vs.\ multimodal ablation on both subsets; (4) PMED to PMCD transfer learning to test cross-context generalization.
-
 \subsection{Implementation Details}
 
-Signals are resampled to a common frequency, bandpass filtered, and z-score normalized per subject. Windows are extracted following the dataset segmentation protocol (stimulus-aligned for PMED; 4-second windows with 50\% overlap for PMCD). The shared modalities used for cross-context comparison are BVP, EDA, EMG, respiration, and skin temperature. We train with the Adam optimizer~\citep{kingma2015adam}, learning rate $10^{-3}$ with cosine annealing, batch size 32, and early stopping based on validation balanced accuracy. For transfer learning, pretrained encoder learning rates are reduced by $10\times$ during fine-tuning.
+Signals are resampled to a common frequency, bandpass filtered, and z-score normalized per subject. Windows are extracted following the dataset protocol (stimulus-aligned for PMED; 4-second windows with 50\% overlap for PMCD). We train with the Adam optimizer~\citep{kingma2015adam}, learning rate $10^{-3}$ with cosine annealing, batch size 32, and early stopping on validation balanced accuracy. For transfer learning, pretrained encoder learning rates are reduced by $10\times$.
 
 %% ============================================================
-\section{Anticipated Results and Analysis}
+\section{Preliminary Results}
 %% ============================================================
 
-\subsection{Expected Findings}
+We have implemented classical baselines (Random Forest, SVM) and a 1D-CNN early-fusion model, evaluated under LOSO cross-validation on both datasets. Table~\ref{tab:preliminary} reports initial results for the three-class setting on both PMED and PMCD, as well as cross-domain transfer (train on PMED, test on PMCD).
 
-Based on the analogies drawn from~\citet{zhang2026same} and prior pain recognition literature, we anticipate the following patterns.
+\begin{table}[t]
+\centering
+\caption{Preliminary baseline results (3-class, LOSO cross-validation). Cross-domain trains RF on PMED and evaluates on PMCD using shared modalities.}
+\label{tab:preliminary}
+\small
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Setting} & \textbf{Model} & \textbf{Accuracy} & \textbf{Macro F1} & \textbf{AUC} \\
+\midrule
+PMED (CoVAS 3-class) & Random Forest & 0.563 & 0.555 & 0.730 \\
+PMED (Heater 3-class) & Random Forest & 0.509 & 0.506 & 0.705 \\
+PMCD (3-class) & Random Forest & 0.576 & 0.483 & 0.688 \\
+\midrule
+Cross-domain (PMED $\to$ PMCD) & Random Forest & 0.388 & 0.366 & 0.552 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\paragraph{Context shift will degrade all methods (RQ1).} Just as all Table QA methods in~\citet{zhang2026same} lose accuracy moving from structured to semi-structured inputs, we expect all pain models to perform worse on PMCD than PMED due to weak labels, class imbalance, and naturalistic noise. However, the magnitude of degradation will vary by model family.
+\paragraph{Key observations.}
+(1) Within-domain performance is moderate for both PMED and PMCD, consistent with the difficulty of physiological pain recognition reported in prior work~\citep{gouverneur2024painmonit}.
+(2) The cross-domain result (38.8\% accuracy, near the 33.3\% chance level) confirms a substantial domain gap between experimental and clinical pain---the central challenge that motivates our transfer learning approach.
+(3) PMCD macro F1 (0.483) is notably lower than accuracy (0.576), reflecting the class imbalance problem: the model performs better on majority classes while under-predicting severe pain.
 
-\paragraph{Classical baselines will be context-sensitive.} Random Forest with handcrafted features should perform well on PMED (clean labels, known feature engineering) but may struggle on PMCD where signal patterns are more variable. This mirrors the NL2SQL finding in~\citet{zhang2026same}: high accuracy on structured data but 30--45\% drop on semi-structured inputs.
+These results establish the baseline performance that our proposed attention-fusion model and transfer learning pipeline aim to improve upon.
 
-\paragraph{End-to-end deep models will be more robust but less precise.} 1D-CNN and LSTM models should show smaller relative drops across contexts but may not achieve peak accuracy on either subset. This parallels the LLM finding of flexibility with reduced precision (only approximately 3.5\% drop across representations).
+%% ============================================================
+\section{Evaluation Plan}
+%% ============================================================
 
-\paragraph{Attention fusion + transfer will be most robust (RQ2, RQ3).} Our Model~B+C should strike the best balance, using modality-specific encoding to capture channel-specific patterns and transfer learning to bridge the context gap. This mirrors the hybrid approaches that proved most robust in~\citet{zhang2026same} (under 5\% degradation across representations).
+Building on the preliminary baselines, we structure the remaining experiments as follows.
 
-\paragraph{Fusion helps, but not uniformly.} Multimodal fusion should improve over unimodal models in most settings, but the benefit may be smaller on PMCD where individual signal quality varies. Attention weights will reveal which modalities are most informative per context.
+\paragraph{Attention-fusion model on PMED and PMCD.} We evaluate the modality-specific encoder with attention fusion on both datasets and compare against the early-fusion neural and classical baselines. This comparison quantifies the benefit of modality-specific processing and learned fusion over simpler approaches.
 
-\subsection{Error and Failure Case Analysis}
+\paragraph{Modality ablation.} We evaluate each modality individually (BVP-only, EDA-only, EMG-only, Resp-only) and in combination. We also re-introduce skin temperature in a controlled ablation to quantify its confounding effect on PMED accuracy. Attention weights from the fusion model provide a complementary view of modality importance across contexts.
 
-We will conduct detailed analysis including confusion matrices to identify systematic misclassification patterns (especially between moderate and severe pain in PMCD), per-subject analysis to identify individuals where all models fail, attention weight visualization to understand which modalities drive predictions in different contexts, and transfer gap analysis comparing per-class performance before and after PMED pretraining.
+\paragraph{Transfer learning.} We compare three strategies for PMCD: training from scratch, frozen-encoder transfer from PMED, and full fine-tuning from PMED. If experimental representations capture generalizable pain physiology, transfer should improve PMCD performance---particularly for the minority severe-pain class where PMCD training data is most limited.
 
-\subsection{Ablation Studies}
+\paragraph{Error analysis.} We report confusion matrices to identify systematic misclassification patterns (e.g., moderate vs.\ severe pain in PMCD), per-subject analysis to identify cases where all models fail, and attention weight visualization across contexts.
 
-We plan the following systematic ablations: (1) modality ablation---remove one channel at a time (EDA-only, BVP-only, EMG-only, all modalities) to quantify individual contributions; (2) fusion strategy---compare early fusion, late fusion, and attention fusion; (3) encoder architecture---compare 1D-CNN, TCN, and Transformer as the modality-specific backbone within Model~B; (4) transfer strategy---frozen encoder vs.\ full fine-tuning vs.\ multi-task learning; (5) loss function---standard cross-entropy vs.\ weighted cross-entropy vs.\ focal loss on PMCD.
+\paragraph{LLM comparison.} We compare zero-shot and few-shot LLM prompting against the trained models, testing whether informing the LLM of the recording context (experimental vs.\ clinical) affects predictions.
+
+%% ============================================================
+\section{Challenges and Risks}
+%% ============================================================
+
+\paragraph{Domain gap severity.} Our preliminary cross-domain result (near chance level) indicates that naive transfer between PMED and PMCD is ineffective. The attention-fusion transfer learning pipeline may partially close this gap, but if the physiological signatures of heat pain and mechanical pain are fundamentally different, even fine-tuned representations may not transfer well.
+
+\paragraph{Class imbalance in PMCD.} Severe pain is underrepresented (485 vs.\ 1443 no-pain segments). Focal loss and class weighting may help, but small minority classes remain difficult under LOSO evaluation where some folds may contain very few severe-pain samples.
+
+\paragraph{Computational cost of LOSO.} Leave-one-subject-out requires training one model per subject (55 for PMED, 49 for PMCD). For deep models this is computationally expensive, which may limit the number of hyperparameter configurations we can explore.
+
+\paragraph{LLM baseline variability.} LLM outputs are sensitive to prompt phrasing. We mitigate this by using structured, templated prompts and averaging over multiple runs, but some variability is inherent.
 
 %% ============================================================
 \section{Discussion}
 %% ============================================================
 
-\subsection{Analogy to Representation-Aware Evaluation}
+Our study highlights that pain recognition performance depends not only on model capacity, but also on the context in which physiological signals are collected and labeled. By comparing PMED and PMCD within a unified framework, we aim to separate the effects of modality choice, supervision quality, and class imbalance.
 
-Our study design is directly motivated by~\citet{zhang2026same}, who showed that the same information under different representations leads to dramatically different model behaviors. In Table QA, the ``representation'' is how table data is structured; in pain recognition, the ``representation'' is the recording context---controlled laboratory versus naturalistic clinical environment. Both studies hold content approximately constant while varying the data condition, enabling controlled attribution of performance changes.
+From a practical standpoint, classical feature-based models may be sufficient for clean experimental data, while clinical data are more likely to benefit from multimodal neural fusion and transfer learning. The LLM-based baseline serves as an exploratory comparison that may exhibit different failure modes informative for understanding the task.
 
-If our results confirm the expected pattern---that model robustness across pain contexts follows the same hierarchy as across table representations (hybrid $>$ end-to-end neural $>$ classical)---this would suggest a broader principle: \emph{methods that combine modality-specific structural processing with flexible neural reasoning are inherently more robust to representation shift}, regardless of the application domain.
+Several limitations should be noted. PMED and PMCD do not share identical modality sets, which constrains transfer for non-shared channels. The dataset contains 104 participants, so results may be sensitive to subject-level variability despite LOSO evaluation. The LLM baseline operates on extracted features rather than raw waveforms, limiting its access to fine-grained temporal information.
 
-\subsection{Practical Method Selection}
+Future work could explore self-supervised pretraining on unlabeled PMCD intervals, domain adaptation techniques, and temporal pain trajectory modeling beyond fixed-window classification.
 
-Following the decision-tree approach of~\citet{zhang2026same}, we aim to provide practical guidance for practitioners. For clean experimental data with reliable labels, classical RF or simple deep models may suffice and offer fast training. For noisy clinical data with weak labels, attention-based fusion with transfer learning is recommended for robustness. When clinical training data is limited, PMED pretraining can compensate, especially with frozen-encoder transfer that requires minimal clinical samples for adaptation.
+%% ============================================================
+\section{Planned Next Steps}
+%% ============================================================
 
-\subsection{Limitations and Future Directions}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Implement the attention-fusion model} (modality-specific 1D-CNN encoders with attention fusion) and evaluate on PMED and PMCD under LOSO cross-validation.
+    \item \textbf{Run cross-context transfer experiments}: pretrain on PMED, fine-tune on PMCD with frozen and full fine-tuning strategies, and compare against training from scratch.
+    \item \textbf{Implement and evaluate the LLM baseline}: serialize extracted features into prompts, run zero-shot and few-shot classification on a sample of PMED and PMCD windows, and compare with trained models.
+\end{enumerate}
 
-Several limitations should be noted. First, PMED and PMCD share most but not all modalities (PMED includes ECG; PMCD includes grip force), which complicates transfer for non-shared channels. Second, 104 total participants may limit generalizability, though LOSO evaluation mitigates overfitting. Third, some PMCD sessions may be longer than practical model context windows.
+%% ============================================================
+\section{Role Breakdown}
+%% ============================================================
 
-Future directions include self-supervised pretraining on unlabeled PMCD intervals, domain adaptation techniques such as adversarial alignment~\citep{pan2010transfer}, and integration of temporal pain trajectory modeling beyond fixed-window classification.
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Fuyu Xing}: Data preprocessing pipeline, feature extraction, classical baselines (RF/SVM), cross-domain evaluation, report writing.
+    \item \textbf{Yara Yao}: Neural model implementation (early-fusion CNN, attention-fusion model), transfer learning pipeline, LLM baseline, report writing.
+\end{itemize}
+
+Code is available at: \url{https://github.com/Belle0918/PainDetection}
 
 %% ============================================================
 \section{Conclusion}
 %% ============================================================
 
-We present a representation-aware study of automated pain recognition on the PainMonit Database. By treating the experimental-to-clinical shift as a controlled representation change---analogous to the structured-to-semi-structured shift studied in Table QA~\citep{zhang2026same}---we aim to reveal how different model families respond to context variation in physiological pain data. Our proposed architecture combines modality-specific temporal encoders with attention-based fusion and cross-context transfer learning, targeting robustness across both clean experimental and noisy clinical conditions. Through diagnostic evaluation along four dimensions, we provide a systematic benchmark that goes beyond aggregate accuracy to characterize when and why different approaches succeed or fail for physiological pain recognition.
+We study automated pain recognition on the PainMonit Database as a cross-context physiological time-series classification problem. Preliminary results with classical baselines confirm a substantial domain gap between experimental and clinical settings, with cross-domain transfer near chance level. Using both PMED and PMCD, we compare classical feature-based models, neural attention-fusion models, transfer learning, and an exploratory LLM-based baseline under subject-independent evaluation. Our analysis characterizes how model families behave across controlled and clinical settings, and evaluates when multimodal fusion and experimental-to-clinical transfer are most beneficial.
 
 %% ============================================================
 \bibliographystyle{unsrtnat}
