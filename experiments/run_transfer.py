@@ -28,7 +28,7 @@ from pain_detection.models import AttentionFusionModel, TransferModel
 from pain_detection.evaluate import loso_cv
 
 # 4 shared modalities used in the paper
-TRANSFER_SENSORS = ["Bvp", "Eda_E4", "Emg", "Resp"]
+TRANSFER_SENSORS = ["Bvp", "Eda_E4", "Resp", "Emg"]
 
 
 def parse_args():
@@ -46,6 +46,7 @@ def parse_args():
     p.add_argument("--batch-size",  type=int, default=64)
     p.add_argument("--lr",          type=float, default=1e-3)
     p.add_argument("--focal-loss",  action="store_true")
+    p.add_argument("--focal-gamma", type=float, default=2.0)
     return p.parse_args()
 
 
@@ -59,6 +60,7 @@ def main():
         epochs=args.epochs,
         batch_size=args.batch_size,
         focal_loss=args.focal_loss,
+        focal_gamma=args.focal_gamma,
     )
 
     print("═" * 65)

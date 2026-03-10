@@ -53,7 +53,7 @@ def parse_args():
 
 
 # Default 4 modalities used in the paper (shared across PMED & PMCD)
-DEFAULT_SENSORS = ["Bvp", "Eda_E4", "Emg", "Resp"]
+DEFAULT_SENSORS = ["Bvp", "Eda_E4", "Resp", "Emg"]
 
 
 def main():

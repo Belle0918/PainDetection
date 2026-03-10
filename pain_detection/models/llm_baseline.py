@@ -83,7 +83,7 @@ class LLMBaseline:
         class_names: list[str],
         context: str | None = None,
         n_shots: int = 0,
-        model: str = "claude-sonnet-4-20250514",
+        model: str = "claude-sonnet-4-5",
         max_retries: int = 3,
         random_state: int = 42,
     ):
@@ -205,9 +205,5 @@ class LLMBaseline:
                 print(f"    Classified {i+1}/{len(X_features)}")
         return np.array(preds)
 
-    def predict_proba(self, X_features: np.ndarray) -> np.ndarray:
-        """LLM gives hard predictions; return one-hot probabilities."""
-        preds = self.predict(X_features)
-        proba = np.zeros((len(preds), len(self.class_names)))
-        proba[np.arange(len(preds)), preds] = 1.0
-        return proba
+    # predict_proba is intentionally not implemented: LLM returns hard labels only.
+    # evaluate.py will skip AUC when predict_proba is absent.
