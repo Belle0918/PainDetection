@@ -50,7 +50,7 @@ def parse_args():
                    help="Include recording context in prompt")
     p.add_argument("--compare", action="store_true",
                    help="Run both zero-shot and few-shot (3) for comparison")
-    p.add_argument("--model", default="claude-sonnet-4-20250514",
+    p.add_argument("--model", default="claude-sonnet-4-5",
                    help="Claude model ID")
     p.add_argument("--seed", type=int, default=42)
     return p.parse_args()
@@ -174,3 +174,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
