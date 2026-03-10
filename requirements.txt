@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+tqdm
+scikit-learn
+scipy
+anthropic
+# Optional: for 1D-CNN baseline
+# torch
