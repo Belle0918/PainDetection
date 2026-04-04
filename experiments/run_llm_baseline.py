@@ -52,6 +52,8 @@ def parse_args():
                    help="Run both zero-shot and few-shot (3) for comparison")
     p.add_argument("--model", default="claude-sonnet-4-20250514",
                    help="Claude model ID")
+    p.add_argument("--prompt-mode", choices=["raw", "semantic"], default="semantic",
+                   help="Prompt mode: 'raw' (64-feature dump) or 'semantic' (natural language)")
     p.add_argument("--seed", type=int, default=42)
     return p.parse_args()
 
@@ -69,7 +71,8 @@ def sample_balanced(X, y, samples_per_class, rng):
 
 
 def run_one(feat_train, y_train, feat_test, y_test, feature_names,
-            class_names, n_shots, context_str, model_id, seed):
+            class_names, n_shots, context_str, model_id, seed,
+            prompt_mode="semantic"):
     """Run a single LLM evaluation."""
     ctx_str = context_str  # None or a descriptive string
 
@@ -79,6 +82,7 @@ def run_one(feat_train, y_train, feat_test, y_test, feature_names,
         n_shots=n_shots,
         model=model_id,
         random_state=seed,
+        prompt_mode=prompt_mode,
     )
     llm.fit(feat_train, y_train, feature_names=feature_names)
     preds = llm.predict(feat_test)
@@ -157,7 +161,7 @@ def main():
         ctx = context_str if args.context else None
         res = run_one(feat_train, y_train, feat_test, y_test,
                       feature_names, class_names, n_shots, ctx,
-                      args.model, args.seed)
+                      args.model, args.seed, args.prompt_mode)
         results[label] = res
 
     # ── Summary ──────────────────────────────────────────────────────────────
