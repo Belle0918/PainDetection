@@ -1,0 +1,2320 @@
+{
+  "macro_f1": 0.35888203331534313,
+  "balanced_accuracy": 0.41197394472162835,
+  "auc": 0.5580858339648674,
+  "parse_failures": 0,
+  "n_samples": 330,
+  "per_class_report": "              precision    recall  f1-score   support\n\n     No-pain       0.14      0.06      0.08        69\n    Moderate       0.66      0.56      0.60       200\n      Severe       0.29      0.62      0.39        61\n\n    accuracy                           0.46       330\n   macro avg       0.36      0.41      0.36       330\nweighted avg       0.48      0.46      0.46       330\n",
+  "records": [
+    {
+      "idx": 0,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevation in signal zero-crossing rate (high), suggesting stronger muscular guarding. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 1,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative deviation in signal zero-crossing rate (high guarding), which is consistent with muscular effort. The other modalities remain close to the subject's baseline. The multimodal pattern is elevated in EMG alone, not across modalities. Classification: Moderate"
+    },
+    {
+      "idx": 2,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), especially signal zero-crossing rate (very high). EVP and Respiration also shift in breathing pattern regulation, but the multimodal deviation is strongest in EMG. The pattern fits severe pain. Classification: Severe"
+    },
+    {
+      "idx": 3,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are not widespread across modalities, and the overall pattern is subject-relative but not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 4,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: high), which is a key pain marker. EDA also elevates in SCR count (very high) and EDA response amplitude (high), indicating sympathetic arousal. The multimodal deviations are strong but not all fe"
+    },
+    {
+      "idx": 5,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated subject-relative guarding (burst count: very high), but other modalities don't consistently elevate. The multimodal pattern is not strongly aligned. Classification: No-pain"
+    },
+    {
+      "idx": 6,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), and Respiration shows strong subject-relative breathing rate elevation (very high). The multimodal pattern reflects intense physical guarding without extreme EDA or cardiovascular deviation. Classificati"
+    },
+    {
+      "idx": 7,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: very high), which is a key pain marker. EVP and Respiration are relatively close to baseline, so the multimodal pattern is dominated by EMG guarding. Classification: Moderate"
+    },
+    {
+      "idx": 8,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA shows very high subject-relative phasic EDA fluctuation and SCR count, indicating strong sympathetic arousal. EMG has isolated elevations in RMS muscle energy (subject-relative), suggesting some muscular guarding. The deviations are multimodal but not consistently extreme across all features. Cl"
+    },
+    {
+      "idx": 9,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), and Respiration shows strong subject-relative breathing depth variability (also high). The multimodal pattern indicates meaningful pain-related guarding without extreme elevation across all modalitie"
+    },
+    {
+      "idx": 10,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high), and EDA has multiple subject-relative shifts (phasic EDA fluctuation: high, SCR count: very high, EDA response amplitude: very high), indicating multimodal pain-related autonomic and muscular responses. The combined deviatio"
+    },
+    {
+      "idx": 11,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has multiple subject-relative elevations in guarding markers (signal zero-crossing rate: high, burst count: high), which fits subject-relative muscular guarding. EDA also shows subject-relative phasic EDA fluctuation (high), suggesting sympathetic arousal. The multimodal deviations are strong in"
+    },
+    {
+      "idx": 12,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are not widespread across modalities, and the overall pattern is mixed rather than consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 13,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), which is a key pain marker. EVP and Respiration are closer to baseline. The multimodal pattern is dominated by EMG guarding without sustained cross-modal elevation. Classification: Moderate"
+    },
+    {
+      "idx": 14,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), and HRV (RMSSD) is also elevated in cardiovascular adaptation, indicating multimodal pain-related autonomic and muscular response. The deviations are consistent across modalities. Classification: Severe"
+    },
+    {
+      "idx": 15,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), suggesting muscular guarding. EDA tonic skin conductance level is high (subject-relative), indicating sympathetic arousal. The multimodal pattern shows subject-relative elevation in EMG burst count and EDA tonic skin conductance level, which align"
+    },
+    {
+      "idx": 16,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA shows very strong subject-relative sympathetic arousal (multiple features elevated), especially phasic EDA fluctuation and SCR count. EMG also elevates in muscle activation level and RMS muscle energy, indicating sustained guarding. The multimodal deviations are strong but not all features are c"
+    },
+    {
+      "idx": 17,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscular guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EDA also elevates in subject-relative sympathetic arousal (phasic EDA fluctuation: very high, SCR count: very high), supporting the pain-related mu"
+    },
+    {
+      "idx": 18,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain indicator. EDA also elevates in tonic skin conductance (high), supporting sympathetic arousal. The deviations are multimodal but not all features are consistently extreme. Classif"
+    },
+    {
+      "idx": 19,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (multiple features elevated), consistent with severe pain. Other modalities follow the EMG pattern. Classification: Severe"
+    },
+    {
+      "idx": 20,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations, indicating meaningful pain-related guarding. The combined multimodal pattern is consistent with moderate pain. Classification: Moderate"
+    },
+    {
+      "idx": 21,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (muscle activation level: high), and Respiration shows strong subject-relative breathing changes (breathing rate: very high, breath interval variability: high), which fits pain-related guarding. EDA also has subject-relative sympathetic arousal (toni"
+    },
+    {
+      "idx": 22,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (especially breath interval variability and breathing rate), but the deviations are not consistently extreme across modalities. Classification: Moderate"
+    },
+    {
+      "idx": 23,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations during pain-monitoring. Respiration has breathing depth variability (high), breath amplitude range (high), and breathing rate (very high) all indicating significant breathing pattern guarding. EMG also has subject-relative elevation in musc"
+    },
+    {
+      "idx": 24,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (especially breath interval variability and breathing rate), but the deviations are not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 25,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding patterns, but the multimodal profile remains balanced. Classification: Moderate"
+    },
+    {
+      "idx": 26,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Breathing depth variability and breath amplitude range show very high subject-relative deviations in respiration, indicating strong breathing guarding. EMG and EVP also show strong subject-relative deviations in respiration, which fits the multimodal pain pattern. Classification: Severe"
+    },
+    {
+      "idx": 27,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has very high breath amplitude range (subject-relative), indicating meaningful pain-related bodily deviation. The multimodal pattern is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 28,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and Respiration has very high breath interval variability (also subject-relative). The multimodal pattern fits severe pain. Classification: Severe"
+    },
+    {
+      "idx": 29,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain indicator. Respiration also shifts meaningfully (breath interval variability: high). The multimodal pattern fits severe pain guarding. Classification: Severe"
+    },
+    {
+      "idx": 30,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are mixed across modalities. The strongest subject-relative deviations are in EDA (SCR count: high), which stands out in the multimodal profile. The overall pattern is not consistently severe across multiple modalities. "
+    },
+    {
+      "idx": 31,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: normal), but overall the multimodal profile is close to baseline. Classification: Moderate"
+    },
+    {
+      "idx": 32,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but EDA has isolated high deviations (EDA response amplitude: high), suggesting sympathetic arousal. The multimodal profile is not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 33,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding behavior. EMG's RMS muscle energy is normal, but the combined multimodal pattern indicates meaningful pain-related autonomic and muscular changes. Classification: Moderate"
+    },
+    {
+      "idx": 34,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. Respiration also shifts meaningfully (breath interval variability: high). The multimodal pattern fits severe pain guarding. Classification: Severe"
+    },
+    {
+      "idx": 35,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and Respiration breathing rate also rises strongly during pain. The multimodal pattern is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 36,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has multiple subject-relative elevations in guarding markers (signal zero-crossing rate, burst count), and Respiration also shows strong subject-relative deviations in breathing rate and breath amplitude range. The multimodal pattern indicates meaningful pain-related guarding. Classification: Mo"
+    },
+    {
+      "idx": 37,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. Classification: No-pain"
+    },
+    {
+      "idx": 38,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG has high muscle activation level and RMS muscle energy, suggesting strong guarding; EDA has high SCR count and EDA response amplitude, indicating strong sympathetic arousal. The combined multimodal pattern indicates severe pain. Classi"
+    },
+    {
+      "idx": 39,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG has isolated shifts (RMS muscle energy: normal), but the combined pattern is not consistently severe. The deviations are spread across modalities without a unified, extreme subject-relative elevation. Classification: No-pain"
+    },
+    {
+      "idx": 40,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and Respiration has very high breath interval variability (also subject-relative). The multimodal pattern fits severe pain. Classification: Severe"
+    },
+    {
+      "idx": 41,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: high), which is a key pain marker. EDA also elevates in EDA response amplitude (high), supporting sympathetic arousal. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 42,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is a key pain marker. EDA also elevates in tonic skin conductance level (high) and SCR count (high), indicating sympathetic arousal. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 43,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG guarding is strongly elevated (burst count: high), matching the subject's own pattern of muscular guarding. Respiration also shows strong subject-relative deviation in breath amplitude range (very high) and breathing depth variability (very high), indicating pain-related breathing guarding. EDA "
+    },
+    {
+      "idx": 44,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG burst count is very high (subject-relative), indicating strong muscular guarding. Respiration breathing rate is also high, suggesting breathing changes. The multimodal deviations are meaningful but not all features are consistently elevated. Classification: Moderate"
+    },
+    {
+      "idx": 45,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: Respiration has very high breathing depth variability (z=2.03) and breath interval variability (z=1.62), which fits pain-related breathing guarding. EDA also has very high tonic skin conductance (z=1.76) and phasic EDA (z=1.05), indicating"
+    },
+    {
+      "idx": 46,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: very high, burst count: high), which is consistent with muscular pain response. Respiration also shifts meaningfully (breathing depth variability and breath amplitude range are high). The multimodal deviations are substantial but"
+    },
+    {
+      "idx": 47,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show subject-relative elevation in breathing pattern regulation during pain: breathing depth variability (high) and breath amplitude range (high) indicate strong subject-relative deviation in respiration. EMG also shows subject-relative elevation in burst count (high), which fits"
+    },
+    {
+      "idx": 48,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG shows sustained muscle guarding (RMS muscle energy: normal), but the deviations are not consistently elevated across modalities. The profile remains close to subject's baseline without a multimodal pain-driven shift. Classification: No-pain"
+    },
+    {
+      "idx": 49,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. Respiration also shows isolated elevation in breathing rate (high), which fits pain-related breathing changes. Multiple modalities show strong subject-relative deviation, but the pattern is not consistently multi"
+    },
+    {
+      "idx": 50,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding behavior. Respiration breathing rate is high (subject-relative), and EMG muscle activation level is normal, but the multimodal pattern is not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 51,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding patterns. Respiration breathing rate elevates strongly in breathing rate (high), which fits pain-related breathing changes. EMG muscle activation level is normal, but the subject-relative shifts in Respiration and EMG are"
+    },
+    {
+      "idx": 52,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration are the most direct indicators of pain-related guarding, while EDA reflects sympathetic arousal and BVP captures cardiovascular adaptation. Here, EMG shows subject-relative guarding elevation in signal zero-crossing rate (low), which is unexpected in pain. Respiration also shifts"
+    },
+    {
+      "idx": 53,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations, but the multimodal pattern is not consistently aligned. Classification: No-pain"
+    },
+    {
+      "idx": 54,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations, particularly in breathing rate (high) and RMS muscle energy (high), indicating sustained guarding. EDA also elevates in phasic fluctuations (very high) and EDA response amplitude (very high), suggesting strong sympathetic arousal. T"
+    },
+    {
+      "idx": 55,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EDA also elevates subject-relatively (phasic EDA fluctuation: very high, SCR count: very high), supporting sympathetic arousal. The multimodal deviations ar"
+    },
+    {
+      "idx": 56,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG burst count is high (subject-relative guarding), Respiration breathing rate is high (subject-relative breathing changes), and EDA has very high SCR count (subject-relative sympathetic reactivity). The multimodal pattern indicates signi"
+    },
+    {
+      "idx": 57,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated guarding bursts (burst count: high), and Respiration breathing rate also shifts (high). Multiple modalities show subject-relative deviation, but the pattern is not consistently severe across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 58,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong sustained guarding (RMS muscle energy: high), and EDA shows strong sympathetic arousal (tonic skin conductance level: high), indicating multimodal pain response. The deviations are consistent across modalities and subject-relative. Classification: Severe"
+    },
+    {
+      "idx": 59,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The strongest subject-relative shifts are in EDA (tonic skin conductance level: high) and MVP (pulse amplitude range: high), which together indicate a multimodal pain respon"
+    },
+    {
+      "idx": 60,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Breathing depth variability and breath amplitude range show very strong subject-relative deviations in respiration, indicating significant pain-related breathing guarding. EMG and Respiration are both strongly affected, which fits the multimodal pain pattern. Classification: Severe"
+    },
+    {
+      "idx": 61,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated subject-relative guarding (burst count: high), but other modalities don't consistently elevate. The deviations are not multimodal or extreme in subject-relative terms. Classification: No-pain"
+    },
+    {
+      "idx": 62,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding deviations (burst count elevated in EMG, breath amplitude range very high in Respiration), indicating meaningful pain-related motor and breathing changes. The combined multimodal pattern reflects severe pain. Classification: Severe"
+    },
+    {
+      "idx": 63,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), which is a key pain marker. EDA also shows strong sympathetic arousal (EDA response amplitude: high), supporting the pain-related multimodal shift. The combined EMG and EDA deviations indicate significant pain-related guarding and autonom"
+    },
+    {
+      "idx": 64,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative deviation in signal zero-crossing rate (high), indicating dense muscular guarding. The other modalities remain close to the subject's baseline. The multimodal pattern is dominated by EMG guarding without sustained cross-modal elevation. Classification: Moderate"
+    },
+    {
+      "idx": 65,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and Respiration has strong subject-relative breathing rate elevation (breathing rate: high). EDA also shows subject-relative sympathetic arousal (EDA response amplitude: high), but the multimodal pattern is not as extreme as in Severe. Cl"
+    },
+    {
+      "idx": 66,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), but other modalities are mixed. The overall multimodal profile does not show a consistent severe pain pattern. Classification: No-pain"
+    },
+    {
+      "idx": 67,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), and Respiration shows strong subject-relative breathing changes (breath amplitude range: very high), breathing depth variability: high, breath interval variability: high. The multimodal pattern indicates significant pain-related guardin"
+    },
+    {
+      "idx": 68,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is consistent with muscular pain response. Respiration also shifts in breath amplitude range (high), indicating breathing guarding. Multiple modalities show meaningful subject-relative deviation, especially EMG and R"
+    },
+    {
+      "idx": 69,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration shows strong subject-relative breathing depth variability (high) and breath amplitude range (high), indicating multimodal pain-related guarding. EDA also elevates in tonic skin conductance level (normal) an"
+    },
+    {
+      "idx": 70,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has strong subject-relative breath interval variability (high). Multiple modalities show strong subject-relative deviation. Classification: Severe"
+    },
+    {
+      "idx": 71,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has multiple subject-relative elevations in guarding markers (signal zero-crossing rate: high, burst count: high), which is a strong subject-relative deviation. Respiration also shows subject-relative breath interval variability (high), indicating breathing pattern regulation. The multimodal pro"
+    },
+    {
+      "idx": 72,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), but no multimodal subject-relative elevation. Classification: No-pain"
+    },
+    {
+      "idx": 73,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG signal zero-crossing rate is very high (subject-relative), indicating dense muscular guarding. This is the strongest subject-relative deviation. The other modalities stay close to the subject's baseline. The multimodal pattern shows isolated severe muscular guarding without sustained cross-modal"
+    },
+    {
+      "idx": 74,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), and Respiration shows meaningful subject-relative changes (breathing depth variability and breath amplitude range both high). The multimodal pattern indicates sustained muscular and respiratory guarding without extreme elevation across "
+    },
+    {
+      "idx": 75,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is consistent with muscular pain response. EDA stays close to baseline, suggesting sympathetic arousal is not strongly engaged. The deviations are mostly isolated rather than multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 76,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has very strong subject-relative guarding (breath interval variability: very high). The combined multimodal deviation is strong but not extreme across all features. Classification: Moderate"
+    },
+    {
+      "idx": 77,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations (especially signal zero-crossing rate and breath interval variability), indicating meaningful guarding. EDA also elevates in subject-relative amplitude, but the multimodal pattern is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 78,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated shifts in signal zero-crossing rate (high), suggesting muscular guarding; Respiration also has isolated shifts in breath amplitude range (high) and breathing depth variability (high), which fits pain-related breathing changes. Multiple modalities show subject-relative elevation in b"
+    },
+    {
+      "idx": 79,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are mixed. The strongest subject-relative deviations are in Respiration (breath interval variability: normal) and EMG (muscle activation level: low), but the overall multimodal profile doesn't consistently elevate across"
+    },
+    {
+      "idx": 80,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), Respiration has strong subject-relative breathing rate elevation (breathing rate: high), and the multimodal pattern shows consistent subject-relative deviation. Classification: Moderate"
+    },
+    {
+      "idx": 81,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations. Respiration breathing rate elevates strongly (high), and EMG signal zero-crossing rate also shifts meaningfully (normal), indicating sustained muscular and breathing guarding. The multimodal pattern is consistent with severe pain. C"
+    },
+    {
+      "idx": 82,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (especially breath interval variability high), but EDA stays close to baseline. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 83,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EVP and Respiration are closer to baseline. The multimodal pattern is dominated by EMG guarding, consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 84,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EDA also elevates in SCR count (very high), supporting sympathetic arousal. The deviations are multimodal and consistent with severe pain. Classification: S"
+    },
+    {
+      "idx": 85,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: very high, signal zero-crossing rate: very high), and Respiration shows meaningful subject-relative breathing changes (breath amplitude range: high). The multimodal deviations are consistent with pain-related guarding. Classification: Mo"
+    },
+    {
+      "idx": 86,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are mostly isolated rather than multimodal or subject-relative extreme. Classification: Moderate"
+    },
+    {
+      "idx": 87,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very high subject-relative signal zero-crossing rate (strong muscular guarding), and Respiration shows very high breath interval variability (subject-relative breathing disruption). The multimodal deviations are strong in guarding patterns but not consistently across all modalities. Classi"
+    },
+    {
+      "idx": 88,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is a key pain marker. The deviations are mostly isolated rather than multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 89,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: normal, RMS muscle energy: normal), but the deviations are not consistently multimodal. Respiration has breathing depth variability and breath amplitude range elevated, which fits pain-related guarding. However, the pattern is not "
+    },
+    {
+      "idx": 90,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations. EMG muscle activation level is normal, but the subject-relative shifts in Respiration (breathing rate: high) and EMG (muscle activation level: normal) are not consistently elevated across modalities. The multimodal profile does not "
+    },
+    {
+      "idx": 91,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (EMG: muscle activation level high, RMS muscle energy high; Respiration: breath interval variability very high), indicating sustained muscular and breathing changes. EDA also elevates in phasic fluctuations and response amplitude, su"
+    },
+    {
+      "idx": 92,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The subject shows strong subject-relative deviations in multiple modalities: EMG (muscle activation level: high, RMS muscle energy: high) and Respiration (breathing depth variability: very high, breath amplitude range: very high) indicate significant pain-related guarding. EDA also elevates in phasi"
+    },
+    {
+      "idx": 93,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (signal zero-crossing rate: low), but Respiration breathing rate is high (subject-relative), which fits pain-related breathing changes. Multiple modalities show strong subject-relative deviation. Classification: Moderate"
+    },
+    {
+      "idx": 94,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain indicator. Respiration also shifts (breathing rate: high), fitting pain-related breathing changes. The multimodal deviations are consistent with severe pain. Classification: Sever"
+    },
+    {
+      "idx": 95,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (muscle activation level: very high, RMS muscle energy: high), which is a key pain marker. EDA also elevates in subject-relative autonomic arousal (EDA response amplitude: very high), supporting the pain-related multimodal shift. The deviations "
+    },
+    {
+      "idx": 96,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), especially signal zero-crossing rate (very high) and RMS muscle energy (high). Respiration also shifts meaningfully in breathing rate (high). The multimodal pattern reflects intense muscular and respiratory defense without extr"
+    },
+    {
+      "idx": 97,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest subject-relative deviations are in Respiration's breathing depth variability (very high), which indicates a meaningful pain-related breathing pattern shift. EMG and EVP show mixed but not extreme deviations; the multimodal pattern is shifted in one modality (respiration) without consis"
+    },
+    {
+      "idx": 98,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are not widespread across modalities, and the overall profile stays within subject-relative bounds. Classification: Moderate"
+    },
+    {
+      "idx": 99,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. Respiration breathing rate also elevates (high), which fits pain-related breathing changes. The deviations are not widespread across modalities, and the overall pattern is subject-relative but not extreme. Classific"
+    },
+    {
+      "idx": 100,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting muscular guarding. EDA has isolated elevated tonic skin conductance level (high), suggesting sympathetic arousal. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 101,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are not widely spread across modalities, and the overall profile stays subject-relative without a multimodal convergence. Classification: Moderate"
+    },
+    {
+      "idx": 102,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), but other modalities are mixed. The overall deviation is not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 103,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting muscular guarding; other modalities are mostly subject-relative baseline. The deviations are not consistently multimodal or extreme across multiple channels. Classification: Moderate"
+    },
+    {
+      "idx": 104,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations, but the multimodal pattern is not consistently aligned. Classification: No-pain"
+    },
+    {
+      "idx": 105,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in guarding patterns, but the multimodal profile is mixed. Classification: Moderate"
+    },
+    {
+      "idx": 106,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and Respiration has strong subject-relative guarding (breathing rate: high, breath interval variability: high). EDA also has strong subject-relative sympathetic arousal (EDA response amplitude: very high), which fits pain-related multimod"
+    },
+    {
+      "idx": 107,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing rate (high) and breathing depth variability (high), which fits pain-related guarding. EDA also elevates in phasic EDA fluctuation (very high) and EDA response amplitude (high), indicating sympathetic arousal. The multimodal pat"
+    },
+    {
+      "idx": 108,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA has very high subject-relative deviation in EDA response amplitude (z=3.30), and Respiration has strong subject-relative deviations in breathing rate (z=1.10) and breathing depth variability (z=1.07), which fit pain-related guarding. EMG and BSP are closer to baseline. The multimodal pattern sho"
+    },
+    {
+      "idx": 109,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing depth variability and breath amplitude range, which are consistent with pain-related guarding. The combined multimodal pattern indicates a meaningful pain response. Classification: Moderate"
+    },
+    {
+      "idx": 110,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG guarding is elevated (burst count: high), and Respiration shows strong subject-relative deviations in breath amplitude range (very high) and breathing depth variability (high), indicating meaningful pain-related guarding. EDA also has subject-relative elevation in phasic EDA fluctuation (very hi"
+    },
+    {
+      "idx": 111,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EDA shows very high subject-relative EDA response amplitude (extreme autonomic activation), and EMG has elevated muscle activation level (strong guarding). The multimodal profile indicates a severe pain response. Classification: Severe"
+    },
+    {
+      "idx": 112,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG burst count is very high (subject-relative), indicating repeated muscular guarding. EDA SCR count is also very high, suggesting strong sympathetic reactivity. The combined multimodal deviation shows a strong subject-relative pain response. Classification: Severe"
+    },
+    {
+      "idx": 113,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The breath interval variability is elevated (very high), which fits pain-related breathing changes, but the overall multimodal profile doesn't show a sustained, multi-system"
+    },
+    {
+      "idx": 114,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations. EMG's burst count is near normal, but Respiration's breathing rate is high (subject-relative), indicating breathing changes during pain. The combined multimodal pattern reflects meaningful but not extreme pain guarding. Classificati"
+    },
+    {
+      "idx": 115,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: high), which is a key pain marker. Respiration also shifts meaningfully (breath interval variability: high), indicating breathing pattern regulation. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 116,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations. EMG muscle activation level and RMS muscle energy are both elevated (normal), indicating sustained muscular guarding. Respiration breathing rate also rises (high), matching the subject's own breathing pattern shift. The multimodal p"
+    },
+    {
+      "idx": 117,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts, but overall the multimodal profile is close to subject's own baseline. Classification: No-pain"
+    },
+    {
+      "idx": 118,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The strongest subject-relative deviation is in Respiration's breath interval variability (high), which fits pain-related breathing changes. However, the multimodal profile d"
+    },
+    {
+      "idx": 119,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations. EMG's muscle activation level and RMS muscle energy are near baseline, but Respiration's breathing rate elevates strongly (high), indicating breathing changes during pain. The combined subject-relative shifts in Respiration and EMG "
+    },
+    {
+      "idx": 120,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), and Respiration shows very strong subject-relative breathing guarding (breathing depth variability: very high, breath amplitude range: very high). The multimodal pattern reflects intense pain-related"
+    },
+    {
+      "idx": 121,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG burst count is high (very strong muscular guarding), Respiration breathing depth variability and breath interval variability are very high (strong breathing guarding), and EDA shows strong autonomic activation. The multimodal pattern i"
+    },
+    {
+      "idx": 122,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. EDA has isolated elevated SCR count (high), suggesting subject-relative sympathetic reactivity. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 123,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevation in burst count (high), which stands out as a subject-relative guarding response. The other modalities remain close to the subject's baseline. The deviation is not widespread across multiple systems. Classification: Moderate"
+    },
+    {
+      "idx": 124,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), but other modalities are not consistently deviating. The overall pattern is mixed rather than showing strong subject-relative multimodal convergence. Classification: Moderate"
+    },
+    {
+      "idx": 125,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), suggesting muscular guarding. Respiration also shows isolated elevation in breathing rate (subject-relative). The multimodal pattern is mostly isolated rather than sustained or widespread. Classification: Moderate"
+    },
+    {
+      "idx": 126,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), and Respiration has isolated elevated breathing rate (high). Multiple modalities show isolated subject-relative deviations rather than a sustained multimodal pain pattern. Classification: Moderate"
+    },
+    {
+      "idx": 127,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (RMS muscle energy: low; burst count: normal), but no modal feature is isolated in severe deviation. Classification: Moderate"
+    },
+    {
+      "idx": 128,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts in guarding, but no multimodal subject-relative elevation. Classification: No-pain"
+    },
+    {
+      "idx": 129,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: normal, muscle activation level: normal), but Respiration has breathing rate high (high) and multiple features shift in pain-related guarding patterns. The multimodal deviations are not consistently extreme across modalities. Classificat"
+    },
+    {
+      "idx": 130,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong sustained muscle guarding (RMS muscle energy: high), which is a key pain indicator. Respiration also shifts meaningfully (breathing rate: high). The multimodal deviations are consistent with severe pain guarding. Classification: Severe"
+    },
+    {
+      "idx": 131,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. Respiration also shifts meaningfully (breath interval variability: high), indicating breathing guarding. The deviations are multimodal but not all fe"
+    },
+    {
+      "idx": 132,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EVP and Respiration also show meaningful deviations, but EMG is the most isolated and extreme. The multimodal pattern fits severe pain. Classificatio"
+    },
+    {
+      "idx": 133,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high subject-relative muscle activation and RMS energy, indicating strong guarding. Respiration also has subject-relative breath interval variability elevation, which fits pain-related breathing changes. The multimodal deviations are strong in EMG (guarding) and Respiration (breathing"
+    },
+    {
+      "idx": 134,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscular guarding (RMS muscle energy: very high), which is a key pain indicator. EDA also has subject-relative SCR count elevated (high), supporting sympathetic arousal. The deviations are mostly in EMG and EDA, but not all modalities are consistently shifted. "
+    },
+    {
+      "idx": 135,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. Respiration also shows isolated elevation in breathing rate (high), which fits pain-related breathing changes. The deviations are not consistently multimodal or extreme across all channels. Classification: Modera"
+    },
+    {
+      "idx": 136,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing rate (very high) and signal zero-crossing rate (high), indicating meaningful guarding. EDA also elevates in subject-relative EDA response amplitude (very high), which fits pain-related sympathetic arousal. The multimodal patter"
+    },
+    {
+      "idx": 137,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. EDA has isolated elevated tonic skin conductance level (high), suggesting sympathetic arousal. The deviations are not consistently multimodal or extreme across all channels, but rather isolated in subject-relative t"
+    },
+    {
+      "idx": 138,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high subject-relative guarding), but other modalities don't consistently shift. The pattern is not severe multi-system deviation. Classification: Moderate"
+    },
+    {
+      "idx": 139,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), but no multimodal subject-relative elevation. Classification: No-pain"
+    },
+    {
+      "idx": 140,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and Respiration has strong subject-relative breathing rate elevation (breathing rate: high). The combined multimodal deviation is severe. Classification: Severe"
+    },
+    {
+      "idx": 141,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: very high), and Respiration has breathing rate elevated (high), indicating meaningful multimodal pain response. The deviations are not isolated but form a consistent subject-relative pattern. Classification: Moderate"
+    },
+    {
+      "idx": 142,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), which is consistent with muscular pain response. EDA also elevates in phasic EDA fluctuation (very high) and SCR count (high), indicating sympathetic arousal. The multimodal deviations are substantial bu"
+    },
+    {
+      "idx": 143,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has breathing rate elevated (high), which fits pain-related breathing changes. EDA also has tonic skin conductance level and phasic EDA fluctuation elevated (both high), indicating sympathetic arousal. The "
+    },
+    {
+      "idx": 144,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has breathing rate elevated (high), indicating meaningful multimodal pain response. EDA also has subject-relative phasic EDA fluctuation (very high), which fits the profile. The combined deviations are seve"
+    },
+    {
+      "idx": 145,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high subject-relative signal zero-crossing rate (extreme guarding), and Respiration shows extreme breathing rate deviation (severe breathing changes). The multimodal pattern indicates strong subject-relative guarding. Classification: Severe"
+    },
+    {
+      "idx": 146,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high subject-relative signal zero-crossing rate (extreme guarding), and Respiration shows extreme breathing rate deviation (severe breathing changes). The multimodal pattern indicates strong subject-relative guarding. Classification: Severe"
+    },
+    {
+      "idx": 147,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EDA has very high phasic EDA fluctuation and EDA response amplitude; EMG has very high signal zero-crossing rate and muscle activation level; Respiration has very high breathing depth variability and breath amplitude range. The multimodal "
+    },
+    {
+      "idx": 148,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative deviation in signal zero-crossing rate (very high), indicating dense muscular guarding. Respiration also has subject-relative elevation in breath interval variability (high), suggesting breathing pattern disruption. The multimodal shifts are consistent with severe p"
+    },
+    {
+      "idx": 149,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration shows strong subject-relative guarding (breath interval variability: high). The multimodal pattern reflects intense pain-related motor and respiratory regulation. Classification: Severe"
+    },
+    {
+      "idx": 150,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and Respiration has strong subject-relative guarding (breath interval variability: high). EDA also has strong subject-relative autonomic activation (EDA response amplitude: very high). The multimodal pattern shows severe pain-related guar"
+    },
+    {
+      "idx": 151,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and Respiration has very strong subject-relative breathing changes (breath amplitude range: very high, breathing depth variability: very high), indicating multimodal pain-related guarding. EDA also elevates in subject-relative autonomic a"
+    },
+    {
+      "idx": 152,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (signal zero-crossing rate: very high), and EDA has strong subject-relative sympathetic arousal (SCR count: very high, phasic EDA fluctuation: very high), indicating multimodal pain response. The combined deviations match severe pain. Classification: Severe"
+    },
+    {
+      "idx": 153,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (e.g., Respiration breath interval variability is high, EMG burst count is normal), but EDA phasic EDA fluctuation and SCR count are also elevated, indicating multimodal pain response. Classification: Moderate"
+    },
+    {
+      "idx": 154,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), Respiration has isolated elevated breath interval variability (high), but the deviations are not consistently multimodal or subject-relative. The pattern doesn't show a strong, sustained subject-relative shift across multiple modalities. Classification: "
+    },
+    {
+      "idx": 155,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), Respiration has isolated elevated breath interval variability (high), but the deviations are not consistently multimodal or extreme across multiple channels. The pattern shows some subject-relative strain but lacks the sustained, widespread multimodal elevati"
+    },
+    {
+      "idx": 156,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), which stands out as a subject-relative guarding response. EDA phasic EDA fluctuation and EDA response amplitude are also elevated, but the multimodal pattern is not consistently severe across all modalities. The deviations are present but not fully align"
+    },
+    {
+      "idx": 157,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing depth variability and signal zero-crossing rate, indicating meaningful pain-related guarding. The combined multimodal pattern is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 158,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts in guarding, but Respiration shows strong subject-relative deviation in breathing depth variability and breath amplitude range (both very high), which fits pain-related breathing guarding. The multimodal pattern is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 159,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in breath interval variability (very high) and muscle activation level (normal), but the multimodal pattern is not consistently shifted across modalities. The breath interval variability is isolated in Respiration, and the shifts don"
+    },
+    {
+      "idx": 160,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows strong pulse rate elevation (high) and breathing depth variability (very high) fits pain-related guarding. EDA has very high phasic EDA fluctuation (very high) and breathing depth variability also rises subject-relatively. Multiple modalities show strong subject-relative deviation in breat"
+    },
+    {
+      "idx": 161,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: normal), but no modal feature is consistently elevated across multiple channels. The deviations are scattered and not multimodal. Classification: No-pain"
+    },
+    {
+      "idx": 162,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high signal zero-crossing rate (subject-relative), indicating dense muscular guarding. Respiration breathing rate also elevates (high), suggesting breathing pattern shifts. The multimodal deviations are strong in EMG and Respiration, consistent with severe pain guarding. Classificatio"
+    },
+    {
+      "idx": 163,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and Respiration has strong subject-relative guarding (breath amplitude range: high, breath interval variability: high). The multimodal pattern shows meaningful pain-related guarding without extreme elevation across all modalities. Classif"
+    },
+    {
+      "idx": 164,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), and Respiration shows strong subject-relative breathing changes (breathing depth variability: high, breathing rate: high). The multimodal deviations are consistent with severe pain. Classification: Sever"
+    },
+    {
+      "idx": 165,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), which is a key pain marker. EVP and Respiration also shift in breathing pattern regulation, but the multimodal deviation is concentrated in EMG guarding. The pattern fits severe pain. Classification: Sev"
+    },
+    {
+      "idx": 166,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain indicator. EVP and Respiration are closer to baseline. The multimodal pattern is dominated by EMG guarding, consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 167,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain marker. EVP and Respiration are closer to baseline. The multimodal pattern is dominated by EMG guarding without sustained cross-modal elevation. Classification: Moderate"
+    },
+    {
+      "idx": 168,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has subject-relative breath interval variability (high), indicating pain-related breathing and muscle changes. EDA also has subject-relative EDA response amplitude (high), supporting autonomic arousal. The "
+    },
+    {
+      "idx": 169,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), which is consistent with muscular pain response. The other modalities remain close to subject baseline. Classification: Moderate"
+    },
+    {
+      "idx": 170,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EDA also elevates in tonic skin conductance (high), supporting sympathetic arousal. The deviations are multimodal but not all features are consistently extr"
+    },
+    {
+      "idx": 171,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG guarding is elevated (burst count: high), and Respiration breathing depth variability also rises (high), indicating a multimodal subject-relative pain response. The deviations are strong in EMG and Respiration, which fits severe pain guarding. Classification: Severe"
+    },
+    {
+      "idx": 172,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (e.g., Respiration breath amplitude range is very high, EMG muscle activation level is normal), but the deviations are not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 173,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA shows strong sympathetic arousal (subject-relative), especially tonic skin conductance level (very high) and EDA response amplitude (high), which fits pain-related autonomic changes. EMG and Respiration also show subject-relative deviations in guarding, but the multimodal pattern is strongest in"
+    },
+    {
+      "idx": 174,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), and Respiration shows strong subject-relative breathing rate elevation (breathing rate: very high). The combined multimodal deviation is severe in guarding and breathing regulation. Classification: Sever"
+    },
+    {
+      "idx": 175,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: normal), but other modalities are mixed. The deviations are not consistently multimodal or extreme across multiple channels. Classification: Moderate"
+    },
+    {
+      "idx": 176,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG burst count is high (guarding), Respiration breath interval variability is high (breathing disruption), and Breathing rate is high (breathing changes). The pattern reflects sustained muscular and respiratory guarding without extreme is"
+    },
+    {
+      "idx": 177,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing rate (very high) and muscular guarding (burst count normal), but the multimodal pattern is not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 178,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), which is consistent with muscular pain response. EDA has isolated elevation in tonic skin conductance (high), but the deviations are not sustained across modalities. The multimodal pattern is elevated in"
+    },
+    {
+      "idx": 179,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (multiple features elevated), while Respiration also has strong subject-relative breath interval variability. The multimodal pattern indicates meaningful pain-related guarding. Classification: Moderate"
+    },
+    {
+      "idx": 180,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (muscle activation level: high, RMS muscle energy: high), and Respiration shows strong subject-relative breathing pattern disruption (breath interval variability: very high). The multimodal deviations are consistent with severe pain-related guarding."
+    },
+    {
+      "idx": 181,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: very high), matching the multimodal pain pattern. Respiration also shifts (breathing rate: high), and the combined deviations indicate meaningful pain-related guarding. Classification: Moderate"
+    },
+    {
+      "idx": 182,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (e.g., Respiration breathing rate is high, EMG muscle activation level is normal), but the deviations are not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 183,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG stays close to baseline in muscle activation and RMS energy, and Respiration stays close to baseline in breathing depth variability and breath amplitude range. Multiple modalities remain near subject's own baseline pattern. Classification: No-pain"
+    },
+    {
+      "idx": 184,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: low; muscle activation level: low), but most modalities remain near subject baseline. The deviations are not consistently multimodal or extreme. Classification: No-pain"
+    },
+    {
+      "idx": 185,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high), and Respiration has very high breath interval variability (subject-relative), indicating pain-related breathing regulation. The combined multimodal deviation is strong but not extreme across all channels. Classification: Mod"
+    },
+    {
+      "idx": 186,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (muscle activation level: high), which is a key pain indicator. Respiration also has strong subject-relative breathing depth variability (very high) and breath amplitude range (very high), indicating pain-related breathing guarding. The multimodal de"
+    },
+    {
+      "idx": 187,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high), which is a key pain indicator. EDA also elevates in phasic fluctuation (subject-relative), supporting sympathetic arousal. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 188,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (e.g., Respiration breathing rate high, EMG burst count low), but the deviations are not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 189,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EDA shows very high subject-relative EDA response amplitude (subject-relative extreme), which is a strong sympathetic arousal marker. Respiration also shows strong subject-relative breathing depth variability and breath amplitude range, indicating pain-related breathing guarding. Multiple modalities"
+    },
+    {
+      "idx": 190,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding patterns, but the multimodal profile is not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 191,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain marker. EDA also elevates in SCR count and phasic EDA fluctuation, indicating sympathetic arousal. The multimodal deviations are consistent with severe pain. Classification: Sever"
+    },
+    {
+      "idx": 192,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. Classification: No-pain"
+    },
+    {
+      "idx": 193,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: normal, RMS muscle energy: normal), but the deviations are not consistently elevated across modalities. The strongest subject-relative shifts are isolated (e.g., EVP pulse rate high, but other features don't follow). The multimodal"
+    },
+    {
+      "idx": 194,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding patterns. The breath interval variability (high) and muscle activation level (low) are both subject-relative, but EMG has isolated shifts. The combined multimodal profile indicates meaningful pain-related guarding. Classi"
+    },
+    {
+      "idx": 195,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (e.g., breath interval variability is very high), but EDA remains relatively low. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 196,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: Respiration has very high breathing depth variability (z=2.71) and breath amplitude range (z=2.64), indicating significant breathing guarding. EMG also has strong subject-relative shifts in RMS muscle energy (low) and signal zero-crossing "
+    },
+    {
+      "idx": 197,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), consistent with severe pain. EDA also has subject-relative elevation in SCR count and tonic skin conductance level, supporting sympathetic arousal. The multimodal pattern indicates severe pain. Classification: Severe"
+    },
+    {
+      "idx": 198,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), especially burst count and RMS muscle energy. Respiration also shifts in breathing rate (high). The multimodal pattern reflects sustained muscular and respiratory changes consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 199,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), which is consistent with muscular pain response. Multiple modalities show strong subject-relative deviation. Classification: Severe"
+    },
+    {
+      "idx": 200,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and EDA tonic skin conductance level and EDA response amplitude also rise meaningfully. The multimodal deviations are substantial but not all features are consistently extreme. Classification: Moderate"
+    },
+    {
+      "idx": 201,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and Respiration also shifts in breathing rate and depth variability. The multimodal deviations are consistent with pain-related guarding. Classification: Moderate"
+    },
+    {
+      "idx": 202,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: high, signal zero-crossing rate: high), and EDA shows strong sympathetic arousal (tonic skin conductance level: high, phasic EDA fluctuation: high), indicating multimodal pain response. The deviations are consistent across modalities. Cl"
+    },
+    {
+      "idx": 203,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has multiple guarded features (muscle activation level, RMS muscle energy, signal zero-crossing rate, burst count all high), which indicates strong subject-relative muscular guarding. EDA also has subject-relative sympathetic arousal (tonic skin conductance level and phasic EDA fluctuation high)"
+    },
+    {
+      "idx": 204,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high guarding (burst count: very high), which is a strong subject-relative muscular response. Respiration also elevates breathing rate (high) and breath amplitude range (high), indicating breathing guarding. The multimodal pattern fits severe pain. Classification: Severe"
+    },
+    {
+      "idx": 205,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: very high), and EDA shows strong sympathetic arousal (phasic EDA fluctuation: very high, EDA response amplitude: high), indicating multimodal pain response. The deviations are consistent across multiple modalities. Classification: Severe"
+    },
+    {
+      "idx": 206,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very high bursting guarding (subject-relative), which is a strong subject-specific muscular response. EDA also has very high phasic EDA fluctuation and EDA response amplitude, indicating strong sympathetic arousal. The multimodal deviations are strong but not all features are in extreme su"
+    },
+    {
+      "idx": 207,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high, signal zero-crossing rate: high), which is consistent with muscular pain response. EDA has isolated elevations in tonic skin conductance level (high) and phasic EDA fluctuation (high), indicating sympathetic arousal. The multimodal devia"
+    },
+    {
+      "idx": 208,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), and Respiration shows strong subject-relative breathing rate elevation (breathing rate: very high), indicating multimodal pain-related autonomic and muscular response. The combined deviations match severe pain. Classification: Severe"
+    },
+    {
+      "idx": 209,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (burst count: very high), and Respiration has strong subject-relative breathing depth variability (very high) and breath amplitude range (high), indicating multimodal pain-related guarding. EDA also elevates in phasic EDA fluctuation (very high) and SC"
+    },
+    {
+      "idx": 210,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), indicating repeated muscular guarding. The deviations are mostly isolated rather than multimodal or subject-relative. Classification: Moderate"
+    },
+    {
+      "idx": 211,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. EDA has isolated elevated SCR count (high), suggesting subject-relative sympathetic reactivity. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 212,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high subject-relative guarding), but no multimodal subject-relative elevation. Classification: Moderate"
+    },
+    {
+      "idx": 213,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. Classification: Moderate"
+    },
+    {
+      "idx": 214,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are not widespread across modalities, and the overall pattern is subject-relative but not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 215,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. EDA phasic fluctuation and EDA response amplitude are high, which fits pain-related sympathetic arousal. However, the multimodal profile doesn't show a sustained, severe sub"
+    },
+    {
+      "idx": 216,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (especially breathing rate), while EDA phasic fluctuations are also elevated. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 217,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in guarding patterns (e.g., breath interval variability is very high), but the multimodal profile doesn't consistently elevate across all pain-relevant modalities. Classification: Moderate"
+    },
+    {
+      "idx": 218,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration shows strong subject-relative guarding (breathing depth variability and breath amplitude range are both high). The multimodal pattern indicates meaningful pain-related physiological deviation. Classificatio"
+    },
+    {
+      "idx": 219,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain marker. EDA also elevates in SCR count (high), supporting sympathetic arousal. The deviations are multimodal but not all features are consistently extreme. The pattern reflects me"
+    },
+    {
+      "idx": 220,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), which is the strongest deviation. The multimodal pattern fits severe pain. Classification: Severe"
+    },
+    {
+      "idx": 221,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), especially signal zero-crossing rate (very high). Respiration also shifts meaningfully in breath interval variability (high). The multimodal pattern reflects sustained muscular and respiratory changes consistent with severe pai"
+    },
+    {
+      "idx": 222,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated shifts in signal zero-crossing rate (normal), but no multimodal subject-relative elevation. Respiration and EDA also show isolated subject-relative shifts. The deviations are not consistently aligned across modalities. Classification: No-pain"
+    },
+    {
+      "idx": 223,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), and Respiration also elevates breathing rate (very high) and breath interval variability (high), indicating sustained multimodal pain-related guarding. EDA has a strong subject-relativ"
+    },
+    {
+      "idx": 224,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high muscular guarding (multiple features elevated), which is a strong subject-relative deviation. Respiration also has strong subject-relative shifts in breath amplitude range and breathing depth variability. The multimodal pattern reflects intense pain-related guarding. Classificati"
+    },
+    {
+      "idx": 225,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing pattern regulation, which fits pain-related guarding. The breath interval variability (high) and breath amplitude range (high) are consistently elevated, indicating sustained breathing changes. EDA also elevates in EDA response"
+    },
+    {
+      "idx": 226,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. Classification: No-pain"
+    },
+    {
+      "idx": 227,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), but the multimodal deviations are not consistently strong across subject-normalized features. Classification: Moderate"
+    },
+    {
+      "idx": 228,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), suggesting repeated muscular guarding. The deviations are not consistently multimodal or extreme across all channels. Classification: Moderate"
+    },
+    {
+      "idx": 229,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated subject-relative elevation in burst count (very high), indicating repeated muscular guarding. The other modalities stay close to subject baseline. The multimodal pattern is dominated by one modality (EMG) with isolated deviation, not the sustained multi-system shift seen in severe p"
+    },
+    {
+      "idx": 230,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG burst count is very high (subject-relative), indicating strong muscular guarding. EDA tonic skin conductance level and EDA response amplitude are also elevated, showing sympathetic arousal. The multimodal deviations are substantial but not extreme across all features. Classification: Moderate"
+    },
+    {
+      "idx": 231,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The strongest subject-relative deviation is EDA tonic skin conductance level going high (subject-relative), which indicates sympathetic arousal. However, the multimodal patt"
+    },
+    {
+      "idx": 232,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: high), and EDA shows strong sympathetic arousal (EDA response amplitude: very high). The multimodal deviations are substantial and consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 233,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (multiple features elevated), and EDA also has very strong subject-relative autonomic activation (EDA response amplitude is very high). The multimodal pattern indicates severe pain-related physiological guarding. Classification: Severe"
+    },
+    {
+      "idx": 234,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (multiple features very high), which is a key pain indicator. Respiration also shifts strongly in breathing rate (very high). The multimodal pattern fits severe pain. Classification: Severe"
+    },
+    {
+      "idx": 235,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high subject-relative muscle guarding (multiple features elevated), matching the subject's own pattern. Respiration also has very high breath interval variability (subject-relative), indicating pain-related breathing changes. The multimodal deviations are strong and consistent with se"
+    },
+    {
+      "idx": 236,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The breath interval variability is elevated (high), which fits pain-related breathing changes, and EDA has some subject-relative elevation in SCR count (high), suggesting sy"
+    },
+    {
+      "idx": 237,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG burst count is elevated (high), indicating repeated muscular guarding, and Respiration breathing depth variability and breath amplitude range are also elevated (high), showing subject-relative breathing changes. Multiple modalities show strong subject-relative deviations. Classification: Severe"
+    },
+    {
+      "idx": 238,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviation: EMG burst count is high (isolated guarding), Respiration breathing depth variability and breath amplitude range are both high (subject-relative), and EVP pulse rate is high (subject-relative). The multimodal pattern indicates significant pa"
+    },
+    {
+      "idx": 239,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. Respiration also has isolated elevation in breathing depth variability (high) and breath amplitude range (high), which fits pain-related breathing changes. Multiple modalities show strong subject-relative deviati"
+    },
+    {
+      "idx": 240,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong sustained guarding (RMS muscle energy: high), and Respiration has strong breath interval variability (high) and breath amplitude range (high) indicating subject-relative pain-related breathing guarding. EDA has isolated elevations in tonic skin conductance level (high) and SCR count"
+    },
+    {
+      "idx": 241,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and Respiration has very high breath amplitude range (also very high). The multimodal pattern is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 242,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EDA also elevates in tonic skin conductance (high), supporting sympathetic arousal. The deviations are multimodal but not all features are consistently extreme. "
+    },
+    {
+      "idx": 243,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is a key pain marker. EDA also has subject-relative sympathetic arousal (SCR count: high), supporting the pain-related response. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 244,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration are the most direct indicators of pain-related guarding, while EDA reflects sympathetic arousal and BVP captures cardiovascular adaptation. Here, EMG shows strong subject-relative deviation in muscle activation level (low) and RMS muscle energy (low), which is inconsistent with p"
+    },
+    {
+      "idx": 245,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG burst count is high (guarding), Respiration breathing rate is very high (very strong subject-relative shift), and EMG signal zero-crossing rate is also elevated. The multimodal pattern indicates significant pain-related guarding. Class"
+    },
+    {
+      "idx": 246,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG signal zero-crossing rate is high (subject-relative), Respiration breathing rate is very high (subject-relative), and EDA phasic EDA fluctuation is very high (subject-relative). The multimodal pattern indicates significant pain-related"
+    },
+    {
+      "idx": 247,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing depth variability and breath amplitude range, which are consistent with pain-related guarding. The combined multimodal pattern indicates a meaningful pain response. Classification: Moderate"
+    },
+    {
+      "idx": 248,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has breathing rate elevated (normal), forming a multimodal pain pattern. EDA also has phasic EDA fluctuation very high, which fits subject-relative deviation. The combined deviations indicate meaningful pai"
+    },
+    {
+      "idx": 249,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows isolated shifts in HRV (RMSSD) without a sustained multimodal pattern; EMG remains mostly within subject-relative baseline. The deviations are not consistently elevated across modalities, and the overall profile lacks the sustained subject-relative elevation seen in severe pain. Classifica"
+    },
+    {
+      "idx": 250,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is a key pain marker. EDA also elevates in tonic skin conductance level (normal) and EDA response amplitude (normal), indicating sympathetic arousal. The multimodal deviations are consistent with severe pain. Classif"
+    },
+    {
+      "idx": 251,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), but other modalities remain close to baseline. The deviations are not consistently multimodal or extreme across physiological systems. Classification: Moderate"
+    },
+    {
+      "idx": 252,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration shows strong subject-relative breathing depth variability (high). Multiple modalities shift in subject-relative pattern, but the deviations are not extreme across all features. Classification: Moderate"
+    },
+    {
+      "idx": 253,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (multiple features elevated), and Respiration has very high breathing depth variability and breath amplitude range (also subject-relative). The multimodal pattern indicates significant pain-related guarding. Classification: Severe"
+    },
+    {
+      "idx": 254,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong sustained guarding (RMS muscle energy: high), which is a key pain indicator. Multiple modalities elevate subject-relative deviations, but the pattern is not extreme across all features. Classification: Moderate"
+    },
+    {
+      "idx": 255,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. EDA and Respiration are mostly within subject baseline. The deviations are not widespread or multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 256,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), which is the strongest deviation. The other modalities stay close to subject baseline. Classification: Moderate"
+    },
+    {
+      "idx": 257,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration shows strong subject-relative guarding (breathing depth variability: high, breath amplitude range: high). The multimodal pattern reflects intense muscular and respiratory guarding without extreme EDA or car"
+    },
+    {
+      "idx": 258,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: normal, RMS muscle energy: normal), but Respiration has breathing depth variability and breath amplitude range both elevated (high), which fits pain-related breathing guarding. The multimodal deviations are consistent with severe p"
+    },
+    {
+      "idx": 259,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative guarding (burst count: high), which is the strongest deviation. The other modalities stay close to the subject's baseline. The multimodal pattern is dominated by EMG guarding without sustained cross-modal synergy. Classification: Moderate"
+    },
+    {
+      "idx": 260,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), which stands out as a subject-relative guarding response. Respiration also has isolated elevated breath interval variability (very high), which fits pain-related breathing changes. The multimodal deviations are not consistently aligned across all feature"
+    },
+    {
+      "idx": 261,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG shows sustained guarding (RMS muscle energy: normal), but the deviations are not consistently elevated across modalities. The profile remains close to subject's baseline without a multimodal pain-driven shift. Classification: No-pain"
+    },
+    {
+      "idx": 262,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), and Respiration shows very strong subject-relative breathing changes (breathing depth variability: very high, breath amplitude range: very high), indicating multimodal pain-related guarding. The devi"
+    },
+    {
+      "idx": 263,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, RMS muscle energy: high), and Respiration shows strong subject-relative breathing rate elevation (breathing rate: very high). The combined multimodal deviation fits severe pain guarding. Classification: Severe"
+    },
+    {
+      "idx": 264,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (RMS muscle energy: high), and Respiration shows strong subject-relative breathing rate elevation (breathing rate: very high), indicating a multimodal pain response. The deviations are consistent across modalities. Classification: Moderate"
+    },
+    {
+      "idx": 265,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: normal), but Respiration breath interval variability is high (z=1.17), indicating breathing pattern disruption. Multiple modalities show strong subject-relative deviation in breathing pattern regulation during pain. Classification: Moderate"
+    },
+    {
+      "idx": 266,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), indicating repeated muscular guarding. The deviations are mostly subject-relative but not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 267,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG burst count is elevated (high), indicating repeated muscular guarding, and Respiration breathing depth variability and breath amplitude range are also strongly shifted (very high), showing subject-relative pain-related breathing changes. The multimodal deviations are strong and consistent with s"
+    },
+    {
+      "idx": 268,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The subject shows strong subject-relative deviations in Respiration breathing depth variability (very high) and breath amplitude range (very high), indicating significant breathing pattern guarding. EMG burst count also rises (normal), suggesting some muscular guarding. Multiple modalities show mean"
+    },
+    {
+      "idx": 269,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (muscle activation level: very high, RMS muscle energy: high), which is a key pain indicator. Respiration also shifts meaningfully (breath interval variability: high). The multimodal pattern reflects sustained muscular and respiratory guarding withou"
+    },
+    {
+      "idx": 270,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative guarding patterns (especially EMG muscle activation level: high, breath interval variability: very high), but EDA phasic EDA fluctuation and EDA response amplitude are extremely elevated, indicating strong sympathetic arousal. The multimodal deviation"
+    },
+    {
+      "idx": 271,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in guarding patterns, but the elevations are not consistently multimodal. Classification: Moderate"
+    },
+    {
+      "idx": 272,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated signal zero-crossing rate and burst count, suggesting muscular guarding. EDA has isolated elevated tonic skin conductance level, suggesting sympathetic arousal. The multimodal deviations are not consistently aligned across subject-relative feature levels. Classification: Mo"
+    },
+    {
+      "idx": 273,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), suggesting muscular guarding. EDA tonic level is also elevated, indicating sympathetic arousal. The multimodal pattern shows subject-relative deviation in EMG and EDA, but not all features are consistently shifted. Classification: Moderate"
+    },
+    {
+      "idx": 274,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. EDA has isolated elevated SCR count (very high), suggesting subject-relative sympathetic reactivity. The multimodal deviations are not consistently aligned across all modalities. Classification: Moderate"
+    },
+    {
+      "idx": 275,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest subject-relative deviations are in Respiration (breath interval variability: very high) and EMG (burst count: high), indicating repeated muscular guarding and breathing irregularity. These multimodal shifts align with severe pain-related guarding. Classification: Severe"
+    },
+    {
+      "idx": 276,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very high subject-relative signal zero-crossing rate (very high guarding), which is a strong subject-relative muscular response. The multimodal pattern is dominated by EMG guarding rather than the combined elevation seen in Severe. Classification: Moderate"
+    },
+    {
+      "idx": 277,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows strong subject-relative cardiovascular deviation (pulse rate very high, pulse amplitude range high), indicating strong autonomic adaptation. EMG has isolated elevations in signal zero-crossing rate (high) and muscle activation level (normal), suggesting some guarding. The multimodal deviat"
+    },
+    {
+      "idx": 278,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), and Respiration has subject-relative breath interval variability (high), indicating meaningful pain-related multimodal deviation. The combined multimodal pattern is severe. Classification: Severe"
+    },
+    {
+      "idx": 279,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations: EMG signal zero-crossing rate is high (z=1.01), and Respiration breath interval variability is high (z=0.83), indicating dense muscular guarding and breathing irregularity. The deviations are consistent across multiple channels and the mul"
+    },
+    {
+      "idx": 280,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), Respiration has strong subject-relative breathing rate shift (very high), and EDA has strong subject-relative sympathetic arousal (SCR count: very high). Multiple modalities show severe pain-related guarding. Classification: Severe"
+    },
+    {
+      "idx": 281,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: high), and EDA has strong sympathetic arousal (SCR count: very high). The multimodal pattern shows meaningful pain-related guarding without extreme isolation. Classification: Moderate"
+    },
+    {
+      "idx": 282,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (high), suggesting subject-relative muscular guarding. Respiration also shifts in breath interval variability (high), which fits pain-related breathing changes. The multimodal deviations are strong but not all features are consistently elevated across modalities. Cla"
+    },
+    {
+      "idx": 283,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP pulse rate is very high (subject-relative), indicating strong cardiovascular stress. EDA tonic skin conductance level is also very high, showing strong sympathetic arousal. EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently extreme across modalit"
+    },
+    {
+      "idx": 284,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows strong subject-relative pulse rate elevation (very high), indicating cardiovascular stress. EDA has very high tonic skin conductance level and SCR count, reflecting strong sympathetic arousal. EMG and Respiration are mostly within subject-relative normal, so the multimodal profile is domin"
+    },
+    {
+      "idx": 285,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain indicator. The other modalities follow the EMG pattern generally, but the deviations are not as extreme across all features. The multimodal profile is consistent wi"
+    },
+    {
+      "idx": 286,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows strong subject-relative cardiovascular adaptation (HRV RMSSD very high), EMG has isolated shifts in signal zero-crossing rate (high), but the deviations are not consistently multimodal or extreme across multiple channels. The pattern doesn't show the sustained, multi-system guarding seen i"
+    },
+    {
+      "idx": 287,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: very high), which is a key pain marker. The multimodal profile is driven by EMG guarding rather than isolated elevation in EDA or BPM. Classification: Moderate"
+    },
+    {
+      "idx": 288,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high, burst count: high), and Respiration shows strong subject-relative guarding (breath interval variability: high). The multimodal pattern indicates intense muscular and respiratory guarding without extreme EDA or cardiovascula"
+    },
+    {
+      "idx": 289,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high), and Respiration has strong subject-relative breath interval variability (high). Multiple modalities show strong subject-relative deviation. Classification: Severe"
+    },
+    {
+      "idx": 290,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing rate (very high) and muscular guarding (burst count normal), indicating effective pain-related guarding. EDA also has subject-relative SCR count very high, which fits pain-related sympathetic arousal. The multimodal pattern is "
+    },
+    {
+      "idx": 291,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show strong subject-relative deviations in breathing rate (very high) and signal zero-crossing rate (high), indicating meaningful guarding. EDA also elevates in phasic EDA fluctuation and EDA response amplitude, which is subject-relative. The multimodal pattern reflects severe pa"
+    },
+    {
+      "idx": 292,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative deviations in guarding patterns, but the shifts are not consistently extreme across modalities. The overall multimodal profile remains close to the subject's baseline. Classification: No-pain"
+    },
+    {
+      "idx": 293,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), but no multimodal subject-relative elevation. Classification: No-pain"
+    },
+    {
+      "idx": 294,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), which is consistent with muscular pain response. EDA also elevates in tonic skin conductance (high), indicating sympathetic arousal. The multimodal deviations are meaningful but not all features are consistently extreme. C"
+    },
+    {
+      "idx": 295,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: very high), which is a key pain marker. The other modalities follow the EMG pattern generally. Classification: Moderate"
+    },
+    {
+      "idx": 296,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: high), which is a key pain marker. EDA also elevates in tonic skin conductance (high), supporting sympathetic arousal. The multimodal deviations are substantial but not extreme across all channels. Cla"
+    },
+    {
+      "idx": 297,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: normal, RMS muscle energy: normal), but the deviations are not consistently multimodal. EDA has only tonic skin conductance level elevated (high), which is subject-relative, but the other EDA features remain near baseline. The comb"
+    },
+    {
+      "idx": 298,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (high), which fits subject-relative guarding. Respiration also has isolated elevation in breath interval variability (high), which fits subject-relative breathing pattern regulation. The multimodal deviations are not consistently aligned across all modalities. C"
+    },
+    {
+      "idx": 299,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The pulse rate is elevated in cardiovascular adaptation, which fits pain-related stress. However, the multimodal profile does not show a sustained, severe subject-relative s"
+    },
+    {
+      "idx": 300,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: high), and Respiration has very strong breath amplitude range deviation (very high), indicating multimodal pain-related guarding. EDA also elevates in phasic EDA fluctuation (very high), supporting the severity. The combined devi"
+    },
+    {
+      "idx": 301,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. EDA has isolated high phasic EDA fluctuation, but the multimodal profile doesn't show a sustained, severe subject-relative shift. Classification: Moderate"
+    },
+    {
+      "idx": 302,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The strongest subject-relative deviation is HRV (RMSSD) in MVP (BVP) going high, which indicates stronger autonomic adjustment. However, the multimodal pattern doesn't show "
+    },
+    {
+      "idx": 303,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. The strongest subject-relative deviation is HRV (RMSSD) going very high in EVP, which may reflect autonomic adaptation. However, the multimodal profile does not show a susta"
+    },
+    {
+      "idx": 304,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative guarding patterns, but the deviations are not consistently strong across modalities. Classification: Moderate"
+    },
+    {
+      "idx": 305,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show the strongest subject-relative deviations in guarding patterns. The breath interval variability (high) and EMG muscle activation level (low) are both shifted in the same direction, indicating sustained muscular and respiratory guarding. The combined multimodal profile fits s"
+    },
+    {
+      "idx": 306,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (muscle activation level: high), which is a key pain indicator. EDA also elevates in tonic skin conductance (high), supporting sympathetic arousal. The multimodal deviations are consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 307,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative muscle guarding (muscle activation level: high, RMS muscle energy: high), which is a key pain indicator. Respiration also shifts subject-relatively (breath interval variability: high), fitting pain-related breathing changes. The multimodal deviations are consistent "
+    },
+    {
+      "idx": 308,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), and Respiration shows strong subject-relative breathing changes (breathing depth variability: very high, breath amplitude range: high), indicating multimodal pain response. The deviations are consistent across modalities. Classification"
+    },
+    {
+      "idx": 309,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (muscle activation level: very high), which is a key pain indicator. Respiration also shifts subject-relatively (breath interval variability: very high), reflecting breathing guarding. The multimodal deviations are consistent with severe pain. C"
+    },
+    {
+      "idx": 310,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (muscle activation level: very high), which is a key pain indicator. Respiration also has strong subject-relative breath interval variability (very high), indicating breathing pattern shifts. The multimodal deviations are consistent with severe "
+    },
+    {
+      "idx": 311,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: high, burst count: high), which is a key pain marker. EDA also elevates in SCR count (high), supporting sympathetic arousal. The deviations are multimodal but not all features are consistently extreme. The pattern reflects meaningf"
+    },
+    {
+      "idx": 312,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), which is a key pain marker. EVP and Respiration are closer to baseline. The multimodal pattern is dominated by EMG guarding without sustained cross-modal elevation. Classification: Moderate"
+    },
+    {
+      "idx": 313,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Breathing depth variability and breath amplitude range are both very high in subject-relative deviation, indicating strong respiratory guarding. This multimodal respiratory shift is consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 314,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Multiple modalities show strong subject-relative deviations during pain-monitoring recordings. Respiration has breathing depth variability (very high), breath amplitude range (very high), and breath interval variability (very high) indicating severe breathing guarding. EMG also has subject-relative "
+    },
+    {
+      "idx": 315,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: normal), but no modal feature is consistently elevated across multiple channels. The deviations are scattered and not multimodal. Classification: No-pain"
+    },
+    {
+      "idx": 316,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: normal), but overall the multimodal profile is close to baseline. Classification: No-pain"
+    },
+    {
+      "idx": 317,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated burst count (normal), Respiration has isolated elevated breath interval variability (high), but no multimodal subject-relative elevation. Classification: Moderate"
+    },
+    {
+      "idx": 318,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (muscle activation level: normal, RMS muscle energy: normal), but the deviations are not consistently elevated across modalities. Respiration also shifts slightly (breathing rate: normal), but the changes are not isolated or extreme. The pattern lacks the m"
+    },
+    {
+      "idx": 319,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative guarding (muscle activation level: very high, RMS muscle energy: very high), which is a key pain marker. EVP and Respiration are closer to baseline. The strongest deviation is in EMG guarding, consistent with severe pain. Classification: Severe"
+    },
+    {
+      "idx": 320,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very strong subject-relative muscle guarding (RMS muscle energy: very high), which is a key pain marker. The multimodal pattern is dominated by EMG rather than being spread across modalities. Classification: Moderate"
+    },
+    {
+      "idx": 321,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (signal zero-crossing rate: very high), and Respiration shows strong subject-relative guarding (breath interval variability: very high). The multimodal deviations are consistent with pain-related motor and respiratory changes. Classification: Moderate"
+    },
+    {
+      "idx": 322,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG signal zero-crossing rate is high (subject-relative), indicating stronger muscular guarding. Respiration breathing rate is also very high (subject-relative), indicating breathing pattern shifts. Multiple modalities show strong subject-relative deviations. Classification: Severe"
+    },
+    {
+      "idx": 323,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "EMG has strong subject-relative guarding (burst count: normal), but overall the multimodal profile is close to baseline. Classification: No-pain"
+    },
+    {
+      "idx": 324,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), but the multimodal pattern is not consistently severe. Classification: Moderate"
+    },
+    {
+      "idx": 325,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has isolated elevated bursts (subject-relative), suggesting muscular guarding. The multimodal profile shows a strong subject-relative deviation in EMG-burst count (high), which is a consistent pain marker. The other modalities remain in baseline range. Classification: Moderate"
+    },
+    {
+      "idx": 326,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), which is a key pain marker. Multiple modalities elevate subject-relative deviation, but the pattern is not extreme across all features. Classification: Moderate"
+    },
+    {
+      "idx": 327,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), which is a key pain marker. Multiple modalities elevate subject-relative deviation, but the pattern is not extreme across all features. Classification: Moderate"
+    },
+    {
+      "idx": 328,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative guarding (burst count: high), which is a key pain marker. EVP and Respiration are closer to baseline. The multimodal pattern is driven by EMG guarding without sustained autonomic or cardiovascular shifts. Classification: Moderate"
+    },
+    {
+      "idx": 329,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations are strongest in Respiration (breath amplitude range: very high, EDA tonic skin conductance level: high), indicating strong pain-related guarding. The multimodal pattern shows a meaningful but not extreme subject-relative shift. Classification: Moderate"
+    }
+  ]
+}

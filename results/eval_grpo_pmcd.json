@@ -1,0 +1,2320 @@
+{
+  "macro_f1": 0.3545711510305006,
+  "balanced_accuracy": 0.3644682030569415,
+  "auc": 0.516347413759973,
+  "parse_failures": 17,
+  "n_samples": 330,
+  "per_class_report": "              precision    recall  f1-score   support\n\n     No-pain       0.21      0.42      0.28        69\n    Moderate       0.59      0.46      0.52       200\n      Severe       0.35      0.21      0.27        61\n\n    accuracy                           0.41       330\n   macro avg       0.38      0.36      0.35       330\nweighted avg       0.47      0.41      0.42       330\n",
+  "records": [
+    {
+      "idx": 0,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows only mild variability, with low pulse rate and high HRV (indicating reduced autonomic flexibility), suggesting minimal stress response. EDA is consistently low in tonic and phasic components, indicating weak sympathetic arousal—no strong autonomic activation. EMG reveals low muscle activat"
+    },
+    {
+      "idx": 1,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal pulse rate and amplitude, but **very low HRV (z = -2.05)** indicates severely reduced autonomic flexibility, suggesting poor regulation of heart rate variability—common in chronic pain or stress, but here, it reflects a *lack* of adaptive response, possibly due to su"
+    },
+    {
+      "idx": 2,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced autonomic flexibility (low HRV, z = -1.48), indicating diminished parasympathetic tone. EDA is markedly low in both tonic and phasic components (z ≈ -1.38 to -0.93), suggesting suppressed sympathetic arousal—typically a response to pain. EM"
+    },
+    {
+      "idx": 3,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme pulse amplitude range (z=2.02), indicating strong cardiovascular adaptation. HRV (RMSSD) is high (z=1.28), suggesting preserved autonomic flexibility. EDA is consistently low (z = -1.36 to -0.43), indicating reduced sympathetic tone and min"
+    },
+    {
+      "idx": 4,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**BVP**: High amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal pulse rate suggests no acute stress. High HRV (RMSSD) is unusual—typically low in pain—so this may reflect autonomic instability rather than pain.\n\n**EDA**: Low tonic level (suggesting reduced s"
+    },
+    {
+      "idx": 5,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Very high amplitude variability and pulse rate, with extremely low HRV (indicating reduced autonomic flexibility), suggest strong cardiovascular stress—common in pain due to sympathetic overdrive.  \n- **EDA:** Low tonic level (suggesting reduced baseline sympathetic tone), "
+    },
+    {
+      "idx": 6,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows high amplitude variability and pulse range, indicating strong cardiovascular adaptation. EMG shows low muscle activation and RMS, but high burst count and signal zero-crossing rate—suggesting frequent, transient muscle bursts. EDA has low tonic lev"
+    },
+    {
+      "idx": 7,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range suggest strong cardiovascular adaptation, but normal heart rate indicates no acute stress. High HRV (RMSSD) is unusual for pain—typically, pain reduces HRV due to sympathetic dominance. Here, high HRV suggests autonomic flexibility"
+    },
+    {
+      "idx": 8,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range, combined with **low HRV (RMSSD)**, indicate reduced autonomic flexibility—typically seen in pain states, though cardiovascular instability can also arise from stress.  \n- **EDA**: Extremely high phasic fluctuations, SCR count, and"
+    },
+    {
+      "idx": 9,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and very low HRV suggest impaired autonomic flexibility, indicating reduced parasympathetic tone and possible sympathetic dominance. This is often seen in pain states, but the low HRV is a key marker of autonomic dysregulation.\n- **EDA:** Phasic f"
+    },
+    {
+      "idx": 10,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated amplitude variability and pulse amplitude range (both high), indicating strong cardiovascular adaptation. EDA exhibits markedly elevated phasic fluctuations, SCR count, and response amplitude—signs of intense sympathetic arousal. EMG shows"
+    },
+    {
+      "idx": 11,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG** shows marked deviations: *muscle activation level* and *RMS muscle energy* are both low (z = -1.02, -0.85), indicating reduced muscle tension. However, *signal zero-crossing rate* and *burst count* are high (z = 1.05, 0.97), suggesting frequent, rapid bursts of muscle activi"
+    },
+    {
+      "idx": 12,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows normal amplitude variability and pulse rate (very low, z = -2.17), suggesting minimal cardiovascular stress or adaptation. Low HRV (z = -0.43) indicates reduced autonomic flexibility, possibly reflecting suppressed sympathetic tone—common in pain states, but not overt"
+    },
+    {
+      "idx": 13,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and high HRV (RMSSD) suggest strong autonomic fluctuation, which is typically seen in stress or pain. However, *very low pulse rate* (z = -2.17) is atypical—this may reflect reduced sympathetic drive or bradycardia, possibly due to sedation or hyp"
+    },
+    {
+      "idx": 14,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse amplitude range (z=0.63) and high HRV (RMSSD, z=0.57) suggest strong autonomic adaptation. High HRV is typically associated with increased parasympathetic tone or high variability, which can be seen in stress or pain, though high HRV is not classically linked to "
+    },
+    {
+      "idx": 15,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude and rate, but **very high HRV (RMSSD)** is unusual—typically, pain reduces autonomic flexibility, leading to *lower* HRV. A *very high* HRV suggests high autonomic flexibility, which is inconsistent with pain-related stress or guarding.  \n- **EDA**: **Tonic"
+    },
+    {
+      "idx": 16,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Low amplitude variability and pulse range, along with very low HRV (z = -1.04), suggest reduced autonomic flexibility—typical of suppressed or dysregulated cardiovascular response, possibly due to pain-induced inhibition of sympathetic tone.  \n\n**EDA:** Extremely high tonic level (z = 1.10)"
+    },
+    {
+      "idx": 17,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced cardiovascular variability and flexibility (low HRV, low pulse amplitude range), indicating diminished autonomic adaptability. EDA is markedly elevated in tonic and phasic components, with high SCR count and response amplitude, signaling st"
+    },
+    {
+      "idx": 18,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**BVP:** Low amplitude variability and pulse range suggest reduced cardiovascular adaptation—typical of minimal autonomic stress.  \n**EDA:** Tonic skin conductance is high, indicating sustained sympathetic arousal, but phasic responses and SCR count are normal, suggesting alertness without acute str"
+    },
+    {
+      "idx": 19,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low amplitude and rate, with high HRV (suggesting reduced autonomic flexibility), indicating weak cardiovascular adaptation. EDA is elevated in tonic skin conductance (high z-score), but phasic responses and SCR count are normal, suggesting sustain"
+    },
+    {
+      "idx": 20,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: All indicators (amplitude, range, rate, HRV) are low, suggesting reduced cardiovascular adaptability and diminished autonomic responsiveness. This is typically seen in the absence of strong pain-related stress, as pain usually elicits increased cardiovascular activity.\n- **"
+    },
+    {
+      "idx": 21,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP** shows low amplitude, low pulse rate, and normal HRV — suggesting minimal cardiovascular stress or autonomic disturbance. This is typical of low pain-related cardiovascular response.\n- **EDA** shows *high tonic level* (sympathetic tone) but *low phasic fluctuations* and norma"
+    },
+    {
+      "idx": 22,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low amplitude and rate, but elevated HRV (RMSSD), suggesting reduced autonomic flexibility—typically associated with pain suppression or fatigue. EDA has high tonic level and low phasic response, indicating sustained sympathetic tone without strong"
+    },
+    {
+      "idx": 23,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low amplitude and range, with high HRV (RMSSD), suggesting reduced autonomic flexibility—typically associated with pain suppression or parasympathetic dominance, not typical pain response. EDA is elevated in tonic level but shows minimal phasic activity and no SCR, indicating weak sympathe"
+    },
+    {
+      "idx": 24,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary:**  \nBVP shows elevated pulse rate (z=1.32) and low pulse amplitude range (z=-1.05), with normal HRV (z=-0.06), suggesting mild cardiovascular stress. EDA has high tonic level (z=0.52) and low phasic fluctuation (z=-0.72), indicating sustained sympathetic tone but min"
+    },
+    {
+      "idx": 25,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** High pulse rate (z=1.32) suggests elevated sympathetic drive and possible stress response, though HRV is only moderately elevated (z=0.60), indicating limited autonomic flexibility.  \n**EDA:** Normal tonic level and minimal phasic fluctuations (z=-0.72) suggest low sympathetic arousal—no st"
+    },
+    {
+      "idx": 26,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP pulse rate is extremely elevated (z=2.49), indicating strong sympathetic drive and cardiovascular stress. HRV is high (z=0.78), which is paradoxical—usually, pain reduces HRV due to autonomic suppression. However, here, high HRV may suggest a dysregulated, reactive state. EMG shows very low musc"
+    },
+    {
+      "idx": 27,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows marked suppression in all indicators of cardiovascular activity (low pulse rate, low HRV, low amplitude variability), suggesting reduced autonomic tone.  \nEDA shows high tonic skin conductance (sympathetic arousal) but minimal phasic fluctuations a"
+    },
+    {
+      "idx": 28,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=1.32) and high HRV (z=0.80) suggest autonomic hyperactivity, but low amplitude variability and normal range imply less dynamic cardiovascular response—consistent with mild stress or tension, not severe pain.  \n- **EDA**: High tonic skin conductance (z"
+    },
+    {
+      "idx": 29,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows low pulse rate and low HRV, indicating reduced autonomic flexibility and poor cardiovascular adaptation—typical of suppressed sympathetic tone. EDA is markedly low in tonic level, phasic fluctuations, and SCR count, suggesting minimal sympathetic arousal, inconsistent with pain-related str"
+    },
+    {
+      "idx": 30,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows normal cardiovascular adaptation, indicating no significant autonomic stress. EDA exhibits low tonic skin conductance and low response amplitude, suggesting weak sympathetic arousal despite a relatively high SCR count—this may reflect atypical or suppressed autonomic activation, possibly d"
+    },
+    {
+      "idx": 31,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability (z=0.78) suggests increased cardiovascular fluctuation, possibly due to autonomic instability—common in pain states, though not extreme.  \n**EDA:** Low tonic skin conductance (z=-1.23) is atypical for pain, as pain typically increases sympathetic tone. However, **"
+    },
+    {
+      "idx": 32,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability and pulse range indicate strong cardiovascular adaptation, suggesting heightened autonomic activity, though pulse rate and HRV remain normal—no overt tachycardia or reduced flexibility.  \n**EDA:** High response amplitude (z=1.21) indicates strong sympathetic activ"
+    },
+    {
+      "idx": 33,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=1.88) and high pulse amplitude range (z=0.62) indicate strong cardiovascular activation, likely due to stress or pain. However, HRV (RMSSD) is normal (z=-0.34), suggesting reduced parasympathetic tone, which is not typical of severe pain—often associa"
+    },
+    {
+      "idx": 34,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG** shows extreme deviations: muscle activation, RMS energy, and zero-crossing rate are all markedly elevated (z-scores >2.3), indicating intense, sustained muscle tension and guarding—classic signs of pain-related motor response.  \n- **BVP** shows high pulse amplitude and range"
+    },
+    {
+      "idx": 35,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** High pulse amplitude and rate with normal HRV suggest strong cardiovascular reactivity, but reduced autonomic flexibility (normal HRV) indicates limited parasympathetic control—common in stress or pain, though not exclusively.\n\n**EDA:** High phasic fluctuations and SCR count indicate strong"
+    },
+    {
+      "idx": 36,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse rate (z=0.80), high pulse amplitude range (z=0.98), high HRV (RMSSD) (z=0.88) — suggests strong autonomic adaptation, but high HRV is typically associated with better regulation, not necessarily pain.  \n- **EDA**: EDA response amplitude is markedly high (z=1.38),"
+    },
+    {
+      "idx": 37,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range suggest strong cardiovascular adaptation, typical of autonomic activation, but without significant tachycardia or dysrhythmia.  \n- **EDA**: Phasic fluctuations and SCR count are elevated (z=0.64, z=0.89), indicating heightened symp"
+    },
+    {
+      "idx": 38,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**BVP**: Elevated pulse rate (z=0.80) and very high HRV (z=1.53) — paradoxical; high HRV typically indicates high autonomic flexibility, often seen in low stress. However, here it is extremely high, suggesting strong sympathetic activation, possibly due to stress or pain.  \n\n**EDA**: High SCR count "
+    },
+    {
+      "idx": 39,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High pulse rate (z=0.80) and high pulse amplitude range (z=0.62), combined with low HRV (z=-0.75), indicate strong cardiovascular activation—common in stress or pain.  \n- **EDA:** All EDA metrics are elevated (z-scores ≥0.65), especially phasic fluctuations and SCR count (z"
+    },
+    {
+      "idx": 40,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \n- **HRV (RMSSD) is very high (z=1.63)** — indicates high autonomic flexibility, typically associated with reduced stress or pain.  \n- **EDA tonic level is high (z=0.71)**, but **phasic fluctuations and SCR count are very low (z=-1.79, -1.73)** — parado"
+    },
+    {
+      "idx": 41,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows reduced autonomic flexibility (low HRV, low pulse rate), indicating diminished cardiovascular adaptability—common in pain states. However, BVP is not consistently elevated or fluctuating, suggesting limited stress response.  \n\nEDA is marked by very low tonic and phasic activity, with a hig"
+    },
+    {
+      "idx": 42,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: All indicators (amplitude, range, rate) are low (z-scores negative), suggesting reduced cardiovascular adaptation and minimal autonomic stress. This is typical of low pain-related cardiovascular response.\n- **EDA**: Tonic level and SCR count are elevated (z = 0.97, 0.89), i"
+    },
+    {
+      "idx": 43,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low amplitude variability and pulse range, but very high HRV (RMSSD), suggesting reduced autonomic flexibility—typically associated with pain suppression or dysregulation.  \nEDA is marked by high tonic level and high response amplitude, indicating "
+    },
+    {
+      "idx": 44,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low pulse amplitude, low pulse rate, and high HRV (RMSSD) suggest reduced cardiovascular activity and autonomic flexibility. Paradoxically, high HRV is often associated with better regulation, but here it may reflect a state of reduced stress response rather than pain-relat"
+    },
+    {
+      "idx": 45,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows mild elevation in pulse rate (z=0.80) and reduced HRV (z=-0.11), indicating slight autonomic strain. EDA is markedly elevated—tonic level (z=1.76), phasic fluctuations (z=1.05), SCR count (z=0.89), and response amplitude (z=1.01)—signaling strong sympathetic arousal, typical of pain-relate"
+    },
+    {
+      "idx": 46,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: All indicators (amplitude, range, rate, HRV) are very low (z-scores ≤ -1.63), suggesting minimal cardiovascular adaptation. This implies reduced autonomic responsiveness—typically seen in the absence of strong stress or pain, as pain usually elicits increased cardiovascular"
+    },
+    {
+      "idx": 47,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows minimal deviation, indicating stable cardiovascular tone without stress-driven changes. EDA is consistently low, suggesting weak sympathetic arousal—no strong autonomic activation. EMG reveals a key deviation: high burst count (z=0.74) indicates repeated episodes of muscle guarding, a hall"
+    },
+    {
+      "idx": 48,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low amplitude variability, low pulse range, and very low HRV indicate reduced autonomic flexibility and poor cardiovascular adaptability—typical of suppressed sympathetic and parasympathetic activity, often seen in absence of pain-related stress.\n- **EDA**: All features are"
+    },
+    {
+      "idx": 49,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated pulse rate (z=0.58) and low HRV (z=-0.17), indicating mild cardiovascular stress. EDA has a very high SCR count (z=1.60) and high phasic fluctuation (z=1.30), suggesting strong sympathetic arousal. EMG shows high burst count (z=0.80) and l"
+    },
+    {
+      "idx": 50,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=1.46) and low HRV (z=-1.36) suggest sympathetic overdrive and reduced autonomic flexibility—common in pain-related stress.  \n**EDA:** High phasic fluctuations (z=1.02) and SCR count (z=0.60) indicate heightened sympathetic arousal, typical of pain-related autonomic ac"
+    },
+    {
+      "idx": 51,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability and pulse rate, with low HRV — indicates strong cardiovascular dysregulation, typical of stress or pain-related autonomic overactivation.  \n**EDA:** High SCR count and normal phasic fluctuation — shows heightened sympathetic arousal, suggesting increased sympathet"
+    },
+    {
+      "idx": 52,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse amplitude range (both z=1.25) suggest strong cardiovascular fluctuation, possibly due to autonomic dysregulation. However, **low pulse rate (z=-1.18)** is atypical for pain, as pain usually elevates heart rate.  \n- **EDA**: **High tonic "
+    },
+    {
+      "idx": 53,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability, pulse rate, and pulse range suggest strong cardiovascular stress response, but low HRV indicates reduced autonomic flexibility—common in pain, though not always severe.\n- **EDA**: High tonic level, phasic fluctuations, and especially a very high "
+    },
+    {
+      "idx": 54,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows high amplitude variability and pulse rate, with markedly low HRV—indicating strong cardiovascular instability. EDA is markedly elevated in tonic level, phasic fluctuations, SCR count, and response amplitude—suggesting intense sympathetic arousal. E"
+    },
+    {
+      "idx": 55,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal HRV suggests limited autonomic flexibility—common in stress or mild pain, not typically severe.\n- **EDA:** High tonic level, very high phasic fluctuations, and very high SCR"
+    },
+    {
+      "idx": 56,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range suggest strong cardiovascular adaptation, but normal pulse rate indicates no acute stressor driving tachycardia. High HRV (RMSSD) is unusual for pain—typically, pain reduces HRV due to sympathetic dominance. Here, high HRV implies "
+    },
+    {
+      "idx": 57,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP** shows high pulse amplitude range (z=0.91), indicating strong cardiovascular fluctuation, likely due to autonomic stress, but pulse rate and HRV are normal, suggesting no acute stress or tachycardia.\n- **EDA** is markedly elevated: tonic level (z=1.02), phasic fluctuations (z"
+    },
+    {
+      "idx": 58,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows elevated pulse rate and pulse amplitude range with reduced HRV, indicating strong cardiovascular stress. EDA is markedly elevated in tonic level, phasic responses, and SCR count, reflecting intense sympathetic arousal. EMG reveals high RMS muscle energy and low burst count—suggesting susta"
+    },
+    {
+      "idx": 59,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal pulse rate suggests no acute stress. Low HRV (autonomic flexibility) suggests reduced parasympathetic tone, typical in pain states, though not extreme.\n- **EDA:** High tonic ski"
+    },
+    {
+      "idx": 60,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "1. **Multimodal feature summary**:  \nBVP shows elevated pulse rate (z=1.46) and high HRV (z=0.78), suggesting some autonomic activation. However, BVP amplitude variability and pulse range are very low (z = -1.80, -2.06), indicating minimal cardiovascular fluctuation—unusual for pain. EDA is markedly"
+    },
+    {
+      "idx": 61,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows very low amplitude and rate, with high HRV (suggesting reduced autonomic flexibility, possibly due to suppressed sympathetic output). EDA is marked by very low tonic level and high SCR count, indicating suppressed baseline sympathetic tone but heig"
+    },
+    {
+      "idx": 62,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Low pulse rate (z = -1.18) and high HRV (z = 1.21) suggest reduced sympathetic drive and poor autonomic flexibility—typically associated with low stress or pain.  \n**EDA:** Very low tonic skin conductance (z = -2.13) and normal phasic responses indicate minimal sympathetic arousal, inconsis"
+    },
+    {
+      "idx": 63,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows elevated pulse rate (z=0.58) and low HRV (z=-0.62), indicating reduced autonomic flexibility and mild cardiovascular stress, possibly due to sympathetic activation.\n- **EDA**: all features are elevated (z-scores from 0.48 to 1.00), especially SCR count (z=0.60) and re"
+    },
+    {
+      "idx": 64,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low amplitude variability, low pulse range, and low HRV indicate reduced autonomic flexibility and minimal cardiovascular adaptation—suggesting absence of stress-driven cardiovascular changes typically seen in pain.\n- **EDA**: All features are low (especially SCR count and "
+    },
+    {
+      "idx": 65,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EDA** shows marked hyper-reactivity: high phasic fluctuations, elevated SCR count, and large response amplitude—all indicating strong sympathetic arousal, likely due to pain-related stress.\n- **EMG** reveals a paradox: while muscle activation and RMS are low (suggesting reduced ba"
+    },
+    {
+      "idx": 66,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, indicating minimal cardiovascular fluctuation—suggests reduced autonomic responsiveness, typical of low-stress or non-pain states.  \n- **EDA**: elevated phasic fluctuations, SCR count, and response amplitude indicate strong s"
+    },
+    {
+      "idx": 67,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, indicating minimal cardiovascular fluctuation. Normal HRV suggests preserved autonomic flexibility—no strong stress response.\n- **EDA**: all measures are low or very low (especially phasic fluctuations and SCR count), indicat"
+    },
+    {
+      "idx": 68,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low pulse rate and normal HRV, indicating minimal cardiovascular stress. EDA exhibits very low tonic and phasic activity, with near-zero SCR count and extreme low response amplitude—suggesting weak sympathetic activation. EMG has normal muscle acti"
+    },
+    {
+      "idx": 69,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low pulse rate (z = -1.18) and normal HRV suggest reduced cardiovascular stress response, typical of low pain intensity.  \n- **EDA**: Normal tonic level and low phasic fluctuation (z = -0.95) indicate minimal sympathetic arousal—no strong autonomic activation.  \n- **EMG**: "
+    },
+    {
+      "idx": 70,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=1.46) and low HRV (z=-0.56) suggest sympathetic overdrive and reduced autonomic flexibility—common in pain-related stress.  \n**EDA:** Extremely low phasic fluctuations (z=-1.19), SCR count (z=-1.41), and response amplitude (z=-1.55) indicate **blunted sympathetic reac"
+    },
+    {
+      "idx": 71,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \n- BVP pulse amplitude range (z=0.95), BVP amplitude variability (z=1.75), EMG signal zero-crossing rate (z=1.06), and EMG burst count (z=0.69) are markedly elevated.  \n- Breathing interval variability (z=1.38) is also notably high.\n\n2. **Physiological "
+    },
+    {
+      "idx": 72,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows high amplitude variability and pulse range, indicating strong cardiovascular adaptation—common in stress or pain. However, HRV remains normal, suggesting preserved autonomic flexibility, which is not typically seen in severe pain.  \n\nEDA exhibits low phasic fluctuations and normal tonic le"
+    },
+    {
+      "idx": 73,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Pulse amplitude range is elevated (z=1.28), indicating stronger cardiovascular fluctuation, which may reflect autonomic stress. However, pulse rate and HRV are normal, suggesting no acute sympathetic overdrive or tachycardia.\n- **EDA**: All EDA measures are near-normal or s"
+    },
+    {
+      "idx": 74,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range, combined with low HRV (indicating reduced autonomic flexibility), suggest strong cardiovascular dysregulation—common in pain due to sympathetic overdrive. However, pulse rate is only mildly elevated, not strongly indicative of acu"
+    },
+    {
+      "idx": 75,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP pulse rate is elevated (z=1.46), suggesting increased sympathetic drive and stress response, though HRV is normal, indicating limited autonomic flexibility. EDA shows very low phasic responses and SCR count, indicating minimal sympathetic arousal despite the high pulse—suggesting poor autonomic "
+    },
+    {
+      "idx": 76,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.58) and normal HRV suggest mild cardiovascular stress, but not extreme dysregulation.  \n- **EDA**: Extremely high response amplitude (z=1.62) indicates strong sympathetic activation, typical of pain-related arousal.  \n- **EMG**: While muscle activat"
+    },
+    {
+      "idx": 77,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (z=0.58) suggests increased sympathetic drive, but normal HRV and amplitude variability indicate limited autonomic flexibility—consistent with mild stress, not severe pain.\n- **EDA:** Extremely high response amplitude (z=1.62) indicates strong sympatheti"
+    },
+    {
+      "idx": 78,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows very high HRV (z=4.05), indicating excessive autonomic flexibility—typically associated with low stress or relaxation, not pain.  \nEDA is marked by high tonic level (z=0.68) but extremely low phasic responses (z=-1.53) and SCR count (z=-1.41), suggesting suppressed sympathetic reactivity, "
+    },
+    {
+      "idx": 79,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low pulse rate (z = -1.13) and normal HRV suggest reduced cardiovascular stress, inconsistent with strong pain-related activation.  \n- **EDA**: All indicators are low (especially tonic level z = -1.17, response amplitude z = -0.61), indicating weak sympathetic arousal—typic"
+    },
+    {
+      "idx": 80,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=0.86) suggests sympathetic activation due to stress or pain, though HRV is normal, indicating limited autonomic flexibility—common in mild to moderate pain.  \n**EDA:** Despite low tonic level, extremely high phasic fluctuations (z=1.59) and elevated SCR count (z=0.37)"
+    },
+    {
+      "idx": 81,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: All indicators (amplitude, range, rate, HRV) are low, suggesting minimal cardiovascular activation and reduced autonomic responsiveness—typical of low stress or pain.\n- **EDA**: All components (tonic, phasic, SCR, amplitude) are low, indicating weak sympathetic arousal. Thi"
+    },
+    {
+      "idx": 82,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows extremely high HRV (z=5.60), indicating profound autonomic flexibility—typically associated with low stress or relaxation, not pain.  \nEDA is markedly low across all measures (z-scores below -1.4, including SCR count z=-2.17), indicating minimal sympathetic arousal, which is atypical for p"
+    },
+    {
+      "idx": 83,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (z=1.52) suggests stress or sympathetic activation, but normal HRV (z=-0.09) indicates limited autonomic flexibility—suggesting stress without significant autonomic dysregulation.  \n- **EDA:** Low tonic level (z=-0.72), normal phasic fluctuations and SCR"
+    },
+    {
+      "idx": 84,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows a very high pulse rate (z=1.52) and low HRV (z=-0.42), indicating stress-driven cardiovascular activation. EDA has a very high SCR count (z=1.64) and low response amplitude (z=-0.67), suggesting strong sympathetic arousal despite minimal phasic fluctuations—indicating sustained alertness r"
+    },
+    {
+      "idx": 85,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG** shows a marked deviation: muscle activation, RMS energy, and zero-crossing rate are all elevated (z-scores of 1.36, 1.52, 1.73), indicating intense, sustained muscle tension and guarding.  \n- **Respiration** shows reduced variability and low breath rate (z = -1.68), with ver"
+    },
+    {
+      "idx": 86,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low amplitude variability and pulse range suggest minimal cardiovascular adaptation, indicating weak autonomic response to stress or pain.  \n- **EDA**: All features are low (especially SCR count and response amplitude), indicating minimal sympathetic arousal—no detectable s"
+    },
+    {
+      "idx": 87,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.86) suggests mild stress or sympathetic activation, but low amplitude variability and normal HRV indicate limited autonomic disturbance—no strong cardiovascular stress signature.  \n- **EDA**: All EDA features are low (z-scores ≤ -0.85), indicating m"
+    },
+    {
+      "idx": 88,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low amplitude variability and pulse range, along with low HRV, suggest reduced autonomic flexibility—typically seen in the absence of strong pain-related cardiovascular responses.  \n- **EDA**: All EDA features are near normal or slightly low, indicating minimal sympathetic "
+    },
+    {
+      "idx": 89,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and very high pulse amplitude range suggest strong cardiovascular adaptation, but normal pulse rate and normal HRV (RMSSD) indicate no significant autonomic dysregulation typically seen in severe pain.  \n- **EDA:** All EDA measures are near or bel"
+    },
+    {
+      "idx": 90,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range (z = 2.62, 1.76) suggest strong cardiovascular adaptation, but normal pulse rate and HRV (z = -0.23) indicate no significant autonomic dysregulation.  \n- **EDA:** Low tonic level, low phasic fluctuations, and only slightly elevated"
+    },
+    {
+      "idx": 91,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range (z = 2.48, 1.66) suggest strong cardiovascular fluctuations, but normal pulse rate and low HRV (z = -0.57) indicate reduced autonomic flexibility—common in pain, but here the low HRV may reflect sympathetic dominance rather than ac"
+    },
+    {
+      "idx": 92,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal pulse rate and HRV suggest no acute autonomic dysregulation.  \n- **EDA:** Extremely high phasic fluctuations, SCR count, and response amplitude show marked sympathetic arousal—i"
+    },
+    {
+      "idx": 93,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows minimal deviation, with normal amplitude and rate, indicating stable cardiovascular regulation. EDA is marked by low response amplitude (z = -0.68), suggesting weak sympathetic activation, despite a slight increase in SCR count (z = 0.37), which is not consistently indicative of pain. EMG "
+    },
+    {
+      "idx": 94,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low pulse rate (z = -1.13) and normal HRV, suggesting reduced cardiovascular stress response. EDA is marked by low tonic level, low phasic fluctuation, and low SCR count—indicating weak sympathetic arousal. EMG shows high muscle activation (z = 1.1"
+    },
+    {
+      "idx": 95,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range indicate strong cardiovascular adaptation, suggesting heightened autonomic activity, but normal pulse rate and low HRV (RMSSD) imply reduced parasympathetic tone—common in pain—but not extreme.\n- **EDA**: Very high tonic level and "
+    },
+    {
+      "idx": 96,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range suggest strong cardiovascular adaptation, but normal pulse rate and low HRV (RMSSD) indicate reduced autonomic flexibility—common in pain, but here not extreme.  \n- **EDA**: Normal tonic level and phasic fluctuations, with a *low* "
+    },
+    {
+      "idx": 97,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "1. **Multimodal feature summary**: All signals are subject-normalized (z-scores), with \"high\" meaning above individual baseline.  \n2. **Strongest subject-relative deviations**:  \n   - **EDA**: All components are significantly below baseline (z-scores from -2.08 to -0.66), indicating **profoundly red"
+    },
+    {
+      "idx": 98,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low pulse rate and normal HRV, indicating minimal cardiovascular stress. EDA is markedly reduced in tonic level, phasic fluctuations, and SCR count—suggesting weak sympathetic arousal, inconsistent with pain-related sympathetic activation. EMG reveals low muscle activation and RMS, but a h"
+    },
+    {
+      "idx": 99,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows consistently low values across all parameters (amplitude, rate, HRV), indicating minimal cardiovascular adaptation. EDA is markedly low in tonic level, phasic fluctuation, and response amplitude, suggesting weak sympathetic arousal. EMG shows low m"
+    },
+    {
+      "idx": 100,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary:**  \nBVP shows markedly elevated pulse rate (z=1.52), indicating heightened cardiovascular activity. HRV is normal, suggesting reduced autonomic flexibility despite high heart rate. EDA exhibits high tonic level (z=0.65) and elevated burst count, though phasic fluctua"
+    },
+    {
+      "idx": 101,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.86) suggests increased sympathetic drive, but normal HRV and pulse amplitude imply limited autonomic flexibility—common in stress, not necessarily pain.  \n- **EDA**: High tonic level (z=0.51) indicates elevated sympathetic tone, but **low phasic flu"
+    },
+    {
+      "idx": 102,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.86) and wide pulse amplitude range (z=0.84) suggest heightened cardiovascular adaptation, possibly due to stress or pain. However, normal HRV (z=-0.08) indicates limited autonomic flexibility, which may reflect reduced parasympathetic tone but not n"
+    },
+    {
+      "idx": 103,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse rate (z=2.19) indicates strong sympathetic activation, but low HRV (z=-0.37) suggests reduced autonomic flexibility—common in pain-related stress, though not typical of severe pain alone.  \n- **EDA**: High tonic level (z=0.79) reflects sustained sympathetic arous"
+    },
+    {
+      "idx": 104,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** High pulse rate (z=0.86) suggests sympathetic activation, but low amplitude variability and HRV (z=-0.20) indicate reduced autonomic flexibility—typical of stress or pain-related inhibition.  \n**EDA:** High tonic level (z=1.10) and very high SCR count (z=1.64) indicate strong sympathetic ar"
+    },
+    {
+      "idx": 105,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude variability, pulse rate slightly elevated (z=0.20), but HRV (RMSSD) is low (z=-0.20), suggesting reduced autonomic flexibility—common in pain, but not extreme.\n- **EDA**: Tonic level and phasic fluctuations are both **high** (z=0.93 and 1.24), indicating st"
+    },
+    {
+      "idx": 106,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EDA is markedly elevated** (especially phasic fluctuations and response amplitude), indicating strong sympathetic arousal, likely due to stress or pain-related vigilance.  \n- **BVP shows normal baseline** but with reduced HRV (lower autonomic flexibility), suggesting diminished pa"
+    },
+    {
+      "idx": 107,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows minimal deviation, indicating stable cardiovascular adaptation. EDA is markedly elevated in tonic and phasic components, reflecting intense sympathetic arousal—despite a low SCR count, which is unusual and may suggest suppressed or atypical autonomic response. EMG shows low muscle activati"
+    },
+    {
+      "idx": 108,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows minimal deviation, with only slight increases in pulse amplitude range and pulse rate, and near-normal HRV.  \nEDA exhibits strong subject-relative deviations: tonic level, phasic fluctuations, and especially EDA response amplitude are markedly elev"
+    },
+    {
+      "idx": 109,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Normal ranges in pulse rate, amplitude, and HRV suggest minimal cardiovascular stress or adaptation to pain.\n- **EDA:** Extremely high tonic level (z=1.55), high phasic fluctuation (z=0.68), and elevated response amplitude (z=0.57) indicate strong sympathetic arousal—common"
+    },
+    {
+      "idx": 110,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP**: Elevated pulse rate (z=0.86) and reduced HRV (z=-0.48) suggest stress-induced cardiovascular activation, typical of pain-related autonomic arousal.  \n**EDA**: Extremely high tonic level (z=1.35), phasic fluctuations (z=2.03), and SCR count (z=1.64) indicate strong sympathetic arousal—common"
+    },
+    {
+      "idx": 111,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse amplitude range (z=1.07) suggests strong cardiovascular adaptation, possibly due to autonomic activation, but not extreme.\n- **EDA**: Extremely high response amplitude (z=1.96) indicates intense sympathetic arousal—strong autonomic activation, but low SCR count ("
+    },
+    {
+      "idx": 112,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** shows low amplitude variability and pulse range, indicating minimal cardiovascular fluctuation—suggests reduced autonomic engagement, typical of low stress or pain.\n- **EDA:** exhibits high tonic level, high phasic fluctuation, and very high SCR count (z=1.64), indicating s"
+    },
+    {
+      "idx": 113,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.53) suggests mild cardiovascular activation, but low amplitude variability and normal HRV indicate limited autonomic stress response—no strong sign of pain-driven cardiovascular dysregulation.  \n- **EDA**: All EDA measures are *low* (z-scores negati"
+    },
+    {
+      "idx": 114,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP pulse rate is elevated (z=1.22)**, indicating increased cardiovascular activity, possibly due to stress or pain-related sympathetic activation.  \n- **EDA is markedly low in tonic and phasic components (z ≈ -1.67, -1.41)** — unusually suppressed sympathetic tone, which is atypi"
+    },
+    {
+      "idx": 115,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows a moderately elevated pulse rate (z=0.53), suggesting mild cardiovascular stress, but no significant deviation in amplitude or HRV. EDA is markedly low across all measures (z-scores ranging from -1.54 to -0.54), indicating minimal sympathetic arousal—consistent with low autonomic activatio"
+    },
+    {
+      "idx": 116,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows a moderately elevated pulse rate (z=0.53) and low HRV (z=-0.30), indicating mild cardiovascular stress. EDA is markedly suppressed across all metrics (z-scores: -1.35, -1.62, -1.99), reflecting absent sympathetic arousal—unusual for pain, which typically triggers strong sympathetic activat"
+    },
+    {
+      "idx": 117,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP pulse rate is elevated (z=1.22)**, indicating increased sympathetic drive and cardiovascular stress—common in pain. However, **HRV (RMSSD) is normal (z=-0.33)**, suggesting minimal autonomic flexibility, which is typically seen in pain states, but not necessarily severe.  \n\n**EDA shows low ton"
+    },
+    {
+      "idx": 118,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, indicating minimal cardiovascular fluctuation—suggesting reduced autonomic activity, typical of low stress or pain.\n- **EDA**: despite low tonic level, **high EDA response amplitude (z=0.80)** indicates strong sympathetic act"
+    },
+    {
+      "idx": 119,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude, pulse rate, and HRV suggest minimal cardiovascular stress or adaptation. No signs of strong autonomic activation.\n- **EDA**: All measures are low (especially phasic fluctuations and response amplitude), indicating weak sympathetic arousal. This is a hallma"
+    },
+    {
+      "idx": 120,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows extreme amplitude and range variability (z=1.25 and 3.70), indicating strong cardiovascular adaptation—common in pain—but HRV is normal, suggesting preserved autonomic flexibility. EDA is paradoxically low in tonic and response amplitude, despite high phasic fluctuations, indicating weak b"
+    },
+    {
+      "idx": 121,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP** shows very high amplitude variability and pulse range, indicating strong cardiovascular fluctuation—common in stress or pain. However, **HRV (RMSSD) is normal**, suggesting preserved autonomic flexibility, which may mitigate severe pain response.\n\n**EDA** has low tonic level (suggesting redu"
+    },
+    {
+      "idx": 122,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Pulse rate is elevated (z=0.53), suggesting increased sympathetic drive, but HRV is normal (z=-0.38), indicating limited autonomic flexibility—common in mild stress or tension, not strong pain markers.  \n- **EDA**: Low tonic level (z=-0.68) suggests reduced baseline sympath"
+    },
+    {
+      "idx": 123,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Normal in all parameters, suggesting no significant cardiovascular stress or adaptation to pain.  \n- **EDA:** Extremely low in tonic level, phasic fluctuations, SCR count, and response amplitude — indicates minimal sympathetic arousal, which is atypical for pain.  \n- **EMG:"
+    },
+    {
+      "idx": 124,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP**: Elevated pulse rate and amplitude variability with normal HRV suggest heightened cardiovascular stress, but not extreme dysregulation.  \n**EDA**: High SCR count and normal tonic level indicate strong sympathetic reactivity—common in pain—but phasic fluctuations and tonic level are only mild"
+    },
+    {
+      "idx": 125,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG burst count is high (z=1.11)**, indicating frequent, repeated muscle guarding — a strong sign of pain-related motor response.  \n- **EDA response amplitude is low (z=-0.76)**, suggesting weak autonomic activation, which is atypical for pain, as pain usually elicits strong sympa"
+    },
+    {
+      "idx": 126,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows minimal deviation, indicating stable cardiovascular tone without significant stress or pain-related autonomic shifts. EDA exhibits low tonic and phasic activity, but notably elevated SCR count (z=1.38) suggests some sympathetic reactivity, though not extreme. EMG is the most concerning: lo"
+    },
+    {
+      "idx": 127,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP** shows a *slightly elevated pulse rate* (z=0.53), but otherwise minimal cardiovascular fluctuation.  \n**EDA** has a *high response amplitude* (z=0.83), indicating strong sympathetic activation—suggesting heightened arousal, possibly due to anxiety or stress, but not necessarily pain-specific."
+    },
+    {
+      "idx": 128,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows a high pulse rate (z=1.22) with low variability and normal HRV, indicating elevated cardiovascular tone without significant autonomic flexibility—suggesting stress or discomfort. EMG reveals low muscle activation and RMS, indicating minimal muscle guarding despite a normal burst count, whi"
+    },
+    {
+      "idx": 129,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP pulse rate is elevated (z=0.53)**, indicating increased sympathetic drive and possible stress or pain-related cardiovascular activation.  \n- **HRV (RMSSD) is normal (z=-0.10)**, suggesting minimal parasympathetic tone, which is common in pain states but not uniquely indicative"
+    },
+    {
+      "idx": 130,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG RMS (z=0.64)** is the most elevated feature, indicating **sustained muscle activation** beyond the subject’s baseline. This suggests **persistent muscular guarding**, a hallmark of pain.\n- **Burst count (z=-1.58)** is extremely low, implying **fewer episodes of sudden muscle b"
+    },
+    {
+      "idx": 131,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows mild cardiovascular fluctuation (high amplitude variability, normal pulse rate and HRV), indicating some autonomic stress but not extreme dysregulation. EDA is markedly low in phasic and response amplitude, suggesting weak sympathetic activation—ty"
+    },
+    {
+      "idx": 132,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG** shows a very high muscle activation level (z=2.54) and very high RMS muscle energy (z=2.40), indicating intense, sustained muscle tension—consistent with pain-related guarding.  \n- **BVP** shows high amplitude variability (z=1.17), suggesting strong cardiovascular fluctuatio"
+    },
+    {
+      "idx": 133,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.53) and amplitude variability (z=1.43) suggest increased cardiovascular stress, but normal HRV (z=-0.22) indicates limited autonomic flexibility—common in pain, though not extreme.  \n- **EDA**: High SCR count (z=1.38) and normal tonic level imply he"
+    },
+    {
+      "idx": 134,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG** shows extreme deviations: muscle activation and RMS energy are both very high (z = 2.21 and 2.65), indicating intense muscle guarding. Burst count is low (z = -1.22), suggesting reduced episodic bursts, which may reflect sustained, tonic tension rather than episodic guarding"
+    },
+    {
+      "idx": 135,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.53) suggests mild cardiovascular activation, but low amplitude variability and normal HRV indicate limited autonomic response—no strong stress or pain-related cardiovascular dysregulation.  \n- **EDA**: Extremely low tonic and phasic levels (z ≈ -2.3"
+    },
+    {
+      "idx": 136,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Shows low pulse rate (indicating reduced cardiovascular drive) and normal HRV, suggesting minimal autonomic stress from cardiovascular adaptation.  \n- **EDA:** Markedly elevated tonic and phasic activity, especially with a very high response amplitude (z=1.79), indicating s"
+    },
+    {
+      "idx": 137,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme suppression in pulse rate (very low z=−3.63) and very high HRV (z=4.28), indicating reduced autonomic flexibility—typically associated with pain-related parasympathetic dominance or shock. However, low amplitude variability and pulse range "
+    },
+    {
+      "idx": 138,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Extremely low pulse rate (z = -3.63) and very high HRV (z = 4.28) suggest paradoxical autonomic instability. Low pulse rate is unusual for pain, and high HRV typically indicates high autonomic flexibility, which is often associated with *low* pain or relaxation. This may re"
+    },
+    {
+      "idx": 139,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal in all aspects, indicating no significant cardiovascular stress or pain-driven fluctuations.  \n- **EDA**: Shows **high tonic skin conductance** and **high SCR count**, indicating strong sympathetic arousal—suggesting stress or anxiety, but not necessarily pain-specif"
+    },
+    {
+      "idx": 140,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows minimal deviation, with normal amplitude and rate, indicating stable cardiovascular tone. EDA is mostly normal, with only slight elevation in tonic level, suggesting mild sympathetic arousal but no strong stress response. EMG reveals a key abnormality: **high burst count (z=1.08)**, indica"
+    },
+    {
+      "idx": 141,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low pulse rate (z = -0.86) and normal HRV, indicating reduced cardiovascular stress response—suggests minimal autonomic activation from pain.\n- **EDA**: elevated tonic level (z = 1.02), high phasic fluctuations (z = 1.32), and high SCR count (z = 1.38) indicate strong"
+    },
+    {
+      "idx": 142,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude variability, pulse rate, and HRV suggest minimal cardiovascular stress or adaptation—no signs of strong sympathetic or parasympathetic override.  \n- **EDA**: Markedly elevated tonic level, phasic fluctuations, and SCR count indicate strong sympathetic arous"
+    },
+    {
+      "idx": 143,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.53) and high phasic variability suggest stress-induced cardiovascular activation, common in pain.\n- **EDA**: Markedly elevated tonic level (z=1.06) and phasic fluctuations (z=1.27), along with high response amplitude (z=0.93), indicate strong sympat"
+    },
+    {
+      "idx": 144,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows elevated pulse rate (z=0.53) and high phasic EDA (z=2.87), indicating strong sympathetic activation and stress response. EDA’s tonic level and response amplitude are both markedly high, suggesting intense autonomic arousal. EMG reveals a high signal zero-crossing rate (z=0.72), indicating "
+    },
+    {
+      "idx": 145,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EDA** shows marked elevations in all phasic and tonic measures (z-scores: 1.28, 0.74, 1.38, 0.62), indicating strong sympathetic arousal, consistent with pain-related stress and anxiety.\n- **BVP** features are normal or slightly reduced, suggesting minimal cardiovascular dysregula"
+    },
+    {
+      "idx": 146,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP** shows normal amplitude, range, and rate, with normal HRV—no signs of significant cardiovascular stress or adaptation to pain.  \n- **EDA** is markedly elevated across all measures: tonic level, phasic fluctuations, SCR count, and response amplitude—all significantly above sub"
+    },
+    {
+      "idx": 147,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.53) and high pulse amplitude variability (z=0.35) suggest increased cardiovascular stress, but normal HRV (z=-0.10) indicates limited autonomic flexibility—common in pain-related stress but not extreme.\n- **EDA**: Extremely high tonic level (z=1.51)"
+    },
+    {
+      "idx": 148,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows normal cardiovascular adaptation, indicating no significant autonomic stress. EDA is marked by *very low* tonic level and *very low* response amplitude, suggesting minimal sympathetic arousal—typically associated with pain. However, EMG reveals a critical deviation: *very high signal zero-"
+    },
+    {
+      "idx": 149,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows normal cardiovascular adaptation, with no signs of strong autonomic fluctuation or tachycardia. EDA is markedly elevated in tonic skin conductance (z=1.30), suggesting heightened sympathetic tone, but lacks phasic responses (low z=-0.75) and no skin conductance responses (z=-1.99), indicat"
+    },
+    {
+      "idx": 150,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Very high amplitude variability and pulse range suggest strong cardiovascular dysregulation, but normal HRV indicates preserved autonomic flexibility—common in mild stress or anxiety, not severe pain.  \n**EDA:** Very high response amplitude and tonic level indicate strong sympathetic arousa"
+    },
+    {
+      "idx": 151,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability and pulse range suggest strong autonomic adaptation, but normal pulse rate and low HRV indicate reduced parasympathetic tone—common in pain—but not extreme.  \n**EDA:** Extremely high tonic and phasic activity, especially EDA response amplitude (z=2.63), indicates "
+    },
+    {
+      "idx": 152,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme variability in amplitude and pulse range, with very low pulse rate and extremely high HRV (RMSSD), suggesting disrupted autonomic regulation. EDA exhibits very low tonic level (indicating reduced sympathetic tone) but very high phasic fluct"
+    },
+    {
+      "idx": 153,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Shows low pulse rate and low variability, indicating reduced cardiovascular reactivity—typical of minimal stress or pain.  \n- **EDA:** Extremely high phasic fluctuations, SCR count, and response amplitude indicate **strong sympathetic arousal**, suggesting significant auton"
+    },
+    {
+      "idx": 154,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=0.92) and low HRV (z=-0.25) suggest sympathetic overdrive and reduced autonomic flexibility—common in pain-related stress.  \n**EDA:** Extremely high SCR count (z=1.73) and low tonic level (z=-0.92) indicate paradoxical sympathetic activation; typically, pain increases"
+    },
+    {
+      "idx": 155,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows elevated pulse rate (z=1.49) and low HRV (z=-0.32), indicating stress-driven cardiovascular activation. EDA is marked by low tonic level (z=-0.92) and low response amplitude (z=-0.78), suggesting suppressed sympathetic arousal despite normal SCR count—possibly reflecting pain-related inhib"
+    },
+    {
+      "idx": 156,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=1.49) and low HRV (z=-0.52) indicate stress-driven cardiovascular activation, but minimal amplitude variability and range suggest limited autonomic adaptation—common in low-level stress or mild discomfort.  \n- **EDA**: Extremely high phasic fluctuatio"
+    },
+    {
+      "idx": 157,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (z=0.92) and low HRV (z=-1.06) suggest reduced autonomic flexibility, typical of stress or pain-related sympathetic dominance.  \n- **EDA:** Low tonic level (z=-0.89) and very high phasic fluctuation (z=1.55) indicate paradoxical sympathetic activity—low "
+    },
+    {
+      "idx": 158,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.92) and low HRV (z=-0.73) suggest reduced autonomic flexibility, indicating stress or pain-related cardiovascular strain.  \n- **EDA**: All EDA measures are low (z-scores ranging from -0.67 to -0.87), indicating suppressed sympathetic arousal—typical"
+    },
+    {
+      "idx": 159,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low HRV (z = -1.08) and normal pulse rate, indicating reduced autonomic flexibility—suggesting diminished stress response. EDA is consistently low across all metrics (z-scores from -0.51 to -0.64), indicating minimal sympathetic arousal, which is typically elevated in pain. EMG shows norma"
+    },
+    {
+      "idx": 160,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP** shows a markedly elevated pulse rate (z=1.49) and severely reduced HRV (z=-0.86), indicating strong sympathetic drive and poor autonomic flexibility—typical of pain-related stress.  \n**EDA** has a very high phasic fluctuation (z=1.71), suggesting heightened sympathetic arousal, though tonic "
+    },
+    {
+      "idx": 161,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal pulse rate and near-normal HRV suggest no severe autonomic dysregulation.  \n- **EDA**: Phasic fluctuations are elevated (z=1.05), indicating heightened sympathetic arousal, but "
+    },
+    {
+      "idx": 162,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse amplitude range indicate strong cardiovascular adaptation, but normal pulse rate suggests no acute stress. High HRV (RMSSD) is unusual—typically, pain reduces HRV due to sympathetic dominance. Here, high HRV suggests *reduced* autonomic "
+    },
+    {
+      "idx": 163,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude variability, pulse range, and HRV suggest no significant cardiovascular stress or dysregulation.  \n- **EDA**: All EDA measures are low (especially SCR count and response amplitude), indicating minimal sympathetic arousal—no signs of autonomic activation typ"
+    },
+    {
+      "idx": 164,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability and pulse range suggest strong autonomic fluctuation, but normal pulse rate. Low HRV indicates reduced autonomic flexibility—common in pain—but not extreme.  \n**EDA:** Low phasic fluctuations and SCR count imply minimal sympathetic reactivity; no signs of heighten"
+    },
+    {
+      "idx": 165,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows very high amplitude variability and pulse range (z = 3.01 and 1.68), indicating strong cardiovascular fluctuations—common in pain-related autonomic dysregulation. However, pulse rate and HRV are normal, suggesting no acute stress or sympathetic overdrive.\n- **EDA**: t"
+    },
+    {
+      "idx": 166,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Shows very high amplitude variability and pulse range (both z=1.88–1.90), indicating strong cardiovascular fluctuation. However, **low pulse rate (z = -0.79)** and **very high HRV (RMSSD, z=1.89)** suggest *reduced autonomic flexibility*, which is typically seen in *low* sy"
+    },
+    {
+      "idx": 167,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range suggest strong cardiovascular adaptation, but *low pulse rate* and *high HRV (RMSSD)* indicate reduced sympathetic drive and autonomic flexibility—typically seen in *low stress or pain* states.  \n- **EDA:** All features are low or "
+    },
+    {
+      "idx": 168,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG (muscle activation)** shows a clear **high** in both activation level (z=0.68) and zero-crossing rate (z=1.46), indicating intense muscle tension and dense firing—hallmarks of pain-related guarding.  \n- **EDA** shows **high** response amplitude (z=0.66) despite low SCR count, "
+    },
+    {
+      "idx": 169,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP, EDA, and respiration all show markedly low (negative z-scores), indicating reduced autonomic and respiratory flexibility—typical of suppression rather than activation. However, EMG exhibits strong relative deviations: high signal zero-crossing rate and burst count suggest intense, repetitive mu"
+    },
+    {
+      "idx": 170,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG** shows extreme deviations: muscle activation (z=4.23), RMS energy (z=4.59), and burst count (z=-2.82) are all markedly elevated or reduced, indicating intense, sustained muscle guarding—highly suggestive of pain-related motor response.  \n- **EDA** is paradoxically low in phas"
+    },
+    {
+      "idx": 171,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Low amplitude variability and pulse range suggest minimal cardiovascular fluctuation, indicating reduced autonomic response to stress or pain.  \n**EDA:** High tonic skin conductance level indicates strong sympathetic arousal, but low response amplitude suggests muted autonomic activation—pa"
+    },
+    {
+      "idx": 172,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP**: low amplitude variability and pulse range suggest minimal cardiovascular fluctuation, indicating reduced autonomic response to stress.  \n**EDA**: high tonic level and response amplitude reflect strong sympathetic arousal, despite low SCR count—suggests sustained autonomic activation, possib"
+    },
+    {
+      "idx": 173,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP** shows low amplitude, low pulse range, and low HRV — indicating reduced cardiovascular adaptability, typical of minimal stress or pain-related activation.  \n- **EDA** is markedly elevated (especially tonic level and response amplitude), indicating strong sympathetic arousal, "
+    },
+    {
+      "idx": 174,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows minimal variability and very low pulse rate (z = -1.93), suggesting reduced cardiovascular activity. EDA is elevated in tonic skin conductance (z = 1.19), indicating heightened sympathetic arousal, though phasic responses and SCR are normal. EMG re"
+    },
+    {
+      "idx": 175,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows reduced pulse rate and low amplitude variability, indicating minimal cardiovascular adaptation. Low HRV and low pulse amplitude suggest reduced autonomic flexibility, typical of low stress or pain-related activation.  \n- **EDA**: tonic level is high (sympathetic tone "
+    },
+    {
+      "idx": 176,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP pulse rate and HRV** show marked elevation (z = 1.49 and 0.88), indicating heightened cardiovascular stress.  \n**EDA tonic level** is elevated (z = 1.20), suggesting sustained sympathetic arousal, though **SCR count is low** (z = -0.87), which is atypical—usually, pain increases SCR frequency."
+    },
+    {
+      "idx": 177,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EDA** shows extreme sympathetic activation: very high tonic level (z=1.54), very high response amplitude (z=1.94), and low SCR count (z=-0.87), indicating strong autonomic arousal—typically linked to pain-related stress.\n- **BVP** features are normal or slightly reduced, suggestin"
+    },
+    {
+      "idx": 178,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** All indicators (amplitude, range, rate, HRV) are low, suggesting minimal cardiovascular adaptation and reduced autonomic flexibility. This is typically seen in the absence of strong stress or pain-related cardiovascular activation.\n- **EDA:** Despite a *slightly* elevated t"
+    },
+    {
+      "idx": 179,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \nEMG muscle activation (z=1.11) and RMS muscle energy (z=0.94) are markedly elevated, indicating strong muscle guarding. Breathing irregularity (breath interval variability, z=2.35) is also highly abnormal, suggesting disrupted respiratory control. All "
+    },
+    {
+      "idx": 180,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows marked suppression in all indicators (low pulse rate, low HRV, low amplitude variability), suggesting reduced cardiovascular activity and poor autonomic flexibility—typical of pain-related suppression or hypoactivity.\n- **EDA**: all measures are low (tonic, phasic, SC"
+    },
+    {
+      "idx": 181,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (high) and low HRV (low) suggest increased sympathetic drive and reduced autonomic flexibility, typically seen in stress or pain. However, the *low* HRV is paradoxical in pain—usually associated with high sympathetic tone, but here it's marked by *low* E"
+    },
+    {
+      "idx": 182,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows elevated pulse rate (z=0.63) and reduced HRV (z=-0.10), indicating heightened cardiovascular stress. EDA has a high SCR count (z=1.28) and low tonic level (z=-1.04), suggesting paradoxical sympathetic activation—common in pain-related arousal despite low baseline. EMG reveals low RMS muscl"
+    },
+    {
+      "idx": 183,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal ranges in all parameters, suggesting minimal cardiovascular adaptation to stress or pain. Low HRV (z = -0.45) indicates reduced autonomic flexibility, which is typically seen in pain states, but here it's within normal limits.  \n- **EDA**: All parameters are low (z-s"
+    },
+    {
+      "idx": 184,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows normal amplitude and rate, indicating minimal cardiovascular stress. EDA is consistently low across all measures—tonic level, phasic fluctuations, SCR count, and response amplitude—all indicating weak sympathetic arousal, which is atypical for pain. EMG shows marked low values in muscle ac"
+    },
+    {
+      "idx": 185,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.63) and low HRV (z=-0.57) suggest increased sympathetic drive and reduced autonomic flexibility, typical of stress or pain.  \n- **EDA**: All EDA measures are low (z-scores from -0.88 to -1.35), indicating **minimal sympathetic arousal**—this is atyp"
+    },
+    {
+      "idx": 186,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced autonomic flexibility (low HRV, normal pulse rate but narrow range), indicating diminished cardiovascular adaptability. EDA is markedly low across all metrics—no sympathetic arousal, no phasic responses, no skin conductance responses—sugges"
+    },
+    {
+      "idx": 187,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows elevated pulse rate (z=0.63), indicating increased sympathetic drive and stress response. EMG reveals high muscle activation (z=1.17) and low signal zero-crossing rate (z=-0.94), suggesting sustained, tense muscle guarding—typical of pain-related motor response. Despite normal breathing de"
+    },
+    {
+      "idx": 188,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=0.63) and low HRV (z=-0.63) indicate reduced autonomic flexibility and increased sympathetic drive—common in pain-related stress.  \n**EDA:** High phasic fluctuations (z=0.72), high SCR count (z=1.28), and high response amplitude (z=0.70) reflect strong sympathetic aro"
+    },
+    {
+      "idx": 189,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows minimal variability and normal range, indicating stable cardiovascular tone—no strong autonomic stress.  \nEDA exhibits extremely high phasic fluctuations and a very high response amplitude (z=2.91), indicating intense sympathetic arousal, likely due to heightened anxiety or autonomic sensi"
+    },
+    {
+      "idx": 190,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows elevated pulse rate and amplitude variability, indicating heightened cardiovascular stress—common in pain states. However, HRV remains normal, suggesting maintained autonomic flexibility, which is atypical for severe pain. EDA is within normal range, with only mild sympathetic reactivity, "
+    },
+    {
+      "idx": 191,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated amplitude variability and pulse range, indicating strong cardiovascular fluctuation. EDA exhibits high phasic fluctuations, SCR count, and response amplitude—suggesting strong sympathetic arousal. EMG shows high muscle activation, RMS ener"
+    },
+    {
+      "idx": 192,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows high pulse rate and low HRV, indicating heightened cardiovascular stress and reduced autonomic flexibility—typical of pain-related sympathetic dominance. However, EDA is markedly low in tonic level, phasic fluctuations, SCR count, and response amplitude, suggesting *reduced* sympathetic ar"
+    },
+    {
+      "idx": 193,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows elevated amplitude variability and pulse rate (both high), indicating heightened cardiovascular stress, but with normal HRV, suggesting reduced autonomic flexibility—common in pain states. EDA is nearly baseline with low phasic fluctuations and normal SCR, implying minimal sympathetic arou"
+    },
+    {
+      "idx": 194,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows high amplitude variability and high HRV (indicating increased autonomic fluctuations, possibly reflecting stress or pain-related sympathetic activation), though pulse rate is normal. EDA is marked by low phasic fluctuations and normal tonic level—suggesting minimal sympathetic arousal, whi"
+    },
+    {
+      "idx": 195,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and high HRV (RMSSD) suggest increased autonomic fluctuation, typically associated with stress or pain. However, pulse rate is normal, and range is within normal limits, indicating no strong cardiovascular dysregulation.\n- **EDA:** All EDA feature"
+    },
+    {
+      "idx": 196,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (z=0.63) and very high HRV (z=2.99) suggest strong autonomic adaptation. High HRV is typically associated with high sympathetic tone and stress, but in pain, it can reflect compensatory mechanisms. However, the pulse rate is elevated, and the low amplitu"
+    },
+    {
+      "idx": 197,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows minimal variability and normal resting pulse rate, indicating limited cardiovascular adaptation. EDA shows elevated tonic skin conductance and a high SCR count, suggesting strong sympathetic arousal. EMG reveals markedly elevated muscle activation,"
+    },
+    {
+      "idx": 198,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \nEMG (muscle activation, RMS energy, burst count) and EDA (tonic level) show pronounced elevations (z > 0.7), while BVP and respiration show only mild or normal deviations.\n\n2. **Physiological pattern**:  \nDespite normal breathing rate variability and d"
+    },
+    {
+      "idx": 199,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated pulse rate (z=0.63) and low HRV (z=-0.59), indicating mild cardiovascular stress. EDA has high tonic level (z=0.79) but very low phasic fluctuations and SCR count (both z < -1), suggesting paradoxical sympathetic suppression despite high b"
+    },
+    {
+      "idx": 200,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary:**  \nBVP shows elevated pulse rate and low HRV, indicating reduced autonomic flexibility and stress-related cardiovascular changes. EDA is markedly elevated in tonic and phasic activity, reflecting strong sympathetic arousal. EMG shows high muscle activation, RMS, zer"
+    },
+    {
+      "idx": 201,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows reduced autonomic flexibility (low HRV, normal pulse rate), suggesting limited cardiovascular adaptation — typical in low-stress or non-pain states, but with subtle autonomic restriction.\n- **EDA**: all indicators are elevated (high tonic level, high phasic fluctuatio"
+    },
+    {
+      "idx": 202,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows minimal deviation, with normal pulse rate and HRV, suggesting stable cardiovascular baseline. However, BVP pulse amplitude range is low, indicating reduced cardiovascular fluctuation—possibly a sign of suppressed autonomic response.\n\n**2. Strongest"
+    },
+    {
+      "idx": 203,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.63) suggests increased sympathetic drive and cardiovascular stress, though HRV is normal, indicating reduced parasympathetic tone—common in pain states.  \n- **EDA**: Markedly elevated tonic level (z=1.16), phasic fluctuations (z=0.80), and SCR count"
+    },
+    {
+      "idx": 204,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range indicate strong cardiovascular adaptation, with elevated HRV (RMSSD) suggesting autonomic hyperactivity—typically seen in stress or pain.\n- **EDA**: High tonic level, phasic fluctuations, and SCR count all point to strong sympathet"
+    },
+    {
+      "idx": 205,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse amplitude range indicate strong cardiovascular fluctuations, suggesting heightened autonomic responsiveness. High HRV (RMSSD) is paradoxical—typically, pain reduces HRV, so this high value may reflect compensatory regulation or stress-re"
+    },
+    {
+      "idx": 206,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows high amplitude variability and pulse range, indicating strong cardiovascular adaptation, likely due to autonomic overactivity. EDA is markedly elevated in tonic level, phasic fluctuations, SCR count, and response amplitude—suggesting intense sympathetic arousal, consistent with heightened "
+    },
+    {
+      "idx": 207,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated amplitude variability and pulse range (both \"high\" after z-score), indicating strong cardiovascular fluctuations. EDA has high tonic and phasic activity (sympathetic arousal), but paradoxically low SCR count and low response amplitude—sugg"
+    },
+    {
+      "idx": 208,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \n- EMG burst count (z=0.95, high) and signal zero-crossing rate (z=1.22, high) indicate intense, repetitive muscle guarding.  \n- EDA tonic level (z=1.60, very high) and EDA response amplitude (z=-0.97, low) show paradoxical sympathetic suppression despi"
+    },
+    {
+      "idx": 209,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows high pulse rate and very high HRV (indicating high autonomic reactivity), suggesting stress or pain-related cardiovascular instability. EDA exhibits very high phasic fluctuations, SCR count, and response amplitude—indicating strong sympathetic arousal, typical of pain-related sympathetic a"
+    },
+    {
+      "idx": 210,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **Strongest subject-relative deviations** are in EMG (especially burst count: z=1.23) and BVP/HRV (all z-scores below -1.0), with EDA also showing consistent low values (z < -0.6).\n\n- **Physiological pattern**: Despite low baseline sympathetic tone (EDA), the high burst count in EMG"
+    },
+    {
+      "idx": 211,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low pulse rate and very low HRV indicate reduced autonomic flexibility, suggesting diminished cardiovascular adaptability—common in absence of strong stress or pain.  \n- **EDA**: Despite low tonic and phasic levels, a **high SCR count (z=1.06)** indicates heightened sympath"
+    },
+    {
+      "idx": 212,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range suggest strong cardiovascular fluctuations, but normal pulse rate and very low HRV (RMSSD) indicate reduced autonomic flexibility—typically seen in stress or pain—but here, the low HRV is paradoxically not accompanied by high sympa"
+    },
+    {
+      "idx": 213,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Very high amplitude variability and pulse range (z = 2.01 and 2.37) suggest strong cardiovascular adaptation, but low pulse rate (z = -1.26) indicates reduced sympathetic drive—unexpected for pain.  \n**EDA:** Low tonic level (z = -1.00) and low response amplitude (z = -0.66) suggest weak sy"
+    },
+    {
+      "idx": 214,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Low pulse rate and low HRV suggest reduced autonomic flexibility, typical of pain-related suppression of sympathetic activity, though this is not consistent with high pain states.\n- **EDA:** All EDA measures are low (z-scores negative), indicating weak sympathetic arousal—t"
+    },
+    {
+      "idx": 215,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \n- **EDA response amplitude (z=1.26)** — highest deviation, indicating heightened sympathetic activation.  \n- **HRV (RMSSD) z=-1.29** — markedly reduced autonomic flexibility, suggesting impaired parasympathetic control.  \n- **Signal zero-crossing rate "
+    },
+    {
+      "idx": 216,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal pulse rate suggests no acute stress. Low HRV (autonomic flexibility) points to reduced parasympathetic tone—common in pain—but not extreme.\n\n**EDA:** Low tonic level (reduced baseline sympatheti"
+    },
+    {
+      "idx": 217,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows high pulse rate and amplitude, low HRV — signs of strong cardiovascular stress. EDA has low tonic and phasic levels but high SCR count, suggesting paradoxical sympathetic suppression with heightened reactivity. EMG shows normal muscle activation an"
+    },
+    {
+      "idx": 218,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal pulse rate and amplitude, but **very low HRV (z = -1.15)** suggests reduced autonomic flexibility—common in pain states, but here it's not extreme.  \n- **EDA**: All features are **low** (z-scores: -0.96, -0.72, -2.05, -1.05), indicating **minimal sympathetic arousal*"
+    },
+    {
+      "idx": 219,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG (muscle activation and guarding):** High muscle activation (z=1.18) and high RMS energy (z=1.34) indicate strong muscle tension and sustained contraction—classic signs of pain-related guarding. Despite low burst count (suggesting fewer episodic spikes), the high baseline tensi"
+    },
+    {
+      "idx": 220,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, with normal HRV—suggests minimal cardiovascular adaptation, typical of low stress or pain.\n- **EDA**: all measures are low or normal, indicating minimal sympathetic arousal. No signs of strong autonomic activation (e.g., phas"
+    },
+    {
+      "idx": 221,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows marked suppression of cardiovascular variability (low HRV, low amplitude), indicating reduced autonomic flexibility—typical of pain-related inhibition. EDA remains near baseline, with minimal phasic and tonic activity, suggesting low sympathetic arousal, which is atypical for acute pain. H"
+    },
+    {
+      "idx": 222,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** All indicators (amplitude, range, rate, HRV) are low, suggesting reduced cardiovascular adaptability and minimal autonomic response—typical of low stress or pain-related cardiovascular activation.  \n- **EDA:** While tonic level and phasic fluctuations are normal, **SCR coun"
+    },
+    {
+      "idx": 223,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=1.20) and high EDA response amplitude (z=2.81) indicate strong sympathetic activation and cardiovascular stress, typical of pain-related arousal.  \n- **EMG**: Very high muscle activation (z=1.87) and RMS energy (z=1.86) show intense muscle guarding — "
+    },
+    {
+      "idx": 224,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (z=1.20) and low HRV (z=-0.50) indicate reduced autonomic flexibility and increased sympathetic drive, suggesting stress or pain-related cardiovascular strain.  \n- **EDA:** Despite normal tonic levels and phasic fluctuations, **low EDA response amplitude"
+    },
+    {
+      "idx": 225,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \n- **HRV (RMSSD) is high (z=0.66)** — indicates preserved autonomic flexibility, suggesting reduced stress or pain-related sympathetic dominance.  \n- **Breath interval variability is high (z=1.45)** — suggests disrupted respiratory rhythm, possibly due "
+    },
+    {
+      "idx": 226,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Low amplitude variability and pulse range, with high HRV (RMSSD) — suggests reduced cardiovascular fluctuation and autonomic flexibility. High HRV is typically associated with parasympathetic dominance, which is not typically seen in pain states; however, in this case, the "
+    },
+    {
+      "idx": 227,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Low amplitude variability and normal pulse rate suggest minimal cardiovascular fluctuation, indicating reduced autonomic stress.  \n**EDA:** Phasic EDA fluctuation is high (z=1.30), indicating heightened sympathetic arousal, but tonic level and SCR count are normal—suggesting acute sympathet"
+    },
+    {
+      "idx": 228,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** High pulse rate and low HRV indicate strong sympathetic drive and reduced autonomic flexibility—typical of stress or pain.  \n**EDA:** Very low tonic level and low phasic fluctuations are unusual; despite a high SCR count, the overall sympathetic tone is suppressed, suggesting paradoxical au"
+    },
+    {
+      "idx": 229,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (high) and low HRV (low) suggest increased sympathetic drive and reduced autonomic flexibility—typically associated with stress or pain. However, the *amplitude variability* is only moderately high, and pulse range is normal, limiting the severity.\n- **E"
+    },
+    {
+      "idx": 230,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows reduced pulse rate and low HRV, indicating diminished autonomic flexibility—typical of suppressed sympathetic and parasympathetic activity, possibly due to pain-induced bradycardia. However, EDA is markedly elevated in tonic level and response amplitude, suggesting strong sympathetic arous"
+    },
+    {
+      "idx": 231,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Low pulse rate and low HRV suggest reduced autonomic flexibility, indicating diminished cardiovascular adaptability—common in absence of acute stress.  \n**EDA:** High tonic level indicates elevated sympathetic tone, but low phasic fluctuations and SCR count suggest minimal autonomic reactiv"
+    },
+    {
+      "idx": 232,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range, along with elevated HRV (RMSSD), suggest strong autonomic adaptation—paradoxically, high HRV can indicate sympathetic activation, but here it's overshadowed by extreme BVP fluctuations, which may reflect stress or pain-related car"
+    },
+    {
+      "idx": 233,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows high amplitude variability and HRV (indicating reduced autonomic flexibility), suggesting disrupted cardiovascular regulation. EDA is markedly elevated in tonic level, SCR count, and response amplitude, indicating strong sympathetic arousal—consistent with acute stress or pain. EMG reveals"
+    },
+    {
+      "idx": 234,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**BVP:** Very high amplitude variability and pulse rate, with very high HRV (RMSSD) — paradoxically, high HRV is typically associated with better autonomic regulation, but here it is extreme, suggesting intense autonomic reactivity.  \n\n**EDA:** Extremely high EDA response amplitude (z=2.20), indicat"
+    },
+    {
+      "idx": 235,
+      "true": "Severe",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=1.20) and high HRV (z=1.44) suggest stress-related cardiovascular activation, though HRV is typically reduced in pain. This paradox may reflect compensatory mechanisms.\n\n**EDA:** High tonic level (z=0.71) indicates sustained sympathetic tone, but low phasic responses "
+    },
+    {
+      "idx": 236,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows very low amplitude and pulse rate, with high HRV (indicating reduced autonomic flexibility), suggesting minimal cardiovascular stress. EDA has high tonic level and SCR count, indicating strong sympathetic arousal—typical of stress or anxiety—but low phasic fluctuations and response amplitu"
+    },
+    {
+      "idx": 237,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced autonomic flexibility (low HRV, low amplitude variability), indicating diminished cardiovascular adaptability. EDA exhibits high tonic skin conductance and SCR count, suggesting strong sympathetic arousal despite low phasic fluctuations—ind"
+    },
+    {
+      "idx": 238,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows high pulse rate (z=1.20) and wide pulse amplitude range (z=0.99), indicating strong cardiovascular activation, likely due to stress or pain. Despite normal HRV, the high pulse rate and amplitude suggest autonomic overdrive. EDA is elevated in tonic skin conductance (z=0.60), indicating hei"
+    },
+    {
+      "idx": 239,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse amplitude range (z=0.99) and high HRV (z=0.54) suggest strong autonomic adaptation, but normal pulse rate and moderate variability in cardiovascular fluctuations.  \n- **EDA**: High tonic skin conductance (z=0.55) and high SCR count (z=1.06) indicate strong sympat"
+    },
+    {
+      "idx": 240,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low pulse rate (z = -1.26) and normal HRV suggest reduced autonomic tone, inconsistent with typical pain-related tachycardia or sympathetic activation.  \n- **EDA**: High tonic level (z = 0.81) and high SCR count (z = 1.06) indicate strong sympathetic arousal, but **low phas"
+    },
+    {
+      "idx": 241,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** HRV (RMSSD) is high (z=1.05), suggesting increased parasympathetic tone, which is typically associated with reduced stress or pain. However, low amplitude variability and normal pulse rate contradict this, indicating possible suppression of cardiovascular dynamics—common in"
+    },
+    {
+      "idx": 242,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows minimal variability and normal rate, indicating stable cardiovascular function—no strong autonomic stress. EDA is only slightly elevated in tonic level but with low phasic responses and normal SCR count, suggesting limited sympathetic arousal, inconsistent with high pain. EMG reveals very "
+    },
+    {
+      "idx": 243,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** HRV (RMSSD) is high (z=1.31), suggesting increased parasympathetic tone or reduced autonomic flexibility—typically associated with pain, but here the *low* pulse amplitude variability and normal pulse rate suggest mild cardiovascular adaptation, not strong stress response. "
+    },
+    {
+      "idx": 244,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Elevated pulse rate (z=1.20) and high HRV (z=0.94) suggest stress or sympathetic activation, though pulse rate alone is not definitive.  \n- **EDA:** High tonic level (z=0.78), high SCR count (z=1.06), and elevated phasic response (z=0.23) indicate strong sympathetic arousal"
+    },
+    {
+      "idx": 245,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme deviations in pulse rate (z=2.44), pulse amplitude range (z=1.55), and HRV (z=0.96), indicating strong cardiovascular stress. EDA has elevated tonic level (z=0.83) and SCR count (z=1.06), suggesting sustained sympathetic arousal. EMG reveal"
+    },
+    {
+      "idx": 246,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse amplitude, high pulse rate, and high HRV (RMSSD) suggest strong cardiovascular adaptation. Paradoxically, high HRV (lower autonomic flexibility) is often seen in pain states, though here it's elevated—indicating autonomic instability, likely due to stress or pain"
+    },
+    {
+      "idx": 247,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude and rate, with only slight increase in HRV (RMSSD), suggesting minimal cardiovascular stress.  \n- **EDA**: Extremely low tonic level (indicating low baseline sympathetic tone), but **very high phasic fluctuations and SCR count** suggest intense, episodic sy"
+    },
+    {
+      "idx": 248,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Low amplitude variability and normal pulse rate/HRV suggest minimal cardiovascular fluctuation, indicating reduced autonomic stress response.  \n- **EDA:** Extremely high phasic fluctuation (z=2.31) and high response amplitude (z=1.00) indicate strong sympathetic arousal, de"
+    },
+    {
+      "idx": 249,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Low pulse rate (z = -1.26) and low amplitude variability (z = -1.10) suggest reduced cardiovascular responsiveness, typical of low stress or pain-related autonomic suppression. High HRV (z = 0.76) indicates preserved autonomic flexibility, which is often seen in non-pain st"
+    },
+    {
+      "idx": 250,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low pulse amplitude range (z = -0.91) and extremely low HRV (z = -1.43), indicating reduced autonomic flexibility and poor cardiovascular adaptation—typical of pain-related suppression. EMG reveals low muscle activation (z = -0.82) and low RMS (z = -0.86), suggesting minimal muscle tension"
+    },
+    {
+      "idx": 251,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Very high HRV (z=1.56) suggests high autonomic flexibility—typically associated with *low* pain-related stress. Low pulse amplitude and variability indicate reduced cardiovascular responsiveness, which is *not* typical of pain.\n\n**EDA:** Low tonic level (z=-0.74), normal phasic fluctuations"
+    },
+    {
+      "idx": 252,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows very high HRV (z=2.76), indicating strong autonomic flexibility—typically associated with low stress or pain. Despite this, the low amplitude and range in BVP suggest minimal cardiovascular fluctuation, which is atypical for pain. EDA is consistently low in tonic level, phasic response, an"
+    },
+    {
+      "idx": 253,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG (muscle tension)** shows strong subject-relative deviations: high activation level, high RMS energy, and high zero-crossing rate—all indicating sustained, dense muscle activity, consistent with pain-related guarding.  \n- **BVP** shows elevated pulse rate (z=0.78), suggesting i"
+    },
+    {
+      "idx": 254,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Low amplitude variability and pulse range, with high HRV (RMSSD) — suggests reduced cardiovascular fluctuation and autonomic flexibility. Low HRV is typically associated with pain, but here *high* HRV (z=0.63) indicates *increased* parasympathetic tone, which is inconsisten"
+    },
+    {
+      "idx": 255,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=1.36) suggests increased sympathetic drive, but low amplitude variability and pulse range indicate reduced cardiovascular adaptability. Normal HRV (z=0.43) implies limited autonomic flexibility—common in pain states, but not extreme.\n- **EDA**: All ED"
+    },
+    {
+      "idx": 256,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, indicating minimal cardiovascular fluctuation—suggests weak autonomic response to stress or pain.  \n- **EDA**: all features are low or normal, indicating minimal sympathetic arousal. No significant skin conductance responses "
+    },
+    {
+      "idx": 257,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Elevated pulse rate (z=0.78) suggests sympathetic activation, but low amplitude variability and normal HRV imply limited autonomic flexibility—common in mild stress or early pain response.  \n**EDA:** Low tonic level (z=-0.73) and high SCR count (z=0.63) indicate reduced baseline sympathetic"
+    },
+    {
+      "idx": 258,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Low amplitude variability and pulse range, normal HRV — suggests minimal cardiovascular adaptation, typical of low stress or pain.\n- **EDA:** All features are low or normal — no signs of sympathetic arousal, no skin conductance responses (SCR), no phasic fluctuations. Indic"
+    },
+    {
+      "idx": 259,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: All indicators (amplitude, range, rate, HRV) are low, suggesting reduced cardiovascular adaptation and diminished autonomic responsiveness—typical of low stress or pain-related sympathetic activation.\n- **EDA**: Tonic level, phasic fluctuations, and SCR count are all low, i"
+    },
+    {
+      "idx": 260,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced cardiovascular variability and low heart rate (indicating reduced autonomic tone), while EMG reveals a high burst count (repeated guarding), despite low baseline muscle activation. EDA is consistently low, suggesting minimal sympathetic aro"
+    },
+    {
+      "idx": 261,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows marked low values across all indicators (amplitude, rate, HRV), indicating suppressed cardiovascular activity—typical of reduced autonomic tone, not stress or pain. EDA is uniformly low, with no signs of sympathetic arousal (no phasic responses, no SCR), suggesting absence of sympathetic a"
+    },
+    {
+      "idx": 262,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows marked suppression (low z-scores), indicating reduced cardiovascular adaptability and autonomic flexibility—typical of pain suppression or inhibition. EDA is uniformly low, suggesting minimal sympathetic arousal, which is atypical for pain, as pain usually elicits strong sympathetic activa"
+    },
+    {
+      "idx": 263,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Normal amplitude variability and pulse rate, with slightly reduced HRV—suggests minimal cardiovascular stress, no strong autonomic activation.  \n- **EDA:** All measures are low (especially tonic level and SCR count), indicating **low sympathetic arousal**—no signs of sympat"
+    },
+    {
+      "idx": 264,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows marked suppression in all indicators (low amplitude, low pulse rate, very low HRV), suggesting diminished cardiovascular adaptability. EDA is consistently low in tonic and phasic components, indicating weak sympathetic arousal. EMG reveals high mus"
+    },
+    {
+      "idx": 265,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low pulse amplitude and rate, with normal HRV—indicating minimal cardiovascular stress. EDA is markedly low in tonic level, phasic fluctuations, and SCR count, suggesting suppressed sympathetic arousal, typical of absence of stress or pain. EMG reveals low muscle activation, RMS, and espec"
+    },
+    {
+      "idx": 266,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude variability and pulse rate, with normal HRV — suggests minimal cardiovascular stress or adaptation to pain.  \n- **EDA**: All measures are low (especially tonic level and SCR count), indicating **reduced sympathetic arousal**. This is atypical for pain, whic"
+    },
+    {
+      "idx": 267,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: All indicators (amplitude, range, rate, HRV) are low, suggesting minimal cardiovascular adaptation—typical of low stress or pain-related autonomic activation.  \n- **EDA**: Tonic level and phasic fluctuations are low, but **SCR count is high (z=0.63)**, indicating increased "
+    },
+    {
+      "idx": 268,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** All indicators (amplitude, range, rate, HRV) are low, suggesting reduced cardiovascular adaptation and minimal autonomic activity—typical of low stress or pain-related sympathetic engagement.  \n- **EDA:** Tonic level and SCR count are low, but SCR count is *moderately eleva"
+    },
+    {
+      "idx": 269,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows minimal cardiovascular adaptation (low amplitude, low range, normal HRV), indicating limited autonomic stress response. EDA is markedly low in tonic and phasic activity, suggesting weak sympathetic arousal—no significant sympathetic activation, which is typically seen in pain. EMG shows a "
+    },
+    {
+      "idx": 270,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme variability in amplitude and range, with low HRV, suggesting disrupted autonomic regulation. EDA exhibits very high phasic and tonic activity, indicating strong sympathetic arousal. EMG shows elevated muscle activation and a high burst coun"
+    },
+    {
+      "idx": 271,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme amplitude and range variability (z=2.24 and 1.81), with high HRV (z=1.46), suggesting strong autonomic modulation. EDA is markedly elevated in all phasic and tonic measures (z up to 3.83), indicating intense sympathetic arousal. EMG shows n"
+    },
+    {
+      "idx": 272,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme variability in amplitude and pulse range (z = 1.87 and 1.53), indicating strong cardiovascular fluctuations. HRV (RMSSD) is very high (z = 1.58), which is paradoxical—typically associated with high autonomic flexibility, but here may reflec"
+    },
+    {
+      "idx": 273,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range indicate strong cardiovascular adaptation, but normal heart rate and HRV suggest no significant autonomic stress or sympathetic overdrive—typical of pain absence or mild stress.\n- **EDA:** High tonic level indicates elevated sympat"
+    },
+    {
+      "idx": 274,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High pulse rate (z=1.36), high amplitude variability and range (z=1.34, 1.16) suggest strong cardiovascular activation, typical of stress or pain-related sympathetic drive. However, **normal HRV (z=0.25)** indicates limited autonomic flexibility—common in pain states, but n"
+    },
+    {
+      "idx": 275,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme elevation in pulse rate and amplitude, with reduced HRV, indicating strong cardiovascular stress. EDA has elevated tonic level and high sympathetic tone, but low SCR count suggests poor responsiveness to stimuli—suggesting a blunted or atyp"
+    },
+    {
+      "idx": 276,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High amplitude variability and pulse range suggest strong cardiovascular adaptation, but normal HRV indicates preserved autonomic flexibility—no overt autonomic collapse.\n- **EDA:** High tonic level indicates sustained sympathetic arousal, but *low* SCR count and normal pha"
+    },
+    {
+      "idx": 277,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Extremely high pulse rate (z=1.93) and pulse amplitude range (z=0.77) indicate strong cardiovascular activation, while low HRV (z=-0.51) suggests reduced autonomic flexibility—common in pain-related stress.  \n- **EDA**: High tonic skin conductance (z=0.84) implies sustained"
+    },
+    {
+      "idx": 278,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP pulse rate (z=1.07) and HRV (z=1.33)** show strong elevation in sympathetic cardiovascular drive, indicating heightened autonomic stress.  \n**EDA tonic level (z=0.68) and SCR count (z=0.63)** reflect persistent sympathetic arousal, suggesting sustained anxiety or stress response.  \n**EMG burst"
+    },
+    {
+      "idx": 279,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Pulse amplitude range is high (z=0.56), indicating stronger autonomic cardiovascular adaptation—common in pain-related stress.  \n**EDA:** Tonic skin conductance and SCR count are both markedly elevated (z=0.85, z=1.99), reflecting intense sympathetic arousal, consistent with heightened stre"
+    },
+    {
+      "idx": 280,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows high amplitude variability and pulse range, but low pulse rate and normal HRV. EDA has high tonic level and very high SCR count, indicating strong sympathetic arousal. EMG shows low muscle activation and RMS, but a high burst count, suggesting repe"
+    },
+    {
+      "idx": 281,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** High amplitude variability and pulse range suggest strong cardiovascular adaptation, but low pulse rate is atypical for pain.  \n**EDA:** Extremely high tonic level and SCR count (z=1.99) indicate intense sympathetic arousal—strong evidence of stress or distress.  \n**EMG:** Despite low muscl"
+    },
+    {
+      "idx": 282,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Normal amplitude variability and pulse rate, with normal HRV — suggests no significant cardiovascular stress or autonomic dysregulation.  \n- **EDA**: Very high tonic skin conductance (z=1.92) and high SCR count (z=0.63) indicate strong sympathetic arousal, suggesting height"
+    },
+    {
+      "idx": 283,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=2.22) and low HRV (z=-0.62) indicate strong sympathetic activation and reduced autonomic flexibility—common in stress or pain.  \n- **EDA**: Very high tonic level (z=1.94) and elevated SCR count (z=0.63) reflect intense sympathetic arousal, suggesting "
+    },
+    {
+      "idx": 284,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme pulse rate (z=2.22) and low HRV (z=-0.84), indicating strong sympathetic drive and reduced autonomic flexibility. EDA is markedly elevated (z=1.95 for tonic level, z=1.99 for SCR count), reflecting intense sympathetic arousal. EMG shows nor"
+    },
+    {
+      "idx": 285,
+      "true": "No-pain",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Shows low amplitude variability, pulse rate, and HRV (high RMSSD) — paradoxically, high HRV (z=1.42) suggests autonomic flexibility, which is typically associated with reduced stress or pain. Low values in BVP features suggest minimal cardiovascular adaptation, inconsistent"
+    },
+    {
+      "idx": 286,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP:** Very high amplitude variability and pulse range, along with very high HRV (RMSSD), suggest strong autonomic fluctuation—typically associated with stress or pain—but paradoxically, high HRV can indicate *reduced* pain-related sympathetic dominance, which may point to a *lack* of pain-related"
+    },
+    {
+      "idx": 287,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated pulse rate and amplitude range, indicating strong cardiovascular adaptation. EDA exhibits very low tonic level but high phasic fluctuations and a very high SCR count, suggesting intense sympathetic arousal despite baseline suppression. EMG"
+    },
+    {
+      "idx": 288,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Normal cardiovascular adaptation — no significant deviation from baseline.  \n**EDA:** Very low tonic level (indicating reduced sympathetic tone), but **very high SCR count (z=2.12)** suggests strong sympathetic reactivity despite low baseline. This is paradoxical but may reflect acute stres"
+    },
+    {
+      "idx": 289,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** Low HRV (z = -0.90) and low pulse amplitude range (z = -0.53) suggest reduced autonomic flexibility, typical of pain-related suppression of cardiovascular modulation. However, no strong increase in amplitude or rate indicates minimal cardiovascular stress.\n  \n- **EDA:** Ext"
+    },
+    {
+      "idx": 290,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** All indicators (amplitude, rate, HRV) are low, suggesting reduced cardiovascular adaptability and minimal autonomic response. This is atypical for pain, which usually elicits increased cardiovascular activity.\n- **EDA:** Extremely low tonic level (z = -2.09) suggests weak s"
+    },
+    {
+      "idx": 291,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, indicating minimal cardiovascular fluctuation—suggests reduced autonomic responsiveness, typical of low stress or pain.\n- **EDA**: extremely high phasic fluctuations and response amplitude (z=6.11) indicate intense sympatheti"
+    },
+    {
+      "idx": 292,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Shows reduced autonomic flexibility (low HRV, normal pulse rate, low pulse amplitude range) — suggests diminished cardiovascular adaptability, typical of low stress or pain-related autonomic suppression.  \n- **EDA**: Tonic level is *high* (z=0.51), indicating elevated sympa"
+    },
+    {
+      "idx": 293,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low pulse rate and low amplitude variability, indicating reduced cardiovascular activity—typical of low stress or pain-related cardiovascular suppression.  \n- **EDA**: tonic level is high (sympathetic tone elevated), suggesting heightened arousal, but phasic responses"
+    },
+    {
+      "idx": 294,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low amplitude and range, with high HRV (RMSSD), suggesting reduced cardiovascular stress response—typical of low pain-related autonomic activation. EDA is elevated in tonic skin conductance (high z-score), indicating heightened sympathetic tone, but phasic responses and SCR count are norma"
+    },
+    {
+      "idx": 295,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows low amplitude variability and pulse range, with high HRV (RMSSD). Low variability suggests reduced cardiovascular fluctuation, which is typically seen in low-stress or relaxed states. High HRV is paradoxically associated with better autonomic regulation, often in the "
+    },
+    {
+      "idx": 296,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows minimal variability and normal pulse rate, indicating stable cardiovascular function. EDA is elevated in tonic skin conductance and sympathetic tone, suggesting heightened sympathetic arousal. EMG shows marked increases in muscle activation, RMS en"
+    },
+    {
+      "idx": 297,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced autonomic flexibility (low HRV, low amplitude variability), indicating diminished cardiovascular adaptability. EDA is elevated in tonic skin conductance (high z-score), suggesting strong sympathetic arousal, though phasic responses are norm"
+    },
+    {
+      "idx": 298,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Low amplitude variability and low HRV suggest reduced autonomic flexibility, typical of suppressed sympathetic and parasympathetic activity—common in mild stress or absence of acute pain.  \n**EDA:** High tonic skin conductance level indicates strong sympathetic tone, which is paradoxically "
+    },
+    {
+      "idx": 299,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP**: Pulse rate is elevated (z=0.95), suggesting increased sympathetic drive due to stress or discomfort. HRV is normal, indicating preserved autonomic flexibility, not severe dysregulation.  \n**EDA**: Tonic level is high (z=0.93), indicating sustained sympathetic arousal—common in pain—but phas"
+    },
+    {
+      "idx": 300,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EDA** shows marked hyperactivation: tonic level (z=0.74), phasic fluctuations (z=3.74), and response amplitude (z=1.41) are all significantly elevated—indicating strong sympathetic arousal, likely due to stress or pain-related fear response.  \n- **BVP** features are near-normal, s"
+    },
+    {
+      "idx": 301,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced autonomic flexibility (low HRV, low pulse rate), indicating diminished cardiovascular adaptability. EDA is markedly elevated—especially phasic fluctuations and response amplitude—suggesting strong sympathetic arousal. EMG shows low muscle a"
+    },
+    {
+      "idx": 302,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low pulse rate (z = -1.21) and high HRV (z = 0.78), suggesting reduced autonomic flexibility—typically associated with pain-related parasympathetic dominance or stress adaptation. However, BVP amplitude variability and pulse range are normal, limit"
+    },
+    {
+      "idx": 303,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: HRV (RMSSD) is *very high* (z=2.07), indicating *excessive autonomic flexibility*, which is typically seen in *low stress or relaxation*, not pain. Low HRV is associated with pain, but here it's *very high*, suggesting *reduced sympathetic drive* or *dissociation*—not typic"
+    },
+    {
+      "idx": 304,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows high amplitude variability and pulse amplitude range, with high HRV (RMSSD), indicating strong cardiovascular fluctuation and autonomic flexibility. EDA has high tonic level and normal phasic fluctuations, but low SCR count—suggesting sustained sym"
+    },
+    {
+      "idx": 305,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "1. **Strongest subject-relative deviations**:  \n- **HRV (RMSSD) = z=0.74 (high)** — indicates elevated autonomic flexibility, typically associated with reduced stress or pain.  \n- **EMG muscle activation level = z=-1.20**, **RMS muscle energy = z=-0.81**, **zero-crossing rate = z=-1.22** — all low, "
+    },
+    {
+      "idx": 306,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows low pulse rate (z=-0.85) and high HRV (z=0.55), indicating reduced sympathetic drive and autonomic flexibility—typically seen in low-stress states. EDA has high tonic level (z=0.66), suggesting elevated sympathetic tone, but low SCR count (z=-0.62) and normal phasic fluctuations imply limi"
+    },
+    {
+      "idx": 307,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**BVP:** Low amplitude variability and pulse range, along with low HRV, suggest reduced autonomic flexibility—typical of suppressed sympathetic and parasympathetic activity, often seen in absence of acute stress or pain.  \n**EDA:** Tonic skin conductance is high, indicating sustained sympathetic ton"
+    },
+    {
+      "idx": 308,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows reduced autonomic flexibility (low HRV, low pulse rate), indicating diminished cardiovascular adaptability. EDA is markedly suppressed—very low tonic level and SCR count—suggesting minimal sympathetic arousal. EMG reveals low muscle activation but "
+    },
+    {
+      "idx": 309,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows low amplitude and rate, with normal HRV—suggesting minimal cardiovascular stress. EDA is near baseline with no significant phasic or tonic activation, indicating low sympathetic arousal. EMG shows markedly elevated muscle activation (z=1.58) and hi"
+    },
+    {
+      "idx": 310,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **EMG (muscle tension)** shows a very high activation level (z=1.77) and high RMS muscle energy (z=1.12), indicating strong, sustained muscle guarding — a classic sign of pain-related motor response.  \n- **BVP (cardiovascular adaptation)** shows low pulse amplitude, low pulse rate, "
+    },
+    {
+      "idx": 311,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows high HRV (z=1.48), suggesting increased autonomic flexibility—typically associated with reduced stress or pain. However, low pulse amplitude range (z=-0.74) and low breathing variability (z=-1.22) suggest diminished physiological dynamics.  \n\n**2. "
+    },
+    {
+      "idx": 312,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated pulse rate and high HRV (indicating autonomic hyperactivity), but normal amplitude variability. EDA is near baseline with no marked increase in tonic or phasic responses. EMG reveals high muscle activation and a very high burst count, indi"
+    },
+    {
+      "idx": 313,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated pulse rate (z=1.31) and severely reduced HRV (z=-1.16), indicating heightened sympathetic drive and poor autonomic flexibility. Despite normal baseline EDA tonic levels, phasic responses and SCR count are low (z=-0.62, z=-0.31), suggesting"
+    },
+    {
+      "idx": 314,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows elevated pulse rate (z=0.95) and high breath rate variability (z=3.82, z=3.02), indicating disrupted autonomic regulation. HRV is normal (z=0.28), suggesting preserved parasympathetic tone but with strong sympathetic drive. EDA shows low SCR count "
+    },
+    {
+      "idx": 315,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "BVP shows a high pulse rate (z=0.95), indicating elevated cardiovascular activity, which is commonly associated with pain. However, HRV (RMSSD) is normal (z=-0.25), suggesting limited autonomic flexibility—typically seen in stress, but not necessarily pain. EDA is nearly flat in tonic and phasic res"
+    },
+    {
+      "idx": 316,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP pulse rate is very high (z=1.67)**, indicating elevated heart rate, a common response to stress or pain.  \n- **HRV (RMSSD) is very low (z=-1.52)**, suggesting reduced parasympathetic tone and poor autonomic flexibility—common in pain states.  \n- **EMG signal zero-crossing rate"
+    },
+    {
+      "idx": 317,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP pulse rate is very high (z=2.03)**, indicating elevated heart rate, a classic sign of stress or pain-related sympathetic activation.  \n- **HRV (RMSSD) is very low (z=-1.67)**, suggesting reduced parasympathetic tone and poor autonomic flexibility—common in pain states.  \n- **E"
+    },
+    {
+      "idx": 318,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP pulse rate is very high (z=2.03)**, indicating elevated heart rate, a common response to pain or stress.  \n- **HRV (RMSSD) is low (z=-1.48)**, suggesting reduced parasympathetic tone and poor autonomic flexibility—common in pain states.  \n- **EMG signal zero-crossing rate is l"
+    },
+    {
+      "idx": 319,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows extreme pulse rate (z=1.67) and very low HRV (z=-1.18), indicating strong sympathetic drive and reduced autonomic flexibility—typical of stress or pain. EMG is markedly elevated: muscle activation (z=2.94), RMS energy (z=3.99), and very low burst count (z=-2.91) suggest intense, sustained "
+    },
+    {
+      "idx": 320,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=1.31) suggests stress or sympathetic activation, but HRV is normal, indicating limited autonomic flexibility—common in pain-related arousal, though not extreme.\n- **EDA**: All EDA features are near or below baseline (especially SCR count z=-0.62, phas"
+    },
+    {
+      "idx": 321,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: Elevated pulse rate (z=0.95) suggests stress or sympathetic activation, but normal HRV (z=0.23) indicates limited autonomic flexibility—common in mild stress, not strong pain.\n- **EDA**: All features are near-normal or slightly low, indicating minimal sympathetic arousal. N"
+    },
+    {
+      "idx": 322,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**BVP pulse rate is very high (z=1.67)** and **HRV is low (z=-1.28)**, indicating strong sympathetic drive and reduced autonomic flexibility—typical of stress or pain.  \n**Respiration rate is very high (z=1.51)** and **breath interval variability is low (z=-1.01)**, suggesting disrupted breathing rh"
+    },
+    {
+      "idx": 323,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP:** High pulse rate (z=1.31) and high pulse amplitude range (z=0.91) indicate strong cardiovascular activation, while low HRV (z=-0.90) suggests reduced autonomic flexibility—common in pain-related stress.  \n- **EDA:** Despite normal tonic level and phasic fluctuations, **low S"
+    },
+    {
+      "idx": 324,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range suggest strong cardiovascular adaptation, but normal pulse rate and HRV (RMSSD) indicate no significant autonomic stress or sympathetic overdrive.  \n- **EDA**: All features are normal or slightly below baseline. No evidence of heig"
+    },
+    {
+      "idx": 325,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme amplitude and range variability (z = 2.16 and 2.25), indicating strong cardiovascular fluctuation. EMG reveals a high burst count (z = 0.64), suggesting repeated episodes of muscle guarding. All other features are near-normal or slightly be"
+    },
+    {
+      "idx": 326,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: shows high amplitude variability and pulse range (z = 2.53 and 2.43), indicating strong cardiovascular fluctuations—typically associated with autonomic stress. However, **low pulse rate (z = -1.21)** and **high HRV (z = 0.79)** suggest reduced sympathetic drive and autonomi"
+    },
+    {
+      "idx": 327,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**1. Multimodal feature summary read:**  \nBVP shows extreme amplitude and range variability (z=2.63 and 2.43), indicating strong cardiovascular fluctuations. HRV (RMSSD) is elevated (z=0.79), suggesting some autonomic flexibility. However, pulse rate is low (z=-1.21), which is atypical for pain-rela"
+    },
+    {
+      "idx": 328,
+      "true": "Moderate",
+      "pred": "No-pain",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP**: High amplitude variability and pulse range (z = 2.71 and 2.02) suggest strong cardiovascular fluctuations, possibly due to autonomic dysregulation. However, **low pulse rate (z = -1.21)** and **very high HRV (RMSSD, z = 1.54)** indicate high autonomic flexibility—typically "
+    },
+    {
+      "idx": 329,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "**Analysis:**\n\n- **BVP** shows elevated pulse amplitude range (z=1.30), indicating strong cardiovascular adaptation, but normal HRV and pulse rate suggest no acute stress or sympathetic overdrive.  \n- **EDA** has high tonic skin conductance (z=0.53), suggesting elevated sympathetic tone, but low SCR"
+    }
+  ]
+}

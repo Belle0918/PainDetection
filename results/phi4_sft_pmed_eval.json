@@ -1,0 +1,20 @@
+{
+  "PMED": {
+    "dataset": "PMED",
+    "n": 556,
+    "macro_f1": 0.165647915686349,
+    "balanced_acc": 0.3299410774410774,
+    "parse_fail": 2,
+    "parse_fail_pct": 0.0035971223021582736,
+    "per_class": {}
+  },
+  "PMCD": {
+    "dataset": "PMCD",
+    "n": 330,
+    "macro_f1": 0.21720472528531912,
+    "balanced_acc": 0.3576126554209234,
+    "parse_fail": 0,
+    "parse_fail_pct": 0.0,
+    "per_class": {}
+  }
+}

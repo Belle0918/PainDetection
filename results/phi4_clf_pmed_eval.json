@@ -1,0 +1,89 @@
+{
+  "PMCD": {
+    "dataset": "PMCD",
+    "n": 330,
+    "macro_f1": 0.13112124282337048,
+    "macro_recall": 0.3249386235843827,
+    "macro_prec": 0.0995609687013171,
+    "balanced_acc": 0.3249386235843827,
+    "auc": 0.4978731504278448,
+    "per_class": {
+      "No-pain": {
+        "support": 69,
+        "precision": 0.21172638436482086,
+        "recall": 0.9420289855072463,
+        "f1": 0.34574468085106386
+      },
+      "Moderate": {
+        "support": 200,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "Severe": {
+        "support": 61,
+        "precision": 0.08695652173913043,
+        "recall": 0.03278688524590164,
+        "f1": 0.047619047619047616
+      }
+    }
+  },
+  "PMED": {
+    "dataset": "PMED",
+    "n": 556,
+    "macro_f1": 0.5661868024072748,
+    "macro_recall": 0.66,
+    "macro_prec": 0.516260162601626,
+    "balanced_acc": 0.66,
+    "auc": 0.9377620868753609,
+    "per_class": {
+      "No-pain": {
+        "support": 400,
+        "precision": 1.0,
+        "recall": 0.98,
+        "f1": 0.98989898989899
+      },
+      "Moderate": {
+        "support": 66,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "Severe": {
+        "support": 90,
+        "precision": 0.5487804878048781,
+        "recall": 1.0,
+        "f1": 0.7086614173228346
+      }
+    }
+  },
+  "Combined": {
+    "dataset": "Combined",
+    "n": 886,
+    "macro_f1": 0.4423043149333982,
+    "macro_recall": 0.527895056411415,
+    "macro_prec": 0.3819232466038828,
+    "balanced_acc": 0.527895056411415,
+    "auc": 0.6881039718118537,
+    "per_class": {
+      "No-pain": {
+        "support": 469,
+        "precision": 0.65379113018598,
+        "recall": 0.9744136460554371,
+        "f1": 0.7825342465753424
+      },
+      "Moderate": {
+        "support": 266,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "Severe": {
+        "support": 151,
+        "precision": 0.4919786096256685,
+        "recall": 0.609271523178808,
+        "f1": 0.5443786982248521
+      }
+    }
+  }
+}

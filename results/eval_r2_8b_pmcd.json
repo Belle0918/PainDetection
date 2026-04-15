@@ -1,0 +1,2320 @@
+{
+  "macro_f1": 0.29778647425706245,
+  "balanced_accuracy": 0.3717213114754099,
+  "auc": 0.5256995652792167,
+  "parse_failures": 0,
+  "n_samples": 330,
+  "per_class_report": "              precision    recall  f1-score   support\n\n     No-pain       0.00      0.00      0.00        69\n    Moderate       0.62      0.53      0.57       200\n      Severe       0.23      0.59      0.33        61\n\n    accuracy                           0.43       330\n   macro avg       0.28      0.37      0.30       330\nweighted avg       0.42      0.43      0.40       330\n",
+  "records": [
+    {
+      "idx": 0,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative elevation in signal zero-crossing rate (high), indicating stronger muscular guarding. The deviations are subject-relative, suggesting a pain-related shift in the electromyography pattern.  \nClassification: Moderate"
+    },
+    {
+      "idx": 1,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviation is in EMG signal zero-crossing rate (high), indicating stronger muscular guarding. The subject-relative shifts align with pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 2,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (very high) and muscle activation level (high), indicating stronger muscular guarding. Respiration also deviates in breath amplitude range (high) and breathing depth variability (high), which fits pain-related breathing shifts. The co"
+    },
+    {
+      "idx": 3,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (high) and BVP-pulse amplitude range (very high), indicating sustained muscular guarding and autonomic fluctuation. The combined pattern suggests pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 4,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high) and Respiration (breathing rate: very high), indicating sustained muscular guarding and altered breathing. EDA also shows strong subject-relative deviations in SCR count (very high) and EDA response amplitude (high), reflecting"
+    },
+    {
+      "idx": 5,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (very high) and EMG signal zero-crossing rate (low), indicating repeated muscular guarding. Respiration and EMG show subject-relative shifts consistent with pain-related physiological disruption.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 6,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 7,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: very high) and EDA (phasic EDA fluctuation: high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological shifts.  \n\nClassificatio"
+    },
+    {
+      "idx": 8,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, SCR count: very high) and EMG (burst count: normal), indicating stronger sympathetic arousal and muscle guarding. The combined pattern suggests pain-related physiological deviation.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 9,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high) and Respiration (breathing depth variability: high), indicating sustained muscle tension and altered breathing pattern. The combined deviations suggest a strong subject-relative pain response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 10,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, SCR count: very high) and EMG (muscle activation level: high), showing combined subject-relative shifts in sympathetic arousal and muscle guarding. The EDA deviations suggest strong phasic arousal, while EMG reflects sustained muscle"
+    },
+    {
+      "idx": 11,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and EDA (phasic EDA fluctuation: high), showing subject-relative shifts in muscle tension and sympathetic arousal. The combined pattern suggests stronger physiological guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 12,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in burst count (high) and signal zero-crossing rate (normal), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (very low) and breathing depth variability (very low), which fits pain-related breathing sh"
+    },
+    {
+      "idx": 13,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and Respiration (breath amplitude range: low, breathing rate: very low), suggesting sustained muscular guarding and breathing shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 14,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and EDA (tonic skin conductance level: high), showing subject-relative shifts in muscle tension and sympathetic arousal. The combined pattern suggests sustained physiological guarding.  \n\nClassification: Moderat"
+    },
+    {
+      "idx": 15,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and EDA tonic skin conductance level (high), indicating sustained muscular guarding and sympathetic arousal. The combined pattern suggests pain-related physiological disruption.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 16,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative deviations in SCR count (very high) and EDA response amplitude (very high), indicating stronger sympathetic arousal. Respiration also deviates in breathing depth variability (high), which fits pain-related breathing shifts. The combined deviations suggest a strong but not ex"
+    },
+    {
+      "idx": 17,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative deviations in phasic EDA fluctuation (very high) and SCR count (very high), indicating stronger sympathetic arousal. EMG shows subject-relative deviations in muscle activation level (very high) and RMS muscle energy (very high), reflecting stronger muscle guarding. Respirati"
+    },
+    {
+      "idx": 18,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in RMS muscle energy (high), indicating stronger muscular guarding. EDA has subject-relative elevation in tonic skin conductance level (high), reflecting sympathetic arousal. The combined deviations suggest pain-related physiological disruption.  \nClassification:"
+    },
+    {
+      "idx": 19,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and EDA (tonic skin conductance level: high), indicating sustained muscular guarding and sympathetic arousal. The combined pattern suggests a strong but not extreme pain response.  \n\nClassification"
+    },
+    {
+      "idx": 20,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and Respiration (breathing depth variability: high), indicating sympathetic arousal and breathing pattern regulation, which are consistent with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 21,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high, breath interval variability: high) and EMG (muscle activation level: high), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Severe."
+    },
+    {
+      "idx": 22,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing rate (very high) and breath interval variability (high), indicating sustained breathing regulation. EMG also elevates in muscle activation level (high), suggesting sustained muscular guarding. The combined pattern reflects sustained physiological devi"
+    },
+    {
+      "idx": 23,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (high), breath amplitude range (high), breathing rate (very high), and breath interval variability (high), indicating sustained breathing pattern regulation. EMG and Respiration are both subject-relative, suggesting sustained muscula"
+    },
+    {
+      "idx": 24,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath interval variability (very high) and breathing rate (very high), indicating sustained breathing pattern regulation. EMG and Respiration are aligned in subject-relative deviations, suggesting sustained muscular guarding and breathing pattern shifts. The c"
+    },
+    {
+      "idx": 25,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath amplitude range: high) and BVP (pulse rate: high), indicating subject-relative shifts in breathing pattern and cardiovascular adaptation. The combined pattern suggests sustained physiological arousal consistent with pain-related guarding.  \n\nClassi"
+    },
+    {
+      "idx": 26,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained guarding. EMG and Respiration are aligned in direction, suggesting sustained muscular and respiratory shifts. The combined pattern reflects sustained pain-relat"
+    },
+    {
+      "idx": 27,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong subject-relative elevation in EMG signal zero-crossing rate (high) and Respiration breath amplitude range (very high), indicating sustained muscular guarding and breath-related pain adjustment. The combined pattern suggests a clear pain-related deviation.  \n\nC"
+    },
+    {
+      "idx": 28,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, RMS muscle energy: high, signal zero-crossing rate: high) and Respiration (breath interval variability: very high), indicating sustained muscular guarding and irregular breathing pattern regulation. The combined deviation suggests a"
+    },
+    {
+      "idx": 29,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high) and Respiration (breath interval variability: high), indicating sustained muscular guarding and irregular breathing pattern regulation. The combined deviations suggest a pain-related physiological shift.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 30,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA-SCR count (high) and EMG-burst count (normal), indicating subject-relative shifts in sympathetic arousal and muscular guarding. The combined pattern suggests sustained physiological pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 31,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (SCR count: high) and Respiration (breathing rate: normal), indicating sympathetic arousal and breathing regulation. The overall pattern reflects subject-relative shifts consistent with pain-related physiological guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 32,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EDA (EDA response amplitude: high), showing subject-relative shifts in breathing pattern and autonomic arousal. These deviations align with pain-related physiological guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 33,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (muscle activation level: normal, RMS muscle energy: normal), suggesting sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 34,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and Respiration (breath amplitude range: high, breath interval variability: high), showing sustained muscular guarding and irregular breathing, which are pain-related. Classification: Severe."
+    },
+    {
+      "idx": 35,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, RMS muscle energy: high) and Respiration (breathing rate: high), showing sustained muscular tension and altered breathing, which aligns with pain-related guarding. Classification: Severe."
+    },
+    {
+      "idx": 36,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate and burst count) and Respiration (breathing rate and breath amplitude range), showing sustained muscular guarding and altered breathing. The combined pattern reflects strong subject-relative shifts consistent with pain-related physiologi"
+    },
+    {
+      "idx": 37,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (SCR count: high) and Respiration (breath interval variability: high), showing subject-relative shifts in sympathetic arousal and breathing pattern regulation. The combined pattern suggests stronger autonomic and respiratory deviation.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 38,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high) and Respiration (breath interval variability: high), indicating sustained muscular guarding and breathing pattern regulation, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 39,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EDA (phasic EDA fluctuation: high, SCR count: high). These indicate stronger sympathetic arousal and breathing pattern regulation, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 40,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (very high), and EMG has subject-relative deviations in muscle activation level (high), RMS muscle energy (high), and signal zero-crossing rate (high), indicating stronger muscular guarding. The combined deviations suggest "
+    },
+    {
+      "idx": 41,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (very high) and RMS muscle energy (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (high) and breathing depth variability (high), reflecting pain-related breathing patt"
+    },
+    {
+      "idx": 42,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (high), indicating stronger muscular guarding. EDA has subject-relative deviations in tonic skin conductance level (high) and SCR count (high), reflecting sympathetic arousal. The combined deviations suggest a pain-related physiologic"
+    },
+    {
+      "idx": 43,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (very high) and breathing depth variability (very high), reflecting pain-related breathing pattern regulation. The combined deviati"
+    },
+    {
+      "idx": 44,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (very high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breathing rate (high), which fits pain-related breathing shifts. The combined deviations suggest a pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 45,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: very high, breath amplitude range: high, breath interval variability: very high) and EDA (tonic skin conductance level: very high, EDA response amplitude: high), showing subject-relative shifts in multiple modalities. The comb"
+    },
+    {
+      "idx": 46,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (very high) and burst count (high), indicating stronger muscular guarding. Respiration also deviates in breathing depth variability (high) and breath amplitude range (high), which fits pain-related breathing shifts. The combined devia"
+    },
+    {
+      "idx": 47,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (high) and breathing depth variability (high), which fit pain-related breathing pattern shifts. The combined deviations suggest a c"
+    },
+    {
+      "idx": 48,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: normal) and Respiration (breathing rate: normal), suggesting sustained muscular guarding and subtle breathing shifts. The deviations are subject-relative but not strongly elevated across multiple modalities.  \nClassification: Moderate"
+    },
+    {
+      "idx": 49,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and Respiration breathing rate (high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests a clear pain-related physiological shift.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 50,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (muscle activation level: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 51,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing rate (high), suggesting stronger respiratory adjustment. EMG and Respiration are aligned in direction, indicating sustained physiological guarding. The combined pattern reflects stronger subject-relative deviations consistent with pain-relat"
+    },
+    {
+      "idx": 52,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP (amplitude variability: high, pulse amplitude range: high) and EDA (tonic skin conductance level: high, SCR count: high), suggesting combined sympathetic and cardiovascular arousal. EMG and Respiration show subject-relative shifts consistent with guarding. The ove"
+    },
+    {
+      "idx": 53,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, SCR count: very high) and Respiration (breathing rate: high), showing sustained sympathetic arousal and breathing shifts consistent with pain-related regulation. Classification: Severe."
+    },
+    {
+      "idx": 54,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: very high, EDA response amplitude: very high) and Respiration (breathing rate: high), showing subject-relative shifts in sympathetic arousal and breathing pattern. The combined pattern suggests stronger autonomic and respiratory deviation."
+    },
+    {
+      "idx": 55,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and EDA (phasic EDA fluctuation: very high, SCR count: very high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations cons"
+    },
+    {
+      "idx": 56,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, SCR count: very high) and Respiration (breathing rate: high), showing combined sympathetic arousal and breathing pattern regulation. The subject-relative shifts suggest sustained physiological pain-related deviation.  \n\nClassificatio"
+    },
+    {
+      "idx": 57,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA phasic EDA fluctuation (very high) and EMG burst count (high), showing subject-relative shifts in sympathetic arousal and muscular guarding. The combined pattern reflects stronger autonomic and muscular responses consistent with pain.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 58,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high) and Respiration (breath interval variability: high), indicating sustained muscular guarding and breathing pattern regulation, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 59,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and EMG (burst count: normal), showing sustained sympathetic arousal and muscular guarding. The combined pattern reflects sustained pain-related physiological deviation.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 60,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained guarding. EMG and Respiration are aligned in direction, suggesting sustained muscular and respiratory shifts. The combined pattern reflects strong subject-relat"
+    },
+    {
+      "idx": 61,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (high) and Respiration-breathing depth variability (normal), indicating sustained muscular guarding and subtle respiratory adjustment. The combined pattern suggests stronger subject-relative deviations consistent with pain-related physiological shifts."
+    },
+    {
+      "idx": 62,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath amplitude range (very high) and breathing depth variability (high), indicating sustained guarding. EMG also has subject-relative deviations in burst count, suggesting repeated muscular guarding. The combined pattern reflects sustained physiological pain "
+    },
+    {
+      "idx": 63,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative deviations in burst count (high) and signal zero-crossing rate (high), indicating stronger muscular guarding. EDA has subject-relative deviations in EDA response amplitude (high) and SCR count (high), showing stronger sympathetic arousal. The combined deviations suggest a pa"
+    },
+    {
+      "idx": 64,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (high), indicating stronger muscular guarding. The deviation is subject-relative, suggesting a meaningful shift. Classification: Moderate."
+    },
+    {
+      "idx": 65,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breathing rate (high), which fits pain-related breathing shifts. The combined deviations suggest a pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 66,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in burst count (high) and signal zero-crossing rate (high), indicating stronger muscular guarding. EDA has subject-relative deviations in phasic EDA fluctuation (high) and EDA response amplitude (high), reflecting sympathetic arousal. The combined deviations sug"
+    },
+    {
+      "idx": 67,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high) and signal zero-crossing rate (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (very high) and breathing depth variability (high), which fits pain-related breathing pattern "
+    },
+    {
+      "idx": 68,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative elevation in signal zero-crossing rate (high), indicating stronger muscular guarding. Respiration also shows subject-relative elevation in breath amplitude range (high), which fits pain-related breathing distortion. The combined deviations suggest a meaningful pain response."
+    },
+    {
+      "idx": 69,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong elevation in Respiration (breathing depth variability: high, raw=1.0673, z=1.24; breath amplitude range: high, raw=4.0362, z=0.79) and EMG (signal zero-crossing rate: high, raw=0.2240, z=1.11), indicating sustained muscular guarding and respiratory regulation."
+    },
+    {
+      "idx": 70,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong but not extreme pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 71,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and breathing irregularity. The combined pattern suggests pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 72,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in burst count (very high) and signal zero-crossing rate (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breathing rate (high), which fits pain-related breathing shifts. The combined pattern reflects sustained physio"
+    },
+    {
+      "idx": 73,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: very high) and Respiration (breath amplitude range: normal), indicating sustained muscular guarding and breathing regulation. The combined pattern suggests sustained pain-related physiological adjustment.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 74,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and Respiration (breath amplitude range: high), indicating sustained muscular guarding and breathing pattern regulation. The combined pattern suggests sustained pain-related physiological arousal.  \n\nClassificat"
+    },
+    {
+      "idx": 75,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (high) and EMG signal amplitude (subject-relative), suggesting stronger muscular guarding. The combined pattern reflects sustained muscular activity consistent with pain-related guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 76,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: very high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing pattern. The combined deviation suggests a strong pain response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 77,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: very high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong pain-related physiological response.  \n\nClassification: Sever"
+    },
+    {
+      "idx": 78,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative elevation in signal zero-crossing rate (high) and RMS muscle energy (normal), suggesting stronger muscular guarding. Respiration shows subject-relative elevation in breath amplitude range (high) and breathing depth variability (high), indicating altered breathing pattern. Th"
+    },
+    {
+      "idx": 79,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing depth variability (normal) and breath interval variability (normal), suggesting subtle breathing pattern regulation. EMG has subject-relative deviations in signal zero-crossing rate (normal), indicating mild muscular guarding. The combined d"
+    },
+    {
+      "idx": 80,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Severe."
+    },
+    {
+      "idx": 81,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing rate (high), which aligns with pain-related breathing changes. The overall pattern suggests sustained but not extreme deviations.  \nClassification: Moderate"
+    },
+    {
+      "idx": 82,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing rate (high) and breath interval variability (high), indicating stronger breathing pattern regulation. EMG and Respiration are aligned in direction, suggesting sustained muscular guarding and respiratory shifts. The combined pattern reflects "
+    },
+    {
+      "idx": 83,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level and RMS muscle energy, indicating stronger muscular guarding. Respiration and EMG are subject-relative in the moderate range, suggesting a sustained deviation. The combined pattern reflects sustained pain-related physiological disruptio"
+    },
+    {
+      "idx": 84,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in muscle activation level, RMS muscle energy, and signal zero-crossing rate, indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range, which fits a guarding pattern. The combined deviations suggest a strong bu"
+    },
+    {
+      "idx": 85,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in RMS muscle energy (very high) and signal zero-crossing rate (very high), indicating stronger muscular guarding. Respiration also deviates in breath amplitude range (high) and breathing depth variability (high), which fits pain-related breathing shifts. The com"
+    },
+    {
+      "idx": 86,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviation is in EMG burst count (high), indicating repeated muscular guarding. The subject-relative shifts align with pain-related physiological amplification in movement patterns.  \nClassification: Moderate"
+    },
+    {
+      "idx": 87,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: very high) and EMG (signal zero-crossing rate: very high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong pain response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 88,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high) and Respiration (breath amplitude range: normal), indicating sustained muscular guarding and breathing regulation. The combined pattern suggests sustained pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 89,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP shows subject-relative deviations in pulse amplitude range (very high) and breathing depth variability (high), suggesting stronger autonomic and respiratory guarding. Respiration has subject-relative deviations in breath amplitude range (very high), which aligns with pain-related breathing shift"
+    },
+    {
+      "idx": 90,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (muscle activation level: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 91,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: very high) and EMG (muscle activation level: high, RMS muscle energy: high), showing sustained muscular guarding and altered breathing. The combined pattern reflects strong subject-relative deviations consistent with pain-rela"
+    },
+    {
+      "idx": 92,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained guarding. EMG also deviates in muscle activation level (high) and RMS muscle energy (high), reflecting sustained muscular tension. The combined subject-relative"
+    },
+    {
+      "idx": 93,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative elevation in breathing rate (high), suggesting stronger respiratory guarding. EMG and Respiration are aligned in direction, indicating sustained muscular and breathing deviations. The combined pattern reflects sustained pain-related physiological disruption.  \n\nCla"
+    },
+    {
+      "idx": 94,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, RMS muscle energy: high) and Respiration (breathing rate: high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests strong pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 95,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high) and Respiration (breathing rate: high), showing sustained muscular guarding and altered breathing, which aligns with pain-related physiological shifts. Classification: Severe."
+    },
+    {
+      "idx": 96,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: very high) and Respiration (breathing rate: high), showing sustained muscular and respiratory shifts. The combined pattern suggests stronger subject-relative deviations consistent with pain-related guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 97,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative elevation in breathing depth variability (very high), which aligns with pain-related breathing shifts. The combined deviations suggest a moderate pain response.  \nClassification: Moderate"
+    },
+    {
+      "idx": 98,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. The combined deviations suggest a pain-related physiological shift. Classification: Moderate."
+    },
+    {
+      "idx": 99,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breathing rate (high), which fits pain-related breathing shifts. The combined deviations suggest a Moderate pain response.  \nClassification: Moderate"
+    },
+    {
+      "idx": 100,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and EMG signal zero-crossing rate (normal), indicating repeated muscular guarding. Respiration has subject-relative shifts in breathing depth variability and breath amplitude range, which fits pain-related breathing regulation. The combined patt"
+    },
+    {
+      "idx": 101,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong bursts in EMG (high) and subject-relative deviations in EMG burst count, indicating repeated muscular guarding. The combined pattern suggests sustained pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 102,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and Respiration (breathing depth variability: low), suggesting sustained muscular guarding and patterned breathing changes. The combined pattern reflects sustained pain-related physiological adjustment.  \n\nClass"
+    },
+    {
+      "idx": 103,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a moderate pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 104,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (SCR count: very high) and Respiration (breath interval variability: normal), showing subject-relative shifts in sympathetic arousal and breathing pattern. The combined pattern suggests stronger autonomic and respiratory deviation.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 105,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA phasic EDA fluctuation (high) and Respiration breath interval variability (high), indicating stronger sympathetic arousal and breathing pattern regulation. The combined pattern suggests sustained physiological deviation consistent with pain-related guarding.  \n\nCl"
+    },
+    {
+      "idx": 106,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative elevation in EDA response amplitude (very high), and EMG has subject-relative elevation in burst count (high). Respiration has subject-relative elevation in breathing rate (high) and breath interval variability (high), indicating sustained pain-related guarding.  \n\nClassific"
+    },
+    {
+      "idx": 107,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA phasic EDA fluctuation (very high) and EDA EDA response amplitude (high), indicating strong sympathetic arousal. Respiration breathing depth variability is also high, reflecting pain-related breathing shifts. The combined pattern shows sustained autonomic and resp"
+    },
+    {
+      "idx": 108,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative deviations in phasic EDA fluctuation (very high) and EDA response amplitude (very high), indicating stronger sympathetic arousal. Respiration also deviates in breathing depth variability (high) and breathing rate (high), which fits pain-related guarding patterns. Classificat"
+    },
+    {
+      "idx": 109,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative \"tonic skin conductance level: very high\" and \"phasic EDA fluctuation: high,\" indicating stronger sympathetic arousal. Respiration has \"breathing depth variability: very high\" and \"breath amplitude range: very high,\" which fits pain-related guarding patterns. The combined de"
+    },
+    {
+      "idx": 110,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA phasic EDA fluctuation (very high) and EMG burst count (high), showing sustained sympathetic arousal and muscular guarding. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological shifts.  \n\nClassification: Sever"
+    },
+    {
+      "idx": 111,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA response amplitude (very high) and EDA tonic skin conductance level (normal), indicating stronger sympathetic arousal. EMG and Respiration features are mostly subject-relative, suggesting sustained muscle tension and breathing regulation. The combined pattern refl"
+    },
+    {
+      "idx": 112,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (very high), indicating stronger muscular guarding. EDA has subject-relative elevation in SCR count (very high) and tonic skin conductance level (high), reflecting sympathetic arousal. The combined deviations suggest a pain-related physiological sh"
+    },
+    {
+      "idx": 113,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviation in breath interval variability (very high), indicating sustained breathing pattern regulation. EMG also has subject-relative deviations in burst count (normal), suggesting repeated muscular guarding. The combined patterns reflect sustained physiological a"
+    },
+    {
+      "idx": 114,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and Respiration (breath interval variability: normal), suggesting a pattern of breathing regulation. EMG and Respiration show subject-relative shifts consistent with pain-related guarding. Classification: Moderate."
+    },
+    {
+      "idx": 115,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high) and Respiration (breath interval variability: high), indicating sustained muscular guarding and disrupted breathing pattern. The combined physiological profile suggests pain-related systemic arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 116,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (RMS muscle energy: normal), suggesting sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 117,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (burst count: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 118,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EDA (EDA response amplitude: high), indicating stronger autonomic and respiratory shifts consistent with pain-related arousal. Classification: Moderate."
+    },
+    {
+      "idx": 119,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative elevation in breathing rate (high), suggesting stronger respiratory guarding. EMG and Respiration are aligned in direction, indicating sustained physiological deviation. The combined pattern reflects sustained pain-related physiological disruption.  \n\nClassificatio"
+    },
+    {
+      "idx": 120,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, RMS muscle energy: high) and Respiration (breath amplitude range: very high, breathing depth variability: very high), showing sustained muscular guarding and altered breathing pattern. The combined deviations suggest strong pain-rel"
+    },
+    {
+      "idx": 121,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Classification: Severe\n\nThe subject shows strong deviations in multiple modalities: Respiration has very high breathing depth variability and breath interval variability, indicating sustained pain-related breathing regulation. EMG has high burst count, reflecting repeated muscular guarding. EDA has "
+    },
+    {
+      "idx": 122,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (high) and EDA-SCR count (high), showing sustained muscular guarding and sympathetic arousal. The combined pattern suggests stronger subject-relative deviations consistent with pain-related physiological shifts.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 123,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (burst count: high), indicating sustained muscular guarding and altered breathing, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 124,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath amplitude range: very high) and EMG (burst count: high), showing sustained muscular guarding and breathing shifts consistent with pain. Classification: Severe."
+    },
+    {
+      "idx": 125,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and Respiration breathing rate (high), indicating sustained muscular guarding and altered breathing, which are consistent with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 126,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative bursts count: high (subject-relative deviation), indicating stronger muscular guarding. Respiration has subject-relative breathing rate: high, reflecting stronger breathing pattern regulation. The combined pattern shows sustained physiological deviation consistent with pain-"
+    },
+    {
+      "idx": 127,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA response amplitude (high) and EMG burst count (normal), indicating stronger sympathetic arousal and sustained muscular guarding. The combined pattern suggests pain-related physiological shifts.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 128,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (burst count: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 129,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (RMS muscle energy: normal), suggesting sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 130,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in RMS muscle energy (high), indicating stronger muscle tension. Respiration has subject-relative elevation in breathing rate (high), which fits pain-related breathing shifts. The combined deviations suggest sustained physiological guarding.  \n\nClassification: Mo"
+    },
+    {
+      "idx": 131,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in muscle activation level and RMS muscle energy, indicating stronger muscular guarding. Respiration also deviates in breath interval variability, which fits pain-related breathing pattern regulation. The combined deviations suggest a moderate pain response.  \nC"
+    },
+    {
+      "idx": 132,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and Respiration (breath interval variability: high), showing sustained muscular guarding and breathing pattern regulation, which are consistent with pain-related physiological shifts. Classificatio"
+    },
+    {
+      "idx": 133,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows very high muscle activation level and RMS muscle energy, indicating strong muscular guarding. Respiration has high breath interval variability, which fits pain-related breathing shifts. The combined deviations suggest sustained physiological pain response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 134,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: very high) and EDA (SCR count: high), showing sustained muscle tension and sympathetic arousal. The combined pattern suggests strong pain-related guarding.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 135,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (high) and Respiration-breathing rate (high), indicating sustained muscular guarding and altered breathing, which are consistent with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 136,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, EDA response amplitude: very high) and Respiration (breathing rate: very high), indicating stronger sympathetic arousal and breathing pattern regulation. The combined pattern suggests pain-related physiological guarding.  \n\nClassific"
+    },
+    {
+      "idx": 137,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (high) and BVP-HRV (RMSSD): very high, indicating stronger subject-relative deviations in muscular guarding and cardiovascular adaptation. The combined pattern suggests sustained physiological shifts consistent with pain-related arousal.  \n\nClassificat"
+    },
+    {
+      "idx": 138,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviation in breath interval variability (normal), which fits pain-related breathing shifts. The combined pattern reflects sustained physiological arousal consistent wi"
+    },
+    {
+      "idx": 139,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (high) and EDA-SCR count (high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects sustained physiological shifts consistent with pain-related distress.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 140,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in burst count (high) and signal zero-crossing rate (normal), indicating stronger muscular guarding. Respiration has subject-relative deviations in breathing rate (high), which fits pain-related breathing shifts. The combined pattern reflects sustained physiolog"
+    },
+    {
+      "idx": 141,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, EDA response amplitude: normal) and EMG (signal zero-crossing rate: very high), indicating stronger sympathetic arousal and muscle guarding. The combined pattern suggests sustained physiological pain response.  \n\nClassification: Seve"
+    },
+    {
+      "idx": 142,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: very high, EDA response amplitude: normal) and EMG (signal zero-crossing rate: high, burst count: high), showing subject-relative elevation in sympathetic arousal and muscular guarding. The combined pattern reflects pain-related physiologi"
+    },
+    {
+      "idx": 143,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA phasic EDA fluctuation (high) and EMG signal zero-crossing rate (high), indicating stronger sympathetic arousal and muscle tension. The combined pattern suggests sustained pain-related guarding.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 144,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing, which are consistent with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 145,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (very high) and Respiration breathing rate (high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests strong subject-relative deviations consistent with pain-related physiological arousal.  \n\nClass"
+    },
+    {
+      "idx": 146,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high, SCR count: high) and Respiration (breathing rate: high), indicating stronger sympathetic arousal and breathing regulation. The EMG shows subject-relative elevation in signal zero-crossing rate: very high, suggesting muscle tens"
+    },
+    {
+      "idx": 147,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: very high, EDA response amplitude: very high) and EMG (signal zero-crossing rate: very high, muscle activation level: high), showing sustained sympathetic arousal and muscle guarding. The combined pattern reflects strong subject-relative d"
+    },
+    {
+      "idx": 148,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong elevation in EDA tonic skin conductance level (high) and EMG signal zero-crossing rate (very high), indicating stronger sympathetic arousal and denser muscular firing. The combined pattern reflects sustained pain-related physiological guarding.  \n\nClassificati"
+    },
+    {
+      "idx": 149,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (high) and Respiration breath interval variability (high), indicating sustained muscular guarding and breathing pattern regulation. The combined pattern suggests sustained pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 150,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and Respiration breath interval variability (high), indicating repeated muscular guarding and disrupted breathing pattern, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 151,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: very high, breath amplitude range: very high) and EMG (burst count: high), showing sustained muscular guarding and respiratory shifts consistent with pain. Classification: Severe."
+    },
+    {
+      "idx": 152,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: very high) and Respiration (breathing rate: high), indicating stronger muscular guarding and respiratory shifts. The combined pattern suggests sustained physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 153,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: normal), indicating sustained muscular guarding. EDA shows subject-relative elevation in SCR count (very high) and phasic EDA fluctuation (high), reflecting sympathetic arousal. The combined pattern"
+    },
+    {
+      "idx": 154,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: high), indicating sustained muscular guarding and altered breathing. EDA (SCR count: very high) also deviates, reflecting sympathetic arousal. The combined pattern suggests severe pain-related physi"
+    },
+    {
+      "idx": 155,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high, breath interval variability: high) and EMG (burst count: high), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Severe."
+    },
+    {
+      "idx": 156,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: very high, EDA response amplitude: very high) and EMG (burst count: high), showing subject-relative shifts in sympathetic arousal and muscular guarding. The combined pattern suggests stronger autonomic and physiological pain responses.  \n\n"
+    },
+    {
+      "idx": 157,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: high, breath amplitude range: high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing pattern. The combined pattern suggests severe pain-related physiological disruption.  "
+    },
+    {
+      "idx": 158,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath amplitude range (very high) and breathing depth variability (very high), indicating sustained physiological guarding. EMG and Respiration are aligned in direction, suggesting sustained muscular and respiratory shifts. Classification: Severe."
+    },
+    {
+      "idx": 159,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (very high), suggesting altered breathing pattern regulation. EMG and Respiration are aligned in indicating stronger subject-relative deviations, which fits a pain-related guarding pattern.  \nClassification: Moderate"
+    },
+    {
+      "idx": 160,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: very high) and EMG (signal zero-crossing rate: normal, burst count: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 161,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (burst count: normal) and EDA (phasic EDA fluctuation: high), showing subject-relative shifts in muscular guarding and sympathetic arousal. The combined pattern suggests sustained physiological pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 162,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (very high) and Respiration breathing rate (high), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 163,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (high) and breath interval variability (high), reflecting sustained breathing pattern regulation. The combined deviations suggest s"
+    },
+    {
+      "idx": 164,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: high, breathing rate: high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing, which aligns with pain-related physiological shifts.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 165,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and Respiration (breath amplitude range: high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong but not extreme pain response.  \n\nClassification: Mo"
+    },
+    {
+      "idx": 166,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, RMS muscle energy: high) and BVP (amplitude variability: very high, pulse amplitude range: very high, HRV (RMSSD): very high), indicating sustained muscular guarding and strong autonomic adaptation. The combined pattern suggests sev"
+    },
+    {
+      "idx": 167,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, RMS muscle energy: high) and BVP (pulse amplitude range: very high), indicating sustained muscular guarding and autonomic adaptation. The combined pattern suggests pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 168,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Classification: Severe\n\nThe subject shows subject-relative deviations in Respiration (breath interval variability: high) and EMG (signal zero-crossing rate: high), indicating stronger muscular guarding and breathing pattern regulation. EDA (EDA response amplitude: high) and Respiration (breath inter"
+    },
+    {
+      "idx": 169,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (high) and burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range (very low) and breathing depth variability (low), which fits pain-related breathing shifts. Th"
+    },
+    {
+      "idx": 170,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and Respiration (breath amplitude range: normal). This reflects sustained muscular guarding and breathing pattern regulation, which are consistent with pain-related physiological shifts.  \n\nClassif"
+    },
+    {
+      "idx": 171,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: high) and EMG (burst count: high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong subject-relative pain response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 172,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath amplitude range (very high) and breath interval variability (high), indicating sustained breathing regulation. EMG and Respiration are both subject-relative in the moderate-to-severe range, suggesting combined muscular and respiratory guarding. Classific"
+    },
+    {
+      "idx": 173,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: very high, EDA response amplitude: high), indicating strong sympathetic arousal. EMG and Respiration are subject-relative but not consistently deviating in the same direction. The combined pattern suggests stronger autonomic and phys"
+    },
+    {
+      "idx": 174,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high, EMG: signal zero-crossing rate: high) and EDA (tonic skin conductance level: high), indicating combined sympathetic arousal and muscular guarding. The subject-relative patterns align with pain-related physiological shifts.  \n\nCl"
+    },
+    {
+      "idx": 175,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative elevation in tonic skin conductance level (high), indicating stronger sympathetic arousal. EMG shows subject-relative elevation in muscle activation level (normal) and signal zero-crossing rate (normal), suggesting sustained muscular guarding. The combined deviations align w"
+    },
+    {
+      "idx": 176,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: high), showing sustained muscular guarding and breathing pattern regulation. The combined deviations suggest sustained pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 177,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EDA has subject-relative \"very high\" EDA response amplitude, indicating stronger sympathetic arousal. Respiration has subject-relative \"very high\" breathing rate, which fits pain-related breathing shifts. The combined deviations suggest a clear pain response pattern.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 178,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show elevated EMG signal zero-crossing rate (high) and EMG burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath amplitude range and breathing depth variability, which fits pain-related breathing shifts. The combi"
+    },
+    {
+      "idx": 179,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (high) and RMS muscle energy (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breath interval variability (very high), which fits pain-related breathing pattern regulation. The combined deviat"
+    },
+    {
+      "idx": 180,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high) and Respiration (breath interval variability: very high), indicating sustained muscular guarding and disrupted breathing pattern. The combined deviation suggests a strong subject-relative pain response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 181,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: very high) and Respiration (breathing rate: high), showing sustained muscular guarding and altered breathing. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological arousal.  \n\nClassification"
+    },
+    {
+      "idx": 182,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: high) and EDA (SCR count: high), showing subject-relative shifts in breathing pattern and sympathetic arousal. The combined pattern suggests stronger physiological guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 183,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very low) and Respiration (breathing depth variability: low), suggesting isolated shifts in muscular guarding and breathing, which can occur during pain. The deviations are subject-relative but not consistently aligned across modalities. "
+    },
+    {
+      "idx": 184,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: low, subject-relative but trending up) and Respiration (breath amplitude range: low, subject-relative but trending up), suggesting isolated shifts in muscle tension and breathing pattern. The deviations are not consistently aligned across"
+    },
+    {
+      "idx": 185,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high) and Respiration (breath interval variability: very high), indicating sustained muscular guarding and altered breathing pattern. The combined deviation suggests a strong pain-related physiological response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 186,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breathing depth variability (very high) and breath amplitude range (very high), which aligns with pain-related breathing pattern shifts. The c"
+    },
+    {
+      "idx": 187,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high) and Respiration (breath amplitude range: normal), indicating sustained muscular guarding and breathing pattern regulation, which are pain-related. Classification: Moderate."
+    },
+    {
+      "idx": 188,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, SCR count: high) and Respiration (breathing rate: high), showing subject-relative shifts in sympathetic arousal and breathing pattern. The combined pattern suggests stronger autonomic and respiratory deviation.  \n\nClassification: Mod"
+    },
+    {
+      "idx": 189,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, EDA response amplitude: very high) and Respiration (breathing depth variability: high, breath amplitude range: high), indicating stronger sympathetic arousal and breathing regulation. The combined pattern suggests pain-related physio"
+    },
+    {
+      "idx": 190,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath amplitude range (high) and breathing depth variability (high), indicating stronger breathing pattern regulation. EMG and Respiration are aligned in showing subject-relative deviations, suggesting sustained muscular guarding and breathing shifts"
+    },
+    {
+      "idx": 191,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high) and EDA (SCR count: high, EDA response amplitude: high), showing sustained muscle tension and sympathetic arousal. The combined pattern reflects sustained pain-related guarding.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 192,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviation in breath interval variability (high), suggesting altered breathing pattern regulation. EMG has subject-relative deviation in RMS muscle energy (normal), indicating sustained muscular activity. The combined deviations point to pain-related guarding.  \n\nCl"
+    },
+    {
+      "idx": 193,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP (amplitude variability: high) and EMG (muscle activation level: normal). This suggests subject-relative shifts in cardiovascular adaptation and muscle tension, which align with pain-related guarding. Classification: Moderate."
+    },
+    {
+      "idx": 194,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and BVP (amplitude variability: high), suggesting combined cardiovascular and respiratory shifts consistent with pain-related guarding. Classification: Moderate."
+    },
+    {
+      "idx": 195,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing rate (high) and breath interval variability (very high), indicating stronger breathing pattern regulation. EMG and Respiration are aligned in showing subject-relative shifts consistent with pain-related guarding. Classification: Severe."
+    },
+    {
+      "idx": 196,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained guarding. EMG and Respiration are aligned in direction, suggesting sustained muscular and respiratory shifts. The combined pattern reflects severe pain-related "
+    },
+    {
+      "idx": 197,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and EDA (SCR count: high). This reflects combined subject-relative shifts in sympathetic arousal and muscular guarding. Classification: Moderate."
+    },
+    {
+      "idx": 198,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and Respiration (breathing rate: high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests stronger subject-relative deviations consistent with pain-related physiological"
+    },
+    {
+      "idx": 199,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and EMG signal zero-crossing rate (high), indicating sustained muscular guarding. Respiration has subject-relative shifts in breath amplitude range, supporting a sustained regulatory pattern. The combined pattern reflects sustained pain-related "
+    },
+    {
+      "idx": 200,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high) and Respiration (breathing depth variability: high), showing sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong pain-related physiological response.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 201,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high) and Respiration (breathing rate: high), showing sustained muscular guarding and altered breathing. The combined pattern reflects sustained physiological arousal consistent with pain.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 202,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, EDA response amplitude: high) and EMG (signal zero-crossing rate: high, RMS muscle energy: high), showing sustained sympathetic arousal and muscular guarding. The combined pattern reflects strong subject-relative deviations consisten"
+    },
+    {
+      "idx": 203,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (SCR count: high) and EMG (RMS muscle energy: high, signal zero-crossing rate: high), showing sustained sympathetic arousal and muscular guarding. The combined pattern reflects stronger subject-relative deviations consistent with pain-related physiological shifts."
+    },
+    {
+      "idx": 204,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: very high) and Respiration (breathing rate: high), showing sustained muscular guarding and altered breathing. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological"
+    },
+    {
+      "idx": 205,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and EDA (phasic EDA fluctuation: very high, EDA response amplitude: high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations consistent"
+    },
+    {
+      "idx": 206,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: very high) and EDA (phasic EDA fluctuation: very high, EDA response amplitude: very high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations "
+    },
+    {
+      "idx": 207,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and EDA (tonic skin conductance level: high), showing subject-relative shifts in muscle tension and sympathetic arousal. The combined pattern suggests sustained physiological guarding.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 208,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing, which aligns with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 209,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, burst count: very high) and Respiration (breathing depth variability: very high), indicating sustained muscular guarding and altered breathing pattern. The combined deviations suggest a strong pain-related physiological respons"
+    },
+    {
+      "idx": 210,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. The deviations are subject-relative, suggesting a meaningful shift in the electromyography pattern. Classification: Moderate."
+    },
+    {
+      "idx": 211,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. EDA has subject-relative elevation in SCR count (high), reflecting sympathetic arousal. The combined deviations suggest pain-related physiological disruption.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 212,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and EDA (phasic EDA fluctuation: very high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiologic"
+    },
+    {
+      "idx": 213,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (signal zero-crossing rate: normal), indicating sustained muscular guarding and breathing irregularity. The combined pattern suggests pain-related physiological disruption.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 214,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breathing rate (normal) and breath interval variability (normal), which fits pain-related breathing shifts. The combined pattern reflects sustained physiol"
+    },
+    {
+      "idx": 215,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (phasic EDA fluctuation: high, EDA response amplitude: high) and Respiration (breathing rate: normal). This reflects subject-relative shifts in sympathetic arousal and breathing pattern, which aligns with pain-related physiological guarding.  \n\nClassification: Mod"
+    },
+    {
+      "idx": 216,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high) and EDA (phasic EDA fluctuation: very high, SCR count: high), showing subject-relative shifts in multiple modalities. The combined pattern suggests stronger sympathetic arousal and breathing regulation, which aligns with pain-re"
+    },
+    {
+      "idx": 217,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath interval variability (very high) and breath amplitude range (high), indicating sustained breathing pattern regulation. EMG also has subject-relative elevation in signal zero-crossing rate (high), suggesting denser muscular firing. The combined deviations"
+    },
+    {
+      "idx": 218,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath amplitude range (high) and breathing depth variability (high), indicating sustained guarding. EMG also has subject-relative deviations in signal zero-crossing rate (high), suggesting stronger muscular activity. The combined pattern reflects sus"
+    },
+    {
+      "idx": 219,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high) and Respiration (breathing depth variability: high), showing sustained muscular tension and altered breathing pattern. The combined deviations suggest strong subject-relative pain-related guarding.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 220,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (high) and RMS muscle energy (high), indicating stronger muscular guarding. Classification: Moderate."
+    },
+    {
+      "idx": 221,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (very high) and RMS muscle energy (high), indicating stronger muscular guarding. Respiration also deviates in breath interval variability (high), which fits pain-related breathing shifts. The combined deviations suggest a moderate pai"
+    },
+    {
+      "idx": 222,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (SCR count: high) and Respiration (breathing rate: normal). This reflects sympathetic arousal and breathing pattern regulation, which aligns with pain-related physiological guarding.  \nClassification: Moderate"
+    },
+    {
+      "idx": 223,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG and Respiration show subject-relative deviations in muscle activation level, RMS muscle energy, breath amplitude range, and breathing rate, indicating stronger muscular guarding and breathing regulation. EDA has an isolated subject-relative deviation in EDA response amplitude, suggesting sympath"
+    },
+    {
+      "idx": 224,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and Respiration (breath amplitude range: high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests strong pain-related physiological disruption.  \n\nClassifi"
+    },
+    {
+      "idx": 225,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high, z=1.45) and EDA (EDA response amplitude: high, z=0.78), showing subject-relative shifts in breathing pattern and autonomic arousal. The combined pattern suggests pain-related guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 226,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: high) and EMG (burst count: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 227,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing depth variability (very high) and breath amplitude range (high), indicating stronger breathing pattern regulation. EMG also has subject-relative deviations in burst count (high), suggesting repeated muscular guarding. The combined pattern re"
+    },
+    {
+      "idx": 228,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and BVP pulse rate (high), indicating sustained muscular guarding and cardiovascular adaptation. The combined pattern suggests strong subject-relative shifts consistent with pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 229,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (very high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breathing rate (normal), which fits pain-related breathing shifts. The combined deviations suggest a pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 230,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG-burst count (very high) and EDA-tonic skin conductance level (high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological shifts.  \n\nClassification:"
+    },
+    {
+      "idx": 231,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and EMG (muscle activation level: normal), suggesting subject-relative shifts in sympathetic arousal and muscle tension. The combined pattern reflects pain-related physiological guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 232,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: very high) and EDA (EDA response amplitude: very high), showing sustained muscular guarding and strong sympathetic arousal. The combined pattern reflects sustained pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 233,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in muscle activation level (very high) and RMS muscle energy (very high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breathing rate (very high), which fits pain-related breathing shifts. The combined deviations suggest "
+    },
+    {
+      "idx": 234,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high, RMS muscle energy: very high) and Respiration (breathing rate: very high), showing sustained muscular guarding and altered breathing. EDA has subject-relative elevation in EDA response amplitude (very high), indicating stronger"
+    },
+    {
+      "idx": 235,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in muscle activation level and RMS muscle energy, indicating stronger muscular guarding. Respiration has subject-relative deviations in breath interval variability, which fits pain-related breathing shifts. The combined patterns suggest a severe pain response.  "
+    },
+    {
+      "idx": 236,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (high) and breathing rate (normal), suggesting subtle but meaningful breathing pattern regulation. EDA has subject-relative deviations in SCR count (high) and tonic skin conductance level (high), indicating stronger sympath"
+    },
+    {
+      "idx": 237,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong elevation in EMG burst count (high) and Respiration breath amplitude range (high), indicating sustained muscular guarding and breathing pattern regulation. The combined deviation pattern reflects sustained pain-related physiological strain.  \n\nClassification: "
+    },
+    {
+      "idx": 238,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and Respiration breath amplitude range (high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests sustained pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 239,
+      "true": "Severe",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "BVP has subject-relative deviations in pulse amplitude range (high) and HRV (RMSSD): high, suggesting stronger autonomic adaptation. EDA has isolated subject-relative deviations in SCR count (high) and tonic skin conductance level (high), indicating sympathetic arousal. EMG has subject-relative devi"
+    },
+    {
+      "idx": 240,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (RMS muscle energy: high), indicating sustained muscular guarding and respiratory adjustment. The combined pattern suggests strong subject-relative deviations consistent with pain-related physiological shifts.  \n"
+    },
+    {
+      "idx": 241,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, RMS muscle energy: high) and Respiration (breath amplitude range: very high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests severe pain-related physiological disruption.  \n\nClassificatio"
+    },
+    {
+      "idx": 242,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong elevation in EMG (muscle activation level: very high, RMS muscle energy: very high) and EDA (tonic skin conductance level: high), indicating sustained muscular guarding and sympathetic arousal. The combined pattern reflects significant pain-related physiologic"
+    },
+    {
+      "idx": 243,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative elevation in signal zero-crossing rate (high), indicating stronger muscular guarding. EDA has subject-relative elevation in SCR count (high) and tonic skin conductance level (high), reflecting sympathetic arousal. The combined deviations suggest a pain-related physiological "
+    },
+    {
+      "idx": 244,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP (pulse rate: high, HRV: high) and EDA (SCR count: high), showing combined subject-relative shifts in cardiovascular and sympathetic arousal. The deviations align with pain-related guarding and autonomic stress.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 245,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high, EMG: burst count: high, Respiration: breath interval variability: high), showing sustained muscular guarding and respiratory shifts. The combined pattern reflects strong pain-related physiological deviation.  \n\nClassification: S"
+    },
+    {
+      "idx": 246,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing rate (very high) and breath interval variability (high), indicating stronger breathing pattern regulation. EMG has subject-relative deviations in signal zero-crossing rate (high), suggesting denser muscular firing. The combined deviations po"
+    },
+    {
+      "idx": 247,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained guarding. EMG and Respiration are aligned in direction, suggesting sustained muscular and respiratory shifts. The combined pattern reflects severe pain-related "
+    },
+    {
+      "idx": 248,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (high) and EDA phasic EDA fluctuation (very high), indicating stronger subject-relative muscle tension and sympathetic arousal. The combined pattern suggests pain-related guarding and autonomic activation.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 249,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: high, breath amplitude range: high) and EDA (SCR count: high, tonic skin conductance level: high), showing subject-relative shifts in multiple modalities. The combined pattern reflects sustained pain-related physiological guar"
+    },
+    {
+      "idx": 250,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show elevated signal zero-crossing rate (EMG) and breathing depth variability (Respiration), indicating stronger muscular guarding and respiratory adjustment. The combined pattern suggests a moderate pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 251,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (high) and EMG overall deviation (subject-relative), indicating stronger muscular guarding. EDA SCR count is also elevated, reflecting sympathetic arousal. The combined pattern suggests pain-related physiological disruption.  \n\nClassifica"
+    },
+    {
+      "idx": 252,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Subject-relative deviations show strong elevation in EMG signal zero-crossing rate (high) and Respiration breathing depth variability (high), indicating sustained muscular guarding and altered breathing pattern. The combined deviation pattern aligns with pain-related physiological shifts.  \n\nClassif"
+    },
+    {
+      "idx": 253,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative deviations in muscle activation level and RMS muscle energy, indicating sustained muscular guarding. Respiration has subject-relative deviations in breathing depth variability and breath amplitude range, which fit pain-related breathing pattern shifts. The combined "
+    },
+    {
+      "idx": 254,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (RMS muscle energy: high, EMG signal zero-crossing rate: high) and Respiration (breath interval variability: normal). This suggests sustained muscular guarding and breathing pattern regulation, which aligns with pain-related physiological shifts. Classification: M"
+    },
+    {
+      "idx": 255,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and EMG signal zero-crossing rate (high), indicating sustained muscular guarding. Respiration and EDA also show subject-relative shifts, consistent with pain-related physiological disruption.  \nClassification: Moderate"
+    },
+    {
+      "idx": 256,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and Respiration breathing rate (normal), indicating sustained muscular guarding and subtle respiratory shifts. The combined pattern suggests a moderate pain response.  \nClassification: Moderate"
+    },
+    {
+      "idx": 257,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (high) and Respiration breath amplitude range (high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests strong subject-relative deviations consistent with pain-related physiological arousal.  \n\nCl"
+    },
+    {
+      "idx": 258,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing depth variability (high) and breath amplitude range (high), indicating sustained guarding. EMG also has subject-relative deviations in RMS muscle energy (normal), suggesting sustained muscular tension. The combined pattern reflects sustained"
+    },
+    {
+      "idx": 259,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviation is in EMG-burst count (high), indicating repeated muscular guarding. The subject-relative pattern suggests sustained but not extreme pain-related physiological disruption. Classification: Moderate."
+    },
+    {
+      "idx": 260,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in burst count (high), indicating repeated muscular guarding. Respiration has subject-relative elevation in breath interval variability (very high), reflecting pain-related breathing pattern regulation. The combined deviations suggest a pain response.  \n\nClassifi"
+    },
+    {
+      "idx": 261,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breathing depth variability (normal) and breath amplitude range (normal), suggesting subtle guarding. EMG and Respiration are both slightly elevated, indicating mild but subject-relative shifts in muscle tension and breathing. The overall pattern is m"
+    },
+    {
+      "idx": 262,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath amplitude range (very high) and breathing depth variability (very high), indicating sustained physiological guarding. Electromyography also has subject-relative deviations in RMS muscle energy (high) and muscle activation level (high), suggesting sustain"
+    },
+    {
+      "idx": 263,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows strong subject-relative deviations in muscle activation level and RMS muscle energy, indicating sustained muscular guarding. Respiration has a subject-relative shift in breathing rate, which fits a severe pain pattern. Classification: Severe"
+    },
+    {
+      "idx": 264,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in RMS muscle energy (high), indicating stronger muscle tension. Respiration has subject-relative elevation in breathing rate (very high), which fits pain-related breathing shifts. The combined deviations suggest a pain response.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 265,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (high) and breathing rate (normal), indicating sustained breathing pattern regulation. Electromyography (EMG) has subject-relative deviations in burst count (normal), suggesting repeated muscular guarding. The combined devi"
+    },
+    {
+      "idx": 266,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviation is in EMG burst count (high), indicating repeated muscular guarding. Respiration and EMG show subject-relative shifts consistent with pain-related physiological disruption. Classification: Moderate."
+    },
+    {
+      "idx": 267,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained breathing regulation. EMG also has subject-relative elevation in burst count (high), reflecting repeated muscular guarding. The combined pattern suggests sustai"
+    },
+    {
+      "idx": 268,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained physiological guarding. EMG also has subject-relative deviations in burst count, suggesting repeated muscular guarding. The combined pattern reflects sustained "
+    },
+    {
+      "idx": 269,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (very high) and RMS muscle energy (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breath interval variability (high), which fits pain-related breathing pattern regulation. The combined deviat"
+    },
+    {
+      "idx": 270,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: very high) and EMG (muscle activation level: high), showing subject-relative shifts in breathing pattern and muscle tension. The combined pattern suggests pain-related guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 271,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "BVP shows strong subject-relative deviations in amplitude variability and pulse amplitude range, indicating stronger cardiovascular adaptation. EDA has very high phasic EDA fluctuation and EDA response amplitude, reflecting stronger sympathetic arousal. Respiration has very high breathing rate, whic"
+    },
+    {
+      "idx": 272,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and BVP (amplitude variability: very high, pulse amplitude range: very high, HRV (RMSSD): very high), suggesting combined cardiovascular and muscular guarding. The subject-relative deviations align with pain-rel"
+    },
+    {
+      "idx": 273,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and EDA tonic skin conductance level (high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects sustained physiological shifts consistent with pain-related distress.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 274,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (burst count: high) and EDA (SCR count: very high), showing sustained muscular guarding and strong sympathetic arousal. The combined pattern reflects sustained pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 275,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: very high) and EMG (burst count: high), showing sustained muscular guarding and irregular breathing, which aligns with pain-related physiological shifts. Classification: Severe."
+    },
+    {
+      "idx": 276,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: very high, burst count: high) and Respiration (breath interval variability: low), indicating sustained muscular guarding and breathing pattern regulation. The combined pattern suggests sustained pain-related physiological arousal.  \n\nCl"
+    },
+    {
+      "idx": 277,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP pulse rate (very high) and EDA tonic skin conductance level (high), showing combined subject-relative shifts in cardiovascular and sympathetic arousal. EMG signal zero-crossing rate is also high, reflecting stronger muscular guarding. The pattern aligns with pain-"
+    },
+    {
+      "idx": 278,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate and burst count) and Respiration (breath interval variability), showing subject-relative shifts in muscular guarding and breathing pattern regulation. The combined pattern suggests sustained physiological arousal aligned with pain.  \n\nCl"
+    },
+    {
+      "idx": 279,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (SCR count: very high) and Respiration (breath interval variability: high), showing subject-relative shifts in sympathetic arousal and breathing pattern. The combined deviations suggest stronger autonomic and respiratory pain-related guarding.  \n\nClassification: M"
+    },
+    {
+      "idx": 280,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high) and EMG (burst count: high), showing sustained muscular guarding and respiratory shifts consistent with pain. Classification: Severe."
+    },
+    {
+      "idx": 281,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and EDA SCR count (very high), showing sustained muscular guarding and strong sympathetic arousal. The combined pattern reflects sustained pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 282,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: very high) and EMG (burst count: high), showing sustained sympathetic arousal and muscular guarding. The combined pattern reflects sustained pain-related physiological deviation.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 283,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: normal) and EMG (burst count: normal), indicating sustained muscular guarding and respiratory shifts consistent with pain. Classification: Moderate."
+    },
+    {
+      "idx": 284,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Classification: Severe\n\nThe subject shows subject-relative deviations in pulse rate (very high), tonic skin conductance level (very high), and SCR count (very high), indicating strong sympathetic arousal and cardiovascular adaptation. Respiration also shifts in breathing depth variability and breath"
+    },
+    {
+      "idx": 285,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative very high muscle activation level and RMS muscle energy, indicating stronger muscular guarding. Respiration has subject-relative normal breathing rate, which fits pain-related deviations. The combined pattern reflects sustained muscular and respiratory shifts.  \n\nClassific"
+    },
+    {
+      "idx": 286,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP (pulse amplitude range: very high, HRV: very high) and EMG (signal zero-crossing rate: high), suggesting combined autonomic and muscular shifts consistent with pain-related guarding. Classification: Moderate."
+    },
+    {
+      "idx": 287,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: very high) and EDA (SCR count: very high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological shifts.  \n\nClassificatio"
+    },
+    {
+      "idx": 288,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in signal zero-crossing rate (high) and burst count (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breath interval variability (high), which fits pain-related breathing shifts. The combined deviations suggest a modera"
+    },
+    {
+      "idx": 289,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (muscle activation level: high), indicating sustained muscular guarding and breathing pattern regulation. The combined pattern suggests sustained pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 290,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EDA has isolated elevation in SCR count (very high), and Respiration shows isolated elevation in breathing rate (very high). The deviations are subject-relative, indicating a clear pain-related shift in multiple modalities.  \nClassification: Severe"
+    },
+    {
+      "idx": 291,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high) and EMG (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing. The combined pattern suggests severe pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 292,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and Respiration (breathing rate: normal). This suggests sympathetic arousal and breathing pattern regulation, which align with pain-related physiological guarding. Classification: Moderate."
+    },
+    {
+      "idx": 293,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: high), indicating sustained muscular guarding and breathing irregularity. The combined pattern suggests sustained pain-related physiological disruption.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 294,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG has subject-relative elevation in signal zero-crossing rate (high) and burst count (normal), indicating stronger muscular guarding. EDA shows subject-relative elevation in tonic skin conductance level (high), reflecting sympathetic arousal. The combined deviations suggest a pain-related physiolo"
+    },
+    {
+      "idx": 295,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG signal zero-crossing rate (very high) and EMG burst count (high), indicating stronger muscular guarding. EDA tonic skin conductance level is also elevated (high), reflecting sympathetic arousal. The combined pattern suggests sustained pain-related physiological di"
+    },
+    {
+      "idx": 296,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: very high) and Respiration (breath amplitude range: normal), indicating sustained muscular guarding and breathing regulation. The combined pattern suggests strong pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 297,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath amplitude range: high) and EMG (muscle activation level: normal), indicating sustained muscular guarding and breathing pattern regulation. The combined pattern suggests sustained pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 298,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and Respiration (breath interval variability: high), indicating sympathetic arousal and breathing pattern regulation. The EMG burst count is also elevated, reflecting subject-relative muscular guarding. The combined pattern sug"
+    },
+    {
+      "idx": 299,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and EMG (signal zero-crossing rate: normal), suggesting combined sympathetic arousal and muscle tension. The deviations are subject-relative but not consistently extreme across all modalities.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 300,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high) and Respiration (breath amplitude range: very high), indicating sustained muscular guarding and altered breathing. EDA also shows subject-relative elevation in phasic EDA fluctuation and EDA response amplitude, reflecting sympathe"
+    },
+    {
+      "idx": 301,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA phasic EDA fluctuation (very high) and EDA response amplitude (high), indicating strong sympathetic arousal. Respiration also shows breathing depth variability and breath amplitude range deviating in the pain direction. The combined pattern suggests sustained auto"
+    },
+    {
+      "idx": 302,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EDA (tonic skin conductance level: high) and EMG (burst count: normal), indicating subject-relative shifts in sympathetic arousal and muscular guarding. The combined pattern suggests pain-related physiological deviation.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 303,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in HRV (RMSSD) and EDA (tonic skin conductance level), showing subject-relative shifts in autonomic and sympathetic arousal. The combined pattern suggests stronger physiological deviation consistent with pain-related systemic adjustment.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 304,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (high), and EMG has subject-relative deviations in burst count (normal). The combined pattern suggests stronger respiratory irregularity and sustained muscular guarding, which aligns with pain-related physiological shifts. "
+    },
+    {
+      "idx": 305,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (high), suggesting stronger breathing pattern regulation. EMG and Respiration are aligned in indicating stronger subject-relative deviations. The combined pattern reflects sustained physiological arousal consistent with pai"
+    },
+    {
+      "idx": 306,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high) and EDA (tonic skin conductance level: high), indicating sustained muscle tension and sympathetic arousal. The combined pattern suggests moderate pain-related guarding.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 307,
+      "true": "Severe",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (high) and RMS muscle energy (high), indicating stronger muscular guarding. Respiration has subject-relative elevation in breath interval variability (high), which fits pain-related breathing pattern regulation. The combined deviations "
+    },
+    {
+      "idx": 308,
+      "true": "No-pain",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing depth variability: very high, breath amplitude range: high) and EMG (burst count: high), indicating sustained muscular guarding and altered breathing, which are consistent with pain-related physiological shifts.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 309,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level (very high) and RMS muscle energy (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breath interval variability (very high) and breathing rate (high), reflecting altered breathing pattern regu"
+    },
+    {
+      "idx": 310,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "EMG shows very high muscle activation level, indicating stronger muscular guarding. Respiration has subject-relative deviations in breath interval variability (very high), which fits pain-related breathing shifts. The combined deviations suggest a strong but not extreme pain response.  \n\nClassificat"
+    },
+    {
+      "idx": 311,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (muscle activation level: high, burst count: high) and EDA (SCR count: high), showing sustained muscular guarding and sympathetic arousal. The combined pattern reflects strong subject-relative deviations consistent with pain-related physiological shifts.  \n\nClassi"
+    },
+    {
+      "idx": 312,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative deviations in muscle activation level (high) and burst count (high), indicating stronger muscular guarding. Respiration has subject-relative deviations in breathing rate (very low) and breath amplitude range (normal), which fits pain-related breathing shifts. The combined "
+    },
+    {
+      "idx": 313,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high) and breath amplitude range (very high), indicating sustained physiological guarding. EMG also has subject-relative deviations in signal zero-crossing rate (normal), suggesting sustained muscular activity. The combined pat"
+    },
+    {
+      "idx": 314,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breathing depth variability (very high), breath amplitude range (very high), and breath interval variability (very high), indicating sustained breathing pattern regulation typical of pain-related guarding. Classification: Severe."
+    },
+    {
+      "idx": 315,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: normal) and BVP (pulse rate: high). This suggests subject-relative changes in cardiovascular adaptation and breathing pattern, which align with pain-related guarding. Classification: Moderate."
+    },
+    {
+      "idx": 316,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "Pain-related deviations are strongest in Respiration (breathing rate: normal) and EMG (muscle activation level: normal), suggesting sustained but not extreme guarding. The subject-relative deviations are moderate but not severe across modalities.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 317,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: normal), indicating sustained muscular guarding and breathing pattern regulation. The combined pattern suggests sustained pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 318,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: normal) and BVP (pulse rate: very high), indicating subject-relative shifts in autonomic and respiratory regulation. The combined pattern suggests pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 319,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level and RMS muscle energy, indicating stronger muscular guarding. Respiration has subject-relative elevation in breathing rate, which fits pain-related breathing shifts. The combined deviations suggest a clear pain response.  \n\nClassificati"
+    },
+    {
+      "idx": 320,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "EMG shows subject-relative elevation in muscle activation level and RMS muscle energy, indicating stronger muscular guarding. The combined deviations suggest a pain-related shift in physiological arousal.  \nClassification: Severe"
+    },
+    {
+      "idx": 321,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows subject-relative deviations in breath interval variability (very high) and breath amplitude range (high), indicating sustained breathing pattern regulation. Electromyography has subject-relative deviations in signal zero-crossing rate (very high), suggesting stronger muscular guard"
+    },
+    {
+      "idx": 322,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breathing rate: very high) and Electromyography (signal zero-crossing rate: high), indicating sustained muscular guarding and altered breathing, which are consistent with pain-related physiological shifts. Classification: Moderate."
+    },
+    {
+      "idx": 323,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP pulse rate (high) and Respiration breathing rate (normal), indicating subject-relative shifts in cardiovascular and respiratory patterns. The combined deviations suggest sustained physiological arousal consistent with pain-related guarding.  \n\nClassification: Mode"
+    },
+    {
+      "idx": 324,
+      "true": "Moderate",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in Respiration (breath interval variability: high) and EMG (burst count: high), showing sustained muscular guarding and breathing pattern regulation. The combined pattern reflects sustained pain-related physiological arousal.  \n\nClassification: Severe"
+    },
+    {
+      "idx": 325,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG burst count (high) and Respiration breathing rate (normal), indicating sustained muscular guarding and subtle breathing shifts. The combined pattern suggests stronger subject-relative deviations consistent with pain-related physiological arousal.  \n\nClassification"
+    },
+    {
+      "idx": 326,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (signal zero-crossing rate: high, burst count: high) and Respiration (breathing rate: normal), suggesting sustained muscular guarding and subtle respiratory shifts. The combined pattern reflects pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 327,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in EMG (burst count: high) and Respiration (breathing rate: normal), suggesting sustained muscular guarding and subtle breathing shifts. The combined pattern reflects pain-related physiological arousal.  \n\nClassification: Moderate"
+    },
+    {
+      "idx": 328,
+      "true": "Moderate",
+      "pred": "Moderate",
+      "parse_ok": true,
+      "generated": "The strongest deviations are in BVP (amplitude variability: very high, EMG: muscle activation level: high, EMG: burst count: high), suggesting combined cardiovascular and muscular shifts. The deviations are subject-relative but not consistently extreme across all modalities.  \n\nClassification: Moder"
+    },
+    {
+      "idx": 329,
+      "true": "No-pain",
+      "pred": "Severe",
+      "parse_ok": true,
+      "generated": "Respiration shows strong deviations in breath amplitude range (very high) and breathing depth variability (very high), indicating sustained guarding. EMG also has subject-relative elevation in signal zero-crossing rate (high), reflecting stronger muscular activity. The combined pattern suggests sust"
+    }
+  ]
+}

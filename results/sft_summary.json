@@ -1,0 +1,29 @@
+{
+  "experiments": [
+    {
+      "round": "r2_4B",
+      "model": "Qwen3-4B-Instruct-2507",
+      "stage": "sft-2stage",
+      "config_pmed": {"lr": 2e-4, "epochs": 5, "batch": 2, "grad_accum": 4, "lora_rank": 8},
+      "config_pmcd": {"lr": 2e-5, "epochs": 5, "batch": 2, "grad_accum": 4, "lora_rank": 8},
+      "eval_pmcd": {"macro_f1": 0.3589, "balanced_acc": 0.4120, "auc": 0.5581},
+      "eval_pmed": {"macro_f1": 0.5199, "balanced_acc": 0.5231},
+      "train_loss_pmcd": 1.0413,
+      "output_dir": "outputs/r2_pmcd_lora"
+    },
+    {
+      "round": "r2_8B",
+      "model": "Qwen3-8B",
+      "stage": "sft-2stage",
+      "config_pmed": {"lr": 1e-4, "epochs": 3, "batch": 1, "grad_accum": 8, "lora_rank": 8},
+      "config_pmcd": {"lr": 5e-5, "epochs": 5, "batch": 1, "grad_accum": 8, "lora_rank": 8},
+      "eval_pmcd": {"macro_f1": 0.30, "balanced_acc": 0.37},
+      "eval_pmed": {"macro_f1": 0.14, "balanced_acc": 0.50},
+      "train_loss_pmcd": 0.0798,
+      "note": "severe overfitting, deleted",
+      "output_dir": "deleted"
+    }
+  ],
+  "best_sft": "r2_4B",
+  "best_checkpoint": "outputs/r2_pmcd_lora"
+}

@@ -1,0 +1,23 @@
+{
+  "stage": "sft",
+  "do_train": true,
+  "model_name_or_path": "/root/pain_detection/models/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554",
+  "dataset_dir": "/root/pain_detection/data",
+  "dataset": "pain_pmed_v3",
+  "template": "qwen3_nothink",
+  "finetuning_type": "lora",
+  "lora_target": "q_proj,v_proj",
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "output_dir": "/root/pain_detection/outputs/r2_pmed_lora",
+  "per_device_train_batch_size": 2,
+  "gradient_accumulation_steps": 4,
+  "lr_scheduler_type": "cosine",
+  "learning_rate": 2e-4,
+  "num_train_epochs": 5,
+  "warmup_ratio": 0.1,
+  "report_to": "none",
+  "overwrite_output_dir": true,
+  "bf16": true
+}
