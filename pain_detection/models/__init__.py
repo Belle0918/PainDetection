@@ -10,6 +10,7 @@ from .cnn import CNN1D
 from .attention_fusion import AttentionFusionModel
 from .transfer import TransferModel
 from .llm_baseline import LLMBaseline
+from .crossmod_transformer import CrossModTransformer
 
 __all__ = [
     "build_rf",
@@ -18,4 +19,5 @@ __all__ = [
     "AttentionFusionModel",
     "TransferModel",
     "LLMBaseline",
+    "CrossModTransformer",
 ]
