@@ -163,3 +163,5 @@ PMCD/dataset/np-dataset/
 .DS_Store
 ._*
 .vscode/
+.claude/
+.Rhistory
