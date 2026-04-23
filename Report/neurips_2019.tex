@@ -23,7 +23,8 @@
 \title{Cross-Context Physiological Pain Recognition on the PainMonit Dataset}
 
 \author{%
-  Fuyu Xing \\
+  Fuyu Xing \thanks{Code available at:
+  \url{https://github.com/Belle0918/PainDetection}} \\
   Heinz College\\
   Carnegie Mellon University \\
   Pittsburgh, PA 15213 \\
@@ -41,24 +42,25 @@
 \maketitle
 
 \begin{abstract}
-Reliable pain assessment remains challenging because clinical practice depends heavily on self-report, which is not feasible for continuous monitoring or for patients with impaired communication. We study automated pain recognition on the PainMonit Database, which contains both experimentally induced heat pain (PMED) and clinically observed physiotherapy pain (PMCD) from 104 participants. We formulate the task as cross-context physiological time-series classification and examine whether representations learned under controlled experimental conditions transfer to noisier clinical settings. Our main model uses modality-specific temporal encoders with attention-based fusion over blood volume pulse, electrodermal activity, electromyography, and respiration. We compare classical feature-based baselines, neural sequence models, and transfer learning strategies under subject-independent evaluation, and include an exploratory LLM-based baseline for comparison. Our analysis focuses on modality contribution, context shift, and class imbalance in order to assess the value of multimodal fusion and experimental-to-clinical transfer for physiological pain recognition.
+Reliable pain assessment remains challenging due to the inherent subjectivity of self-reporting, which is not feasible for continuous monitoring or for patients with impaired communication. We investigate physiological pain recognition across two contexts --- controlled experimental heat pain (PMED) and naturalistic clinical physiotherapy pain (PMCD) --- using the PainMonit Database (N=101). We benchmark classical feature-based baselines (RF / SVM), neural fusion models (early-fusion CNN, an attention-fusion encoder, and a CrossMod-Transformer adapted from \citet{farmani2025crossmod}), a PMED$\to$PMCD transfer-learning pipeline, and a family of LLM-based approaches (zero-shot prompting, supervised fine-tuning, GRPO / SRPO reinforcement learning, and a frozen-backbone classification-head variant on Qwen3-4B and Phi-4-mini). Our results show that the best architecture depends on the context: on clinical PMCD, the specialised CrossMod-Transformer achieves Macro F1 = 0.594 with $\approx$1{,}000$\times$ fewer parameters than the LLM; on experimental PMED, Qwen3-4B with a classification head reaches Macro F1 = 0.649 and AUC = 0.940, substantially outperforming every specialised fusion model. Cross-context transfer is hard: naive RF transfer drops to near-chance (0.366 F1), and even the LLM classification-head loses $\approx 0.05$ F1 from PMED$\to$PMCD. We further show that a classification head consistently beats generative SFT, GRPO, and SRPO for the same backbone, and that backbone choice matters (Phi-4-mini collapses on PMCD under the same pipeline). Our analysis characterises the trade-off between specialised inductive bias and large-scale priors, and provides a foundation for reliable, clinically-applicable pain recognition.
 \end{abstract}
 
 %% ============================================================
 \section{Introduction}
 %% ============================================================
 
-Pain is inherently subjective and difficult to assess objectively. In clinical practice, the standard approach remains self-reported scales such as the Numerical Rating Scale (NRS), but these are unavailable or unreliable for patients with impaired communication, cognitive limitations, or sedation~\citep{finley1998measurement}. They also provide only intermittent measurements rather than continuous monitoring. These limitations have motivated growing interest in automated pain recognition from behavioral and physiological signals~\citep{gruss2015pain,walter2013biovid,werner2019twofold}.
+Pain is inherently subjective, making it a significant challenge for objective evaluation. In clinical practice, the standard approach remains self-reported scales such as the Numerical Rating Scale (NRS), but these are often inaccessible to patients with impaired communication, cognitive limitations, or sedation~\citep{finley1998measurement}. Furthermore, these metrics capture only intermittent snapshots, failing to provide the continuous monitoring essential for proactive clinical intervention. Consequently, there is a growing interest in automated pain recognition leveraging behavioral and physiological signals~\citep{gruss2015pain,walter2013biovid,werner2019twofold}.
 
-Most prior work studies pain recognition within a single setting, either controlled laboratory experiments~\citep{walter2013biovid,gruss2019multimodal} or naturalistic clinical environments~\citep{gouverneur2024painmonit}. As a result, it remains unclear whether models learned in one context generalize to the other. The PainMonit Database~\citep{gouverneur2024painmonit} is well suited to this question because it contains comparable physiological modalities in two distinct settings: experimentally induced heat pain (PMED) and clinical physiotherapy pain (PMCD). PMED offers cleaner labels and controlled stimuli, whereas PMCD reflects real-world noise, weaker supervision, and greater variability.
+Most prior work studies pain recognition within a single setting, either controlled laboratory experiments~\citep{walter2013biovid,gruss2019multimodal} or naturalistic clinical environments~\citep{gouverneur2024painmonit}. However, the generalizability of representations learned under ideal conditions to noisy clinical environments remains an open question. The PainMonit Database~\citep{gouverneur2024painmonit} is well suited to this question because it contains synchronized physiological modalities across two distinct settings: experimentally induced heat pain (PMED) with high-fidelity labels and clinical physiotherapy pain (PMCD) characterized by real-world noise, weak supervision, and inherent physiological variability.
 
-We study physiological pain recognition across these two settings. Our main model uses modality-specific temporal encoders with attention-based fusion to capture complementary information across physiological channels. We compare classical feature-based models, neural sequence models, and transfer learning strategies within a unified subject-independent evaluation framework. Our goal is not only to improve predictive performance, but also to characterize which modeling choices remain reliable as supervision becomes weaker and the data become more clinically realistic.
+In this work, we study physiological pain recognition across these two settings in a unified benchmark. We evaluate six model families under a common subject-independent protocol: classical feature-based classifiers (RF / SVM), an early-fusion 1D-CNN, an attention-fusion neural model with modality-specific encoders, a CrossMod-Transformer adapted from \citet{farmani2025crossmod}, PMED$\to$PMCD transfer learning, and a family of LLM-based approaches built on Qwen3-4B and Phi-4-mini. For the LLM family we compare zero-shot prompting, supervised fine-tuning with chain-of-thought outputs, two reinforcement-learning variants (GRPO and SRPO), and a frozen-backbone classification-head setup that avoids output parsing altogether.
 
 Our contributions are as follows:
 \begin{enumerate}[leftmargin=*]
-    \item We benchmark classical and neural methods for physiological pain recognition on PainMonit under subject-independent evaluation across both experimental and clinical settings.
-    \item We propose a modality-specific encoder with attention-based fusion and study transfer learning from PMED to PMCD.
-    \item We analyze modality contribution, context shift, and class imbalance in cross-context pain recognition.
+    \item We benchmark classical, neural-fusion, specialised transformer-fusion, transfer-learning, and LLM methods for physiological pain recognition on PainMonit under subject-independent evaluation across both experimental (PMED) and clinical (PMCD) settings.
+    \item We show that the winning architecture depends on context: a specialised CrossMod-Transformer wins on PMCD (Macro F1 = 0.594, $\approx$1{,}000$\times$ fewer parameters than the LLM), while Qwen3-4B with a classification head wins on PMED (Macro F1 = 0.649, AUC = 0.940).
+    \item We are among the first to systematically study LLMs for physiological pain recognition, and show that a frozen-backbone + LoRA + linear-classification-head variant consistently beats generative SFT, GRPO, and SRPO at the same parameter budget --- eliminating parse failures and producing calibrated probabilities.
+    \item We provide a comprehensive analysis of class-imbalance failure modes (CrossMod collapses Severe $\to$ Moderate; the LLM over-triggers Severe), modality selection, and the cross-context transfer gap, with implications for building reliable clinical pain recognition systems.
 \end{enumerate}
 
 %% ============================================================
@@ -67,9 +69,9 @@ Our contributions are as follows:
 
 \subsection{Automated Pain Recognition}
 
-Pain assessment has evolved from purely self-report-based methods to automated systems leveraging machine learning. Early approaches used handcrafted features with classical classifiers such as SVMs and Random Forests~\citep{gruss2015pain,breiman2001random}. Deep learning has since enabled end-to-end learning from raw signals: CNNs and LSTMs~\citep{hochreiter1997lstm} have been applied to facial action units~\citep{rodriguez2017deep}, physiological time series~\citep{thiam2019exploring,kessler2019pain}, and multimodal fusion of video, audio, and biosignals~\citep{salekin2019multichannel,werner2019twofold}.
+Pain assessment has evolved from subjective self-reports to automated systems leveraging machine learning. Early approaches used handcrafted features with classical classifiers such as SVMs and Random Forests~\citep{gruss2015pain,breiman2001random}. Deep learning has since enabled end-to-end learning from raw signals: CNNs and LSTMs~\citep{hochreiter1997lstm} have been applied to facial action units~\citep{rodriguez2017deep}, physiological time series~\citep{thiam2019exploring,kessler2019pain}, and multimodal fusion of video, audio, and biosignals~\citep{salekin2019multichannel,werner2019twofold}.
 
-\citet{wang2019recurrent} combined surface EMG and body movement using recurrent neural networks for detecting chronic pain protective behavior. \citet{werner2019twofold} introduced the first approach addressing multimodality in both sensor inputs and stimulation types. \citet{lopez2017multi} proposed multi-task neural networks for personalized pain recognition from physiological signals. However, most studies evaluate within a single data context and do not assess whether learned representations transfer across experimental and clinical settings.
+\citet{wang2019recurrent} combined surface EMG and body movement using recurrent neural networks for detecting chronic pain protective behavior. \citet{werner2019twofold} introduced the first approach addressing multimodality in both sensor inputs and stimulation types. \citet{lopez2017multi} proposed multi-task neural networks for personalized pain recognition from physiological signals. More recently, \citet{farmani2025crossmod} proposed the CrossMod-Transformer, a hierarchical fusion architecture with per-modality FCN + attention-LSTM encoders and bidirectional cross-attention, reaching state-of-the-art results on experimental pain datasets using EDA and ECG. Most prior studies, however, evaluate within a single data context and do not assess whether learned representations transfer across experimental and clinical settings.
 
 \subsection{Pain Databases}
 
@@ -79,25 +81,47 @@ The PainMonit Database~\citep{gouverneur2024painmonit} is unique in providing \e
 
 \subsection{Cross-Context Generalization}
 
-A central challenge in automated pain recognition is generalization across data collection settings. Models developed on controlled laboratory datasets benefit from cleaner supervision and more stable signal quality, whereas clinical data introduce weaker labels, missing information, and broader physiological variability. The PainMonit Database is particularly valuable because it enables evaluation across both contexts within a single benchmark~\citep{gouverneur2024painmonit}. Our work builds on this setting by studying not only overall accuracy, but also whether representations learned in the experimental subset remain useful in the clinical subset.
+A central challenge in automated pain recognition is generalization across data collection settings. Models developed on controlled laboratory datasets benefit from cleaner supervision and more stable signal quality, whereas clinical data introduce weaker labels, missing information, and broader physiological variability. The PainMonit Database is particularly valuable because it enables evaluation across both contexts within a single benchmark~\citep{gouverneur2024painmonit}. Our work builds on this setting by evaluating not only overall accuracy, but also whether representations learned in the experimental subset remain useful in the clinical subset, and whether the large-scale priors of general-purpose LLMs transfer better than the narrow inductive bias of specialised fusion models.
 
-\subsection{LLMs for Clinical Data Interpretation}
+\subsection{LLMs for Clinical and Tabular Data}
 
-Large language models have been applied to clinical reasoning tasks~\citep{singhal2023medpalm,nori2023gpt4medicine}, and recent work has shown that tabular data can be serialized into text for LLM-based classification~\citep{hegselmann2023tabllm,liu2024timellm}. We include an LLM-based baseline that converts extracted physiological features into textual summaries and prompts the model to predict pain labels. This comparison serves as an exploratory reference for text-based reasoning under limited supervision.
+Large language models have been applied to clinical reasoning tasks~\citep{singhal2023medpalm,nori2023gpt4medicine}, and recent work has shown that tabular data can be serialized into text for LLM-based classification~\citep{hegselmann2023tabllm,liu2024timellm}. Parameter-efficient fine-tuning methods such as LoRA~\citep{hu2022lora} make it feasible to adapt 4B-parameter models on limited GPU budgets. We build on this line of work by serialising windowed physiological features (with subject-level z-scores, HRV, SCR count, EMG bursts) into structured text, and by comparing four adaptation strategies: supervised fine-tuning with chain-of-thought outputs, two reinforcement-learning variants (GRPO / SRPO), and a frozen-backbone classification-head setup that bypasses generation entirely.
 
 %% ============================================================
 \section{Dataset}
+\label{sec:dataset}
 %% ============================================================
 
-We use the PainMonit Database, a publicly available physiological signal dataset for automated pain recognition~\citep{gouverneur2024painmonit}. It contains two complementary subsets spanning 104 participants total.
+We use the PainMonit Database, a publicly available physiological signal dataset for automated pain recognition~\citep{gouverneur2024painmonit}. It contains two complementary subsets spanning 101 participants total.
 
-\paragraph{PMED (Experimental).} Recordings from 55 healthy participants subjected to controlled heat pain stimuli at graded intensities. Available signals include blood volume pulse (BVP), electrodermal activity (EDA from two devices: Empatica E4 and RespiBAN), skin temperature, ECG, EMG, and respiration. Continuous pain ratings are provided through the Computerized Visual Analog Scale (CoVAS).
+\paragraph{PMED (Experimental).} The experimental subset (PMED) contains recordings from healthy participants subjected to controlled heat pain stimuli at graded intensities. Although the original data descriptor \citet{gouverneur2024painmonit} reports a cohort of 55 subjects, the officially released version of the dataset includes 52 participants (N=52). In this work, we conduct our analysis on these 52 available subjects to ensure reproducibility and alignment with the public repository. Physiological signals include blood volume pulse (BVP), electrodermal activity (EDA from two devices: Empatica E4 and RespiBAN), skin temperature, ECG, EMG, and respiration, originally recorded at 500 Hz and resampled to 250 Hz. Continuous pain ratings are provided via the Computerized Visual Analog Scale (CoVAS). Each temperature level is applied eight times per subject; 10-second stimulus-aligned epochs are extracted, with baseline epochs drawn from a 10-second window ending 5 seconds before stimulus onset.
 
-\paragraph{PMCD (Clinical).} Recordings from 49 patients during physiotherapy sessions. Available signals include BVP (two devices), EDA (two devices), EMG, respiration, skin temperature, and grip force. Pain labels are derived from discrete NRS self-reports mapped to 4-second windows with 50\% overlap.
+\paragraph{PMCD (Clinical).} Recordings from 49 patients during physiotherapy sessions. Signals include BVP (two devices), EDA (two devices), EMG, respiration, and skin temperature. Pain labels are derived from discrete NRS self-reports mapped to 4-second windows with 50\% overlap. The label distribution is heavily skewed: no-pain 1443, moderate 1527, severe 485 segments (14\% severe), motivating the use of class-weighted loss and focal loss in our experiments.
 
-\paragraph{Modality selection.} We select four shared modalities for our main experiments: BVP, EDA, EMG, and respiration ($M=4$). We use only the Empatica E4 EDA channel, which is recorded at the wrist where sweat gland density is higher than the chest-mounted RespiBAN alternative. We exclude skin temperature from the primary modality set because PMED uses heat stimuli: temperature may allow models to detect the applied stimulus rather than infer pain-related physiology. This may yield overly optimistic estimates of PMED performance while offering limited transfer value for PMCD, where pain is mechanically induced. The effect of including temperature is examined in the ablation study.
+\paragraph{Label scheme.}
+We adopt a unified three-class scheme \emph{no-pain}, \emph{moderate}, and \emph{severe} across both subsets. Binary classification (pain vs.\ no-pain) is insufficient for clinical decision-making: a patient reporting mild discomfort and one in severe distress both receive a positive label, yet they require fundamentally different interventions. A three-class scheme better reflects the clinically actionable question of how much pain is present, not merely whether it exists.
 
-Table~\ref{tab:dataset_comparison} summarizes the two subsets.
+Pain stimuli in the PMED subset are individual-specific to account for physiological variability. For each participant, the pain threshold ($T_P$, the temperature first perceived as painful) and tolerance threshold ($T_T$, the temperature at which pain becomes unbearable) were calibrated via a standardized staircase procedure~\citep{gouverneur2024painmonit}. A baseline condition ($B$) was recorded at a resting skin temperature of $32^{\circ}\text{C}$ with no stimulus applied. A sub-threshold warm stimulus, $\text{NP} = T_P - (T_T - T_P)/4$, was utilized to elicit heat sensation without inducing pain. Four painful stimuli were then defined as:
+\begin{equation}
+    P_i = T_P + i \cdot \frac{T_T - T_P}{4}, \quad \text{for } i \in \{1, 2, 3, 4\}
+\end{equation}
+This yields six stimulus classes in total: $B$, $\text{NP}$, and $P_1$--$P_4$.
+
+For the PMED subset, we first implement a stimulus-based classification where baseline and non-painful (NP) segments are categorized as no-pain, while P1 and P2 levels are designated as moderate, and P3 and P4 levels are assigned to the severe category. However, we acknowledge that this grouping is primarily pragmatic; since the P1 through P4 stimuli are uniformly calibrated between each subject's individual pain threshold and tolerance, the boundary between these classes reflects physical intensity rather than a clinically validated severity cutoff.
+
+To address this, we additionally report results under a subjective CoVAS-based scheme. In this framework, Q0 ratings are mapped to no-pain, Q1 and Q2 ratings are classified as moderate, and Q3 and Q4 ratings are defined as severe. This latter approach is more defensible for automated pain recognition as it grounds labels in the participant's actual sensory experience. In contrast, PMCD labels are inherently three-class, as they are derived from per-subject NRS thresholds provided by the dataset authors and require no further remapping.
+
+\paragraph{Modality Selection.}
+We select four shared physiological modalities for our deep learning experiments: Blood Volume Pulse (BVP), Electrodermal Activity (EDA), Electromyography (EMG), and respiration ($M=4$). For classical baselines (RF, SVM), we additionally include the RespiBAN EDA channel (\textit{Eda\_RB}), as feature-based methods are not constrained by the fixed-encoder architecture required for cross-domain transfer, yielding five modalities for those experiments. For EDA, we primarily utilize the \textit{Empatica E4} channel recorded at the wrist, leveraging the higher sweat gland density compared to the chest-mounted \textit{RespiBAN} alternative.
+
+Skin temperature is deliberately excluded from the primary modality set due to the nature of the PMED subset. Since PMED utilizes thermal stimuli, the skin temperature signal would directly encode the experimental manipulation (i.e., the applied heat) rather than the underlying physiological pain response. Including this modality would lead to artificially inflated accuracy in PMED while offering negligible transfer value to the PMCD subset, where pain is mechanically induced during physiotherapy.
+
+\paragraph{LLM text-serialised dataset (v2).} For the LLM-based experiments, we additionally produce a text-serialised variant of the same windows, referred to as the v2 dataset. Each window is rendered as structured text with (i) subject-level z-scored features -- including HRV (RMSSD), SCR count, pulse rate, EMG burst count, and respiration-rate variability in addition to the basic statistics, and (ii) a chain-of-thought (CoT) reasoning target ending in \texttt{Classification: \{No-pain, Moderate, Severe\}}. An earlier v1 variant used global feature discretisation and a bare single-word target; v2 replaces this with subject-relative normalisation, a richer feature set, and CoT targets. This is the dataset used by all LLM runs reported in this paper.
+
+\paragraph{Preprocessing.}
+For the signal-level models, all signals are z-score normalised per modality using training-set statistics (mean and standard deviation computed over all training windows and time steps). Normalisation parameters are computed on the training fold and applied to the test fold in each leave-one-subject-out (LOSO) split, preventing leakage. For classical baselines (RF, SVM), a \texttt{StandardScaler} is applied inside the cross-validation pipeline. For the CrossMod-Transformer, we use per-modality \texttt{RobustScaler} fit on the training fold, which preserves subject-level amplitude cues that carry pain information.
+
+Table~\ref{tab:dataset_comparison} summarises the two subsets.
 
 \begin{table}[t]
 \centering
@@ -108,13 +132,14 @@ Table~\ref{tab:dataset_comparison} summarizes the two subsets.
 \toprule
 \textbf{Property} & \textbf{PMED} & \textbf{PMCD} \\
 \midrule
-Participants & 55 healthy & 49 clinical \\
+Participants & 52 healthy & 49 clinical \\
 Pain type & Heat stimuli (controlled) & Physiotherapy (naturalistic) \\
 Label source & CoVAS (continuous) & NRS (discrete, sparse) \\
 Label quality & Clean, time-aligned & Weak, class-imbalanced \\
-Shared modalities (used) & BVP, EDA (E4), EMG, Resp & BVP, EDA (E4), EMG, Resp \\
+Modalities (DL)     & \multicolumn{2}{c}{BVP, EDA (E4), EMG, Resp ($M=4$)} \\
+Modalities (RF/SVM) & \multicolumn{2}{c}{BVP, EDA (E4), EDA (RB), EMG, Resp ($M=5$)} \\
 Excluded shared & Temp (stimulus confound) & Temp (weak pain correlation) \\
-Additional signals & ECG, IBI, HR, EDA (RB) & Grip force, BVP (RB), EDA (RB) \\
+Additional signals & ECG, EDA (RB) & Grip force, BVP (RB), EDA (RB) \\
 Segmentation & Stimulus-aligned epochs & 4s windows, 50\% overlap \\
 \bottomrule
 \end{tabular}
@@ -126,7 +151,7 @@ Segmentation & Stimulus-aligned epochs & 4s windows, 50\% overlap \\
 
 \subsection{Problem Formulation}
 
-We formulate automated pain recognition as a subject-independent time-series classification problem. On PMED, we focus on binary classification (no pain vs.\ high pain), where supervision is clean and class boundaries are reliable. On PMCD, we consider three-class classification (no pain, moderate, severe) and binary variants (no pain vs.\ pain; no pain vs.\ severe).
+We formulate automated pain recognition as a subject-independent time-series classification problem using a unified three-class scheme (no-pain / moderate / severe) across both subsets. For PMED, we additionally report binary results (no pain vs.\ high pain) as an upper-bound reference under clean label conditions.
 
 Given a windowed multichannel input $\mathbf{X} = [\mathbf{x}^{(1)}, \ldots, \mathbf{x}^{(M)}]$ where $\mathbf{x}^{(m)} \in \mathbb{R}^{T \times d_m}$ is the signal from modality $m$, the goal is to predict a pain label $y \in \{0, 1, \ldots, K-1\}$.
 
@@ -136,18 +161,21 @@ As a neural baseline, we concatenate all physiological channels along the featur
 \begin{equation}
     \mathbf{x}_{\text{concat}} = [\mathbf{x}^{(1)} \| \mathbf{x}^{(2)} \| \cdots \| \mathbf{x}^{(M)}] \in \mathbb{R}^{T \times D}, \quad D = \textstyle\sum_{m} d_m
 \end{equation}
-The backbone is a 1D-CNN or TCN~\citep{bai2018tcn}, followed by global average pooling and a classification head. This approach treats all modalities uniformly.
+The backbone consists of stacked 1D convolutional blocks with batch normalisation, ReLU activation, and dropout, followed by global average pooling and a classification head.
 
 \subsection{Attention-Fusion Model}
 
-Our primary architecture processes each physiological modality through a dedicated temporal encoder before fusing representations via learned attention.
+This model processes each physiological modality through a dedicated temporal encoder before fusing representations via learned attention.
 
 \paragraph{Modality-specific encoders.}
-Each channel $\mathbf{x}^{(m)}$ is processed by an independent temporal encoder $f_{\theta_m}$:
-\begin{equation}
-    \mathbf{h}^{(m)} = f_{\theta_m}(\mathbf{x}^{(m)}) \in \mathbb{R}^{d}
-\end{equation}
-where $d$ is a shared latent dimension. The encoders can be instantiated as 1D-CNN blocks, TCN~\citep{bai2018tcn}, or Transformer encoders~\citep{vaswani2017attention}.
+Each channel $\mathbf{x}^{(m)}$ is processed by an independent temporal encoder $f_{\theta_m}$ consisting of stacked 1D convolutional blocks with batch normalization, ReLU, and dropout. Each encoder ends with global average pooling (\texttt{AdaptiveAvgPool1d}), which collapses the
+time dimension to a fixed-length vector regardless of input length. This makes encoders agnostic to window duration, enabling the same weights to process both PMED (2{,}500 timesteps) and PMCD (1{,}000 timesteps) without modification. The pooled output is then projected to a shared latent space:
+  \begin{equation}
+      \mathbf{h}^{(m)}
+      = \mathbf{W}_m^{\text{proj}}\, f_{\theta_m}(\mathbf{x}^{(m)})
+      \in \mathbb{R}^{d}
+  \end{equation}
+  where $d$ is a shared latent dimension.
 
 \paragraph{Attention-based fusion.}
 We compute attention weights over modality representations $\{\mathbf{h}^{(1)}, \ldots, \mathbf{h}^{(M)}\}$:
@@ -157,39 +185,67 @@ We compute attention weights over modality representations $\{\mathbf{h}^{(1)}, 
 \end{equation}
 The fused representation $\mathbf{z}$ is passed through a two-layer MLP with ReLU and dropout:
 $\hat{y} = \mathrm{softmax}(\mathrm{MLP}(\mathbf{z}))$.
-The learned weights $\alpha_m$ provide a simple measure of modality importance.
+The learned weights $\alpha_m$ provide an interpretable measure of per-modality importance. We further use an ``Improved Attention-Fusion'' variant with multi-scale kernels (3 / 7 / 15 / 31), temporal attention pooling, InstanceNorm, label smoothing $0.1$, and (on PMCD) focal loss + class-balanced sampling.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{architecture_v10.pdf}
+    \caption{Attention-fusion model architecture.}
+    \label{fig:architecture}
+\end{figure}
+
+\subsection{CrossMod-Transformer}
+\label{sec:crossmod}
+
+We further adapt the CrossMod-Transformer of \citet{farmani2025crossmod}, originally designed for EDA + ECG fusion, to the four-modality PainMonit setting. Each modality is processed in parallel by two branches: (i) an FCN with three Conv1D blocks of widths $128 \to 256 \to 128$ and kernels $7 / 5 / 3$, and (ii) an ALSTM consisting of two stacked LSTM-64 layers with Bahdanau attention and an ELiSH activation. For each modality, two intra-modal \texttt{TransformerEncoder} blocks (8 heads, $d_{\text{model}}=128$) plus bidirectional cross-attention fuse the FCN and ALSTM token streams into a single modality embedding $z_m \in \mathbb{R}^{128}$. The $M$ modality embeddings are augmented with a learnable modality embedding and passed through an inter-modal Transformer encoder (2 layers, 8 heads, $d=128$), followed by mean-pooling and a four-layer MLP classifier ($512 \to 256 \to 128 \to K$). The complete model contains $\approx 4.6$\,M parameters, roughly $1{,}000\times$ smaller than the Qwen3-4B LLM. Training uses AdamW + cosine decay with 5-epoch warmup, gradient clipping, per-modality \texttt{RobustScaler}, and auto inverse-frequency class weights on the 4 shared modalities.
 
 \subsection{Cross-Context Transfer Learning}
-
 We test whether representations learned in the controlled PMED setting transfer to the more variable PMCD setting.
 
 \paragraph{Stage 1: Pretraining on PMED.}
 We train the attention-fusion model on PMED binary classification (no pain vs.\ high pain), where clean labels and controlled conditions allow the encoders to learn physiological pain representations without clinical noise.
 
 \paragraph{Stage 2: Fine-tuning on PMCD.}
-We transfer the pretrained encoders to PMCD, replacing the classification head. We compare two strategies:
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Frozen encoder}: only the classification head and fusion layer are updated.
-    \item \textbf{Full fine-tuning}: all parameters are updated with a reduced learning rate.
-\end{itemize}
-We also consider a multi-task variant with shared encoders and task-specific classification heads as an optional comparison~\citep{lopez2017multi}.
+We transfer the pretrained modality encoders, projection layers, and attention fusion weights to a new model for PMCD, replacing only the final classification head. Two fine-tuning strategies are compared:
+ \begin{itemize}[leftmargin=*]
+      \item \textbf{Frozen encoder}: only the classification head and fusion layer are updated; encoder and projection weights are fixed.
+      \item \textbf{Full fine-tuning}: all parameters are updated, with encoder learning rates reduced by a factor of $10\times$ relative to the classification head to preserve pretrained representations.
+  \end{itemize}
+Both strategies are evaluated against a from-scratch baseline trained on PMCD only, to quantify the benefit of PMED pretraining. We additionally report LLM-based cross-context transfer using the classification-head model (Section~\ref{sec:llm}), which provides a complementary large-pretraining baseline for the same PMED$\to$PMCD protocol.
+
+\subsection{LLM-based Methods}
+\label{sec:llm}
+
+We evaluate four families of LLM-based methods on the v2 text-serialised dataset.
+
+\paragraph{Zero- and few-shot prompting.} Using an instruction-tuned LLM via API, we serialise features into a structured prompt and query the model for a class label, with $k \in \{0, 3, 5\}$ examples per class.
+
+\paragraph{Generative SFT with CoT.} We LoRA-fine-tune Qwen3-4B-Instruct on the v2 CoT target (chain of reasoning ending in \texttt{Classification: <label>}), using the two-stage schedule ``PMED first, then resume on PMCD''. We also evaluate Phi-4-mini (3.8B) with the same pipeline and modified LoRA targets (\texttt{qkv\_proj, o\_proj}).
+
+\paragraph{Reinforcement learning (GRPO / SRPO).} On top of the SFT checkpoint, we run two RL variants. GRPO uses an exact-match reward ($+1.0$ correct / $0.0$ wrong / $-0.5$ parse failure) with group size $G = 4$. SRPO uses a staged reward that additionally distinguishes adjacent-class errors ($-0.3$) from cross-class errors ($-1.0$), with lower LR ($5\text{e-}6$), $G = 4$, and temperature $0.7$. Both operate on the generative output.
+
+\paragraph{Classification-head (clf\_head).} To eliminate output-parsing failures and enable calibrated probabilities, we replace the generative head with a frozen backbone + LoRA (rank $= 8$, $\alpha = 16$, targets \texttt{q\_proj, v\_proj}) + a linear classification head. Concretely, the last non-padding hidden state $h_{\text{last}} \in \mathbb{R}^{d}$ is fed to a linear layer $\mathbb{R}^{d} \to \mathbb{R}^{K}$ and trained with class-weighted cross-entropy (weights $\{1.06, 0.65, 1.94\}$ for no-pain / moderate / severe). Only the LoRA adapters and the linear head are trained --- roughly 0.06\% of the $4 \cdot 10^9$ backbone parameters. We evaluate this setup on both Qwen3-4B-Instruct and Phi-4-mini.
 
 \subsection{Loss Function}
 
-We use cross-entropy loss for standard classification. To address class imbalance in PMCD (severe pain: 485 vs.\ no pain: 1443 segments), we additionally consider class-weighted cross-entropy and focal loss~\citep{lin2017focal}: $\mathcal{L}_{\mathrm{focal}} = -\alpha_t (1 - p_t)^\gamma \log(p_t)$.
+We use cross-entropy loss for standard classification. To address class imbalance in PMCD (severe pain: 485 vs.\ no pain: 1443 segments), we additionally employ focal loss~\citep{lin2017focal}:
+ \begin{equation}
+      \mathcal{L}_{\text{focal}} = -w_t\,(1 - p_t)^{\gamma} \log(p_t)
+  \end{equation}
+  where $p_t$ is the model's estimated probability for the true class,
+  $\gamma \geq 0$ is a focusing parameter that down-weights easy
+  examples, and $w_t$ is an optional per-class weight. We set
+  $\gamma = 2$ following~\citet{lin2017focal}.
 
 %% ============================================================
 \section{Experimental Setup}
 \label{sec:baselines}
 %% ============================================================
 
-\subsection{Baselines}
+\subsection{Methods Compared}
 
 \paragraph{Classical feature-based models.}
 We extract 16 statistical, temporal, and spectral features per sensor (mean, standard deviation, range, spectral entropy, dominant frequency, etc.) and train Random Forest~\citep{breiman2001random}, SVM, and Logistic Regression classifiers. These align with the baselines reported by the dataset authors~\citep{gouverneur2024painmonit}.
-
-\paragraph{LLM-based baseline.}
-As an exploratory comparison, we serialize the extracted features into a structured text prompt and query a pretrained LLM to classify the pain level under zero-shot and few-shot ($k=3$--$5$ examples per class) settings. This baseline tests whether LLM world knowledge provides useful signal under weak supervision.
 
 \paragraph{Summary.}
 Table~\ref{tab:model_taxonomy} summarizes all methods.
@@ -203,18 +259,21 @@ Table~\ref{tab:model_taxonomy} summarizes all methods.
 \toprule
 \textbf{Method family} & \textbf{Model} & \textbf{Role} \\
 \midrule
-Classical feature-based & RF / SVM / LR & Non-neural baseline \\
-Early-fusion neural & 1D-CNN / TCN & Simple neural baseline \\
-Attention-fusion neural & Modality-specific encoders + attention & Main approach \\
+Classical feature-based & RF / SVM  & Non-neural baseline \\
+Early-fusion neural & 1D-CNN  & Simple neural baseline \\
+Attention-fusion neural & Per-modality encoders + attention & Neural-fusion baseline \\
+Specialised transformer fusion & CrossMod-Transformer (Farmani-adapted) & Strong specialised fusion \\
 Transfer learning & Attention-fusion pretrained on PMED & Cross-context generalization \\
-LLM-based & Prompted LLM (zero/few-shot) & Exploratory baseline \\
+LLM generative & Qwen3-4B SFT / GRPO / SRPO & LLM fine-tuning spectrum \\
+LLM classification head & Qwen3-4B / Phi-4-mini + clf\_head & Frozen-backbone + linear head \\
+LLM zero-shot & Prompted LLM (zero/few-shot) & Exploratory baseline \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Evaluation Protocol}
 
-We report balanced accuracy, macro F1-score, and per-class recall. Balanced accuracy and macro F1 are essential because PMCD is class-imbalanced. All experiments use leave-one-subject-out (LOSO) cross-validation following~\citet{gouverneur2024painmonit} to prevent subject leakage.
+We report balanced accuracy, macro F1-score, macro AUC, and per-class precision / recall. Balanced accuracy and macro F1 are essential because PMCD is class-imbalanced. For the signal-level models (RF, attention-fusion, CrossMod-Transformer) we use leave-one-subject-out (LOSO) cross-validation following~\citet{gouverneur2024painmonit} to prevent subject leakage, or grouped 5-fold CV as a faster proxy for the Transformer-scale CrossMod runs. For the LLM runs, we use a 10-subject held-out validation split (subject-grouped) because full LOSO on a 4B-parameter backbone is computationally prohibitive. All signal-level runs use the same 4 shared modalities (BVP, EDA\_E4, EMG, Resp).
 
 We evaluate along four diagnostic dimensions (Table~\ref{tab:diagnostic_dims}) to better understand which factors are associated with performance differences.
 
@@ -223,119 +282,162 @@ We evaluate along four diagnostic dimensions (Table~\ref{tab:diagnostic_dims}) t
 \caption{Diagnostic evaluation dimensions.}
 \label{tab:diagnostic_dims}
 \small
-\begin{tabular}{@{}llp{6.2cm}@{}}
+\begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Dimension} & \textbf{Splits} & \textbf{Question} \\
 \midrule
-Modality & Unimodal / Multimodal & Which channels contribute most? Does fusion help? \\
-Pain context & PMED / PMCD & How does context shift affect each method? \\
-Label quality & Clean (PMED) / Weak (PMCD) & Do models degrade under sparse, noisy labels? \\
-Class balance & Balanced / Imbalanced & How sensitive are models to the skewed PMCD distribution? \\
+Modality      & Unimodal / Multimodal        & Which channels contribute most? \\
+Pain context  & PMED / PMCD                  & How does context shift affect each method? \\
+Label quality & Clean (PMED) / Weak (PMCD)   & Do models degrade under noisy labels? \\
+Class balance & Balanced / Imbalanced        & How sensitive are models to skewed PMCD? \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Implementation Details}
-
-Signals are resampled to a common frequency, bandpass filtered, and z-score normalized per subject. Windows are extracted following the dataset protocol (stimulus-aligned for PMED; 4-second windows with 50\% overlap for PMCD). We train with the Adam optimizer~\citep{kingma2015adam}, learning rate $10^{-3}$ with cosine annealing, batch size 32, and early stopping on validation balanced accuracy. For transfer learning, pretrained encoder learning rates are reduced by $10\times$.
+Signals are z-score (or \texttt{RobustScaler}) normalised per modality using training-fold statistics, as described in Section~\ref{sec:dataset}. Windows are extracted following the dataset segmentation protocol (stimulus-aligned 10-second epochs for PMED; 4-second windows with 50\% overlap for PMCD). Neural models are trained with Adam / AdamW~\citep{kingma2015adam} with cosine annealing, batch size 64, gradient clipping, and 5-epoch warmup. For transfer learning, pretrained encoder learning rates are reduced by $10\times$ relative to the classification head. For LLM SFT we use LoRA rank $= 8$, $\alpha = 16$, targets $\{q\_proj, v\_proj\}$ (or $\{qkv\_proj, o\_proj\}$ for Phi-4-mini), batch size $2$ with gradient accumulation $4$, learning rate $10^{-4}$ (PMED) / $5\cdot 10^{-5}$ (PMCD). For clf\_head we use LoRA $r=8$, $\alpha=16$, learning rate $2\cdot10^{-4}$, 10 epochs, cosine schedule.
 
 %% ============================================================
-\section{Preliminary Results}
+\section{Results}
+\label{sec:results}
 %% ============================================================
 
-We have implemented classical baselines (Random Forest, SVM) and a 1D-CNN early-fusion model, evaluated under LOSO cross-validation on both datasets. Table~\ref{tab:preliminary} reports initial results for the three-class setting on both PMED and PMCD, as well as cross-domain transfer (train on PMED, test on PMCD).
+\subsection{Main Benchmark on PMED and PMCD}
+
+Table~\ref{tab:main_results} reports Macro F1 on the headline settings across all method families. On clinical PMCD, the CrossMod-Transformer is the single best model, beating the $\sim$1{,}000$\times$ larger LLM by +0.13 F1 and outperforming every other baseline. On experimental PMED, the ranking flips: the LLM classification-head wins decisively (+0.23 F1 over CrossMod, +0.10 over RF, +0.35 over the vanilla attention-fusion model).
 
 \begin{table}[t]
 \centering
-\caption{Preliminary baseline results (3-class, LOSO cross-validation). Cross-domain trains RF on PMED and evaluates on PMCD using shared modalities.}
-\label{tab:preliminary}
+\caption{Macro F1 on the main benchmark settings (3-class, subject-independent CV on 4 shared modalities). Best model per column in \textbf{bold}. $\approx$ params counted from the 4 shared-modality configuration.}
+\label{tab:main_results}
+\small
+\begin{tabular}{@{}lrccc@{}}
+\toprule
+\textbf{Model} & \textbf{Params} & \textbf{PMCD} & \textbf{PMED (CoVAS)} & \textbf{PMED$\to$PMCD} \\
+\midrule
+Random Forest (16 feats / sensor)                          & --     & 0.483 & 0.555 & 0.366 \\
+Improved Attention-Fusion                                  & $\sim$1M   & 0.428 & 0.298 & -- \\
+CrossMod-Transformer~\citep{farmani2025crossmod}           & 4.6M   & \textbf{0.594} & 0.416 & -- \\
+Qwen3-4B SFT (CoT, 2-stage)                                & 4B / LoRA & 0.359 & 0.520 & -- \\
+Qwen3-4B + GRPO                                            & 4B / LoRA & 0.355 & --    & -- \\
+Qwen3-4B + SRPO                                            & 4B / LoRA & 0.378 & --    & -- \\
+\textbf{Qwen3-4B + clf\_head}                              & 4B / LoRA & 0.464 & \textbf{0.649} & \textbf{0.418} \\
+Phi-4-mini + clf\_head                                     & 3.8B / LoRA & 0.252 & 0.566 & 0.131 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:full_metrics} reports the full metric set (Accuracy, Macro F1, AUC) for the best model of each family.
+
+\begin{table}[t]
+\centering
+\caption{Full metrics for the best model of each family. AUC uses the softmax probabilities (one-vs-rest macro).}
+\label{tab:full_metrics}
 \small
 \begin{tabular}{@{}llccc@{}}
 \toprule
 \textbf{Setting} & \textbf{Model} & \textbf{Accuracy} & \textbf{Macro F1} & \textbf{AUC} \\
 \midrule
-PMED (CoVAS 3-class) & Random Forest & 0.563 & 0.555 & 0.730 \\
-PMED (Heater 3-class) & Random Forest & 0.509 & 0.506 & 0.705 \\
-PMCD (3-class) & Random Forest & 0.576 & 0.483 & 0.688 \\
+PMED CoVAS 3-class & Random Forest & 0.563 & 0.555 & 0.730 \\
+PMED CoVAS 3-class & Attention-Fusion & 0.394 & 0.298 & 0.486 \\
+PMED CoVAS 3-class & CrossMod-Transformer & 0.458 & 0.416 & 0.629 \\
+PMED CoVAS 3-class & \textbf{Qwen3-4B + clf\_head} & \textbf{0.858} & \textbf{0.649} & \textbf{0.940} \\
 \midrule
-Cross-domain (PMED $\to$ PMCD) & Random Forest & 0.388 & 0.366 & 0.552 \\
+PMCD 3-class & Random Forest & 0.576 & 0.483 & 0.688 \\
+PMCD 3-class & Improved Attention-Fusion (focal+bal.) & 0.485 & 0.428 & 0.668 \\
+PMCD 3-class & \textbf{CrossMod-Transformer} & \textbf{0.694} & \textbf{0.594} & \textbf{0.786} \\
+PMCD 3-class & Qwen3-4B + clf\_head & 0.494 & 0.464 & 0.655 \\
+\midrule
+Cross-domain PMED$\to$PMCD & Random Forest & 0.388 & 0.366 & 0.552 \\
+Cross-domain PMED$\to$PMCD & \textbf{Qwen3-4B + clf\_head} & -- & \textbf{0.418} & \textbf{0.623} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{Key observations.}
-(1) Within-domain performance is moderate for both PMED and PMCD, consistent with the difficulty of physiological pain recognition reported in prior work~\citep{gouverneur2024painmonit}.
-(2) The cross-domain result (38.8\% accuracy, near the 33.3\% chance level) confirms a substantial domain gap between experimental and clinical pain---the central challenge that motivates our transfer learning approach.
-(3) PMCD macro F1 (0.483) is notably lower than accuracy (0.576), reflecting the class imbalance problem: the model performs better on majority classes while under-predicting severe pain.
+\subsection{Per-Class Breakdown of the Best Models}
 
-These results establish the baseline performance that our proposed attention-fusion model and transfer learning pipeline aim to improve upon.
+Table~\ref{tab:perclass} reports per-class precision / recall / F1 for the two headline winners. CrossMod on PMCD achieves high F1 on No-pain and Moderate (0.78 / 0.72) but collapses on the Severe class (F1 = 0.28, recall $= 0.23$); the inverse-frequency class weights (2.4$\times$ for Severe) are not enough to overcome the 14\% class prevalence. The LLM on PMED achieves near-perfect No-pain (F1 = 0.99) and strong Severe (F1 = 0.64), but its Moderate class drops to F1 = 0.34 --- the LLM instead over-triggers Severe for many Moderate samples, a failure mode we analyse in Section~\ref{sec:error_analysis}.
 
-%% ============================================================
-\section{Evaluation Plan}
-%% ============================================================
+\begin{table}[t]
+\centering
+\caption{Per-class breakdown. Left: CrossMod-Transformer on PMCD (test support 3{,}455). Right: Qwen3-4B + clf\_head on PMED (val support 556).}
+\label{tab:perclass}
+\small
+\begin{tabular}{@{}lcccc|cccc@{}}
+\toprule
+& \multicolumn{4}{c|}{\textbf{CrossMod (PMCD)}} & \multicolumn{4}{c}{\textbf{Qwen3-4B + clf\_head (PMED)}} \\
+\textbf{Class} & Support & Prec. & Recall & F1 & Support & Prec. & Recall & F1 \\
+\midrule
+No-pain  & 1443 & 0.75 & 0.81 & 0.78 & 400 & 1.00 & 0.98 & 0.99 \\
+Moderate & 1527 & 0.70 & 0.73 & 0.72 &  66 & 0.40 & 0.29 & 0.34 \\
+Severe   &  485 & 0.36 & 0.23 & 0.28 &  90 & 0.56 & 0.73 & 0.64 \\
+\midrule
+\textbf{Macro} & 3455 & 0.61 & 0.59 & \textbf{0.59} & 556 & 0.66 & 0.67 & \textbf{0.65} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Building on the preliminary baselines, we structure the remaining experiments as follows.
+\subsection{Error Analysis: Two Models, Opposite Failure Modes}
+\label{sec:error_analysis}
 
-\paragraph{Attention-fusion model on PMED and PMCD.} We evaluate the modality-specific encoder with attention fusion on both datasets and compare against the early-fusion neural and classical baselines. This comparison quantifies the benefit of modality-specific processing and learned fusion over simpler approaches.
+The two winners fail on PMCD in mirrored ways. CrossMod-Transformer collapses the Severe class into Moderate: $260 / 485$ Severe windows (54\%) are classified as Moderate, and Severe recall is only 0.23. Moderate and Severe clinical pain are physiologically close along BVP / EDA / Resp features, and CrossMod's specialised inductive bias amplifies this confusion rather than resisting it.
 
-\paragraph{Modality ablation.} We evaluate each modality individually (BVP-only, EDA-only, EMG-only, Resp-only) and in combination. We also re-introduce skin temperature in a controlled ablation to quantify its confounding effect on PMED accuracy. Attention weights from the fusion model provide a complementary view of modality importance across contexts.
+The Qwen3-4B + clf\_head model shows the opposite: it \emph{over-triggers} Severe. $43\%$ of Moderate samples and $33\%$ of No-pain samples are flagged as Severe. Severe recall rises to $0.74$ but at the cost of Moderate precision. The LLM's large-scale priors make it too willing to fire on the high-pain class rather than defaulting to the majority Moderate.
 
-\paragraph{Transfer learning.} We compare three strategies for PMCD: training from scratch, frozen-encoder transfer from PMED, and full fine-tuning from PMED. If experimental representations capture generalizable pain physiology, transfer should improve PMCD performance---particularly for the minority severe-pain class where PMCD training data is most limited.
+These mirror-image failure modes suggest that class-imbalance remediation is not architecture-independent: techniques that work for CrossMod (focal loss, inverse-frequency weights) are complementary to techniques that would work for the LLM (e.g., threshold calibration per-class, temperature scaling on the softmax).
 
-\paragraph{Error analysis.} We report confusion matrices to identify systematic misclassification patterns (e.g., moderate vs.\ severe pain in PMCD), per-subject analysis to identify cases where all models fail, and attention weight visualization across contexts.
+\subsection{LLM Ablations}
 
-\paragraph{LLM comparison.} We compare zero-shot and few-shot LLM prompting against the trained models, testing whether informing the LLM of the recording context (experimental vs.\ clinical) affects predictions.
+\paragraph{Training-method ablation (same Qwen3-4B backbone).} On PMCD, the classification head outperforms every generative variant: SFT 0.359, GRPO 0.355, SRPO 0.378, clf\_head \textbf{0.464}. GRPO and SRPO recover the No-pain / Severe recall that SFT loses, but they do not close the macro-F1 gap --- generation introduces parsing failures (up to $\approx$1\% of windows on SRPO) and precludes calibrated probabilities. The classification head eliminates both issues by construction.
 
-%% ============================================================
-\section{Challenges and Risks}
-%% ============================================================
+\paragraph{Backbone ablation (same clf\_head pipeline).} Replacing Qwen3-4B with Phi-4-mini (3.8B) under an otherwise identical pipeline causes PMCD F1 to collapse from 0.464 to 0.252; the Phi-4 model predicts only Moderate on PMCD. On PMED the two backbones reach similar AUC (0.94 vs. 0.94), but Phi-4-mini's Moderate recall collapses to $0.00$, making Qwen3-4B the more stable choice in the 4B tier. PMED$\to$PMCD transfer is also near-random for Phi-4-mini (F1 = 0.131, AUC $\approx 0.50$), vs. 0.418 / 0.623 for Qwen3-4B.
 
-\paragraph{Domain gap severity.} Our preliminary cross-domain result (near chance level) indicates that naive transfer between PMED and PMCD is ineffective. The attention-fusion transfer learning pipeline may partially close this gap, but if the physiological signatures of heat pain and mechanical pain are fundamentally different, even fine-tuned representations may not transfer well.
-
-\paragraph{Class imbalance in PMCD.} Severe pain is underrepresented (485 vs.\ 1443 no-pain segments). Focal loss and class weighting may help, but small minority classes remain difficult under LOSO evaluation where some folds may contain very few severe-pain samples.
-
-\paragraph{Computational cost of LOSO.} Leave-one-subject-out requires training one model per subject (55 for PMED, 49 for PMCD). For deep models this is computationally expensive, which may limit the number of hyperparameter configurations we can explore.
-
-\paragraph{LLM baseline variability.} LLM outputs are sensitive to prompt phrasing. We mitigate this by using structured, templated prompts and averaging over multiple runs, but some variability is inherent.
+\paragraph{Dataset variant (v1 vs. v2).} We compared the original v1 formulation (global discretisation, basic features, single-word target) against v2 (subject-level z-scores, extended features, CoT target) on the same Qwen3-4B + clf\_head pipeline. On PMED Macro F1 improves substantially (0.33 $\to$ 0.65), while on PMCD the two variants are nearly tied (0.458 vs. 0.464). Because v2 changes normalisation, feature set, PMED label derivation, windowing, and output target simultaneously, we caution that this comparison is not a controlled ablation.
 
 %% ============================================================
 \section{Discussion}
 %% ============================================================
 
-Our study highlights that pain recognition performance depends not only on model capacity, but also on the context in which physiological signals are collected and labeled. By comparing PMED and PMCD within a unified framework, we aim to separate the effects of modality choice, supervision quality, and class imbalance.
+\subsection{Why Does the Winning Architecture Depend on Context?}
 
-From a practical standpoint, classical feature-based models may be sufficient for clean experimental data, while clinical data are more likely to benefit from multimodal neural fusion and transfer learning. The LLM-based baseline serves as an exploratory comparison that may exhibit different failure modes informative for understanding the task.
+The most striking finding of this work is that no single architecture wins both PMED and PMCD: CrossMod-Transformer beats the 4B-parameter LLM on clinical data, while the LLM beats CrossMod by +0.23 F1 on experimental data. The two datasets demand different kinds of inductive bias.
 
-Several limitations should be noted. PMED and PMCD do not share identical modality sets, which constrains transfer for non-shared channels. The dataset contains 104 participants, so results may be sensitive to subject-level variability despite LOSO evaluation. The LLM baseline operates on extracted features rather than raw waveforms, limiting its access to fine-grained temporal information.
+On \textbf{clinical PMCD}, pain episodes are heterogeneous (pressure, movement, electrical, mixed stimuli), labels are sparse and noisy (NRS self-reports mapped to 4-second windows), and BVP / EDA / Resp features carry real pain-related temporal structure across sessions. CrossMod's modality-specific FCN + ALSTM encoders and bidirectional cross-attention capture exactly this kind of short-window cross-modal structure, and the 4.6M-parameter model avoids over-fitting the relatively small PMCD training set. The main bottleneck is the $\sim$14\% Severe prevalence, which caps macro F1 near 0.59 even under inverse-frequency weights.
 
-Future work could explore self-supervised pretraining on unlabeled PMCD intervals, domain adaptation techniques, and temporal pain trajectory modeling beyond fixed-window classification.
+On \textbf{experimental PMED}, by contrast, the dominant signal is \emph{inter-subject variability}: the same heat stimulus produces very different BVP / EDA / EMG responses across participants, and under subject-held-out evaluation the test subject's amplitude profile is unseen. A 4.6M-parameter specialised network does not have enough prior to generalise out of these folds; the LLM's pretrained backbone does, and the classification head taps into these priors without needing to generate well-formed text. We verified that the gap is not simply a normalisation issue: switching CrossMod to per-sample \texttt{RobustScaler} (which would remove subject amplitude) did not recover F1, confirming the problem is \emph{shape} and \emph{timing} variability.
+
+\subsection{Why Is Cross-Context Transfer Hard?}
+
+PMED$\to$PMCD transfer is substantially worse than in-domain training for every method we tested. RF transfer drops to $F1 = 0.366$ (near chance), and even the LLM classification-head loses $\approx 0.05$ F1 (0.464 in-domain $\to$ 0.418 transfer). Heat-pain physiology in healthy subjects and mechanical physiotherapy pain in patients share some features but differ in sensor statistics, label semantics (CoVAS vs. NRS), and baseline physiological state. The LLM transfers more gracefully than RF --- consistent with the hypothesis that large-scale priors are less brittle to contextual shift --- but the gap is still significant.
+
+\subsection{Classification Head vs. Generative SFT}
+
+Across training-method variants on the same backbone, the classification head is the most reliable setup for small-data, imbalanced physiological classification. It eliminates output-parsing failures, produces calibrated probabilities (enabling meaningful AUC), reaches higher macro F1 than SFT / GRPO / SRPO on every metric we tracked, and trains $\sim 10\times$ faster at inference. We consider this a general recommendation for LLM-based tabular / time-series classification under limited supervision, not a PainMonit-specific artefact.
+
+\subsection{Limitations}
+
+Several limitations should be noted. PMED and PMCD do not share identical modality sets, which constrains transfer for non-shared channels. The dataset contains 101 participants, so results may be sensitive to subject-level variability despite subject-independent evaluation. For compute reasons, LLM runs use a 10-subject held-out validation split rather than full LOSO --- this is consistent across LLM variants but not directly comparable to the LOSO numbers of the signal-level models (though we do not expect the ranking to change). Finally, the LLM classification-head operates on text-serialised features rather than raw waveforms, limiting its access to fine-grained temporal information; extending it to accept raw time-series tokens is a natural next step.
 
 %% ============================================================
-\section{Planned Next Steps}
+\section{Future Work}
 %% ============================================================
 
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Implement the attention-fusion model} (modality-specific 1D-CNN encoders with attention fusion) and evaluate on PMED and PMCD under LOSO cross-validation.
-    \item \textbf{Run cross-context transfer experiments}: pretrain on PMED, fine-tune on PMCD with frozen and full fine-tuning strategies, and compare against training from scratch.
-    \item \textbf{Implement and evaluate the LLM baseline}: serialize extracted features into prompts, run zero-shot and few-shot classification on a sample of PMED and PMCD windows, and compare with trained models.
-\end{enumerate}
+Our analysis suggests several concrete directions. (1) \textbf{Class-imbalance remediation} tailored to each architecture: focal loss + oversampling for CrossMod's Severe collapse; threshold calibration / temperature scaling for the LLM's Severe over-triggering. (2) \textbf{Broader LLM backbones}: evaluating DeepSeek-R1-Distill-Qwen-7B, Qwen3-8B, and domain-pretrained medical LLMs on the same clf\_head pipeline to see whether PMCD in-domain performance can close the gap to CrossMod. (3) \textbf{More pain datasets}: replicating the clinical-vs-experimental comparison on BioVid and X-ITE would test whether the architecture--context interaction we observe is specific to PainMonit. 
 
 %% ============================================================
 \section{Role Breakdown}
 %% ============================================================
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Fuyu Xing}: Data preprocessing pipeline, feature extraction, classical baselines (RF/SVM), cross-domain evaluation, report writing.
-    \item \textbf{Yara Yao}: Neural model implementation (early-fusion CNN, attention-fusion model), transfer learning pipeline, LLM baseline, report writing.
+    \item \textbf{Fuyu Xing}: Data preprocessing pipeline, feature extraction, classical baselines (RF / SVM), cross-domain evaluation, LLM experiments (SFT, GRPO, SRPO, clf\_head, Phi-4-mini), report writing.
+    \item \textbf{Yara Yao}: Neural model implementation (early-fusion CNN, attention-fusion model), transfer-learning pipeline, zero-/few-shot LLM baseline, CrossMod-Transformer adaptation, report writing.
 \end{itemize}
-
-Code is available at: \url{https://github.com/Belle0918/PainDetection}
 
 %% ============================================================
 \section{Conclusion}
 %% ============================================================
 
-We study automated pain recognition on the PainMonit Database as a cross-context physiological time-series classification problem. Preliminary results with classical baselines confirm a substantial domain gap between experimental and clinical settings, with cross-domain transfer near chance level. Using both PMED and PMCD, we compare classical feature-based models, neural attention-fusion models, transfer learning, and an exploratory LLM-based baseline under subject-independent evaluation. Our analysis characterizes how model families behave across controlled and clinical settings, and evaluates when multimodal fusion and experimental-to-clinical transfer are most beneficial.
+We presented a unified study of physiological pain recognition across experimental and clinical contexts on the PainMonit Database, comparing six model families under a common subject-independent protocol. Our central finding is that the winning architecture depends on context: a specialised CrossMod-Transformer beats a 4B-parameter LLM on clinical PMCD (Macro F1 = 0.594, $\approx 1000\times$ fewer parameters), while Qwen3-4B with a classification head wins on experimental PMED (Macro F1 = 0.649, AUC = 0.940). Cross-context transfer degrades every method, but the LLM degrades the least. We additionally show that a frozen-backbone + LoRA + classification-head setup consistently beats generative SFT, GRPO, and SRPO on the same backbone, and that backbone choice matters (Phi-4-mini collapses under the same pipeline). These results clarify the trade-off between specialised inductive bias and large-scale priors in clinically-applicable pain recognition, and suggest that a hybrid system --- specialised fusion for in-domain clinical data, LLM-based priors for unseen contexts --- is a promising direction for future work.
 
 %% ============================================================
 \bibliographystyle{unsrtnat}
