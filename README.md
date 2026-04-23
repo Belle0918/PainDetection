@@ -162,6 +162,47 @@ This is exactly where a large pre-trained LLM has the upper hand: Qwen3-4B + clf
 
 On the **clinical PMCD split** — arguably the more clinically relevant task — CrossMod-Transformer is the best model in this repository, beating every other baseline including the 4 B-parameter LLM (+0.13 F1 / ~1 000× fewer parameters). On the **experimental PMED split** the LLM is strongest; the small fusion model ranks between RF and the LLM. This gap is mainly a function of PMED's inter-subject noise, not an architectural limitation of CrossMod per se: the paper's original setup used per-subject RobustScaler with a calibration window from each test subject, which we cannot reproduce cleanly under fully subject-held-out evaluation.
 
+## Results — LLM Zero-shot / Few-shot Baseline
+
+Prompted-only baseline with `claude-sonnet-4-20250514` on the 16 extracted features (4 modalities × 4 features: BVP, EDA, EMG, Respiration). The **semantic** prompt mode renders each feature as a qualitative level (`very low` / `low` / `normal` / `high` / `very high`) relative to the training-population percentiles, together with the raw value and a short physiological interpretation; the system prompt carries domain knowledge about pain physiology. Evaluation uses an 80/20 subject split (not LOSO, to cap API cost), seed 42, with dataset context included in the prompt (e.g. `controlled experimental (heat pain)`).
+
+### PMED Binary (no-pain vs. pain)
+
+| Config | Accuracy | Macro F1 |
+|---|---|---|
+| Zero-shot | 0.5400 | 0.5398 |
+| **Few-shot (k=3)** | **0.5600** | **0.5593** |
+| Few-shot (k=5) | 0.5400 | 0.5393 |
+
+Best config per-class (few-shot k=3, support 50/50): No-pain P/R/F1 = 0.56 / 0.60 / 0.58; Pain = 0.57 / 0.52 / 0.54.
+
+### PMCD 3-class (no-pain / moderate / severe)
+
+| Config | Accuracy | Macro F1 |
+|---|---|---|
+| Zero-shot | 0.4111 | 0.3950 |
+| **Few-shot (k=3)** | **0.4333** | **0.4309** |
+| Few-shot (k=5) | 0.4111 | 0.3975 |
+
+Best config per-class (few-shot k=3, support 30/30/30): No-pain P/R/F1 = 0.38 / 0.40 / 0.39; Moderate = 0.38 / 0.33 / 0.36; Severe = 0.53 / 0.57 / 0.55. Zero-shot is conservative on Severe (P = 0.67, R = 0.20) — few-shot balances this to R = 0.57 with only a small hit to the other two classes.
+
+### Raw vs. Semantic Prompt Mode (PMED binary)
+
+| Config | Raw Acc | Raw F1 | Semantic Acc | Semantic F1 |
+|---|---|---|---|---|
+| Zero-shot | 0.4800 | 0.3200 | **0.5400** | **0.5398** |
+| Few-shot (k=3) | 0.4800 | 0.3400 | **0.5600** | **0.5593** |
+
+Semantic prompting eliminates the single-class bias seen in raw mode (raw zero-shot → 96% Pain; raw few-shot k=3 → 94% No-pain) and recovers balanced predictions, at ~1.5k vs. ~6.9k input tokens per sample (78% reduction).
+
+### Takeaways
+
+- **PMED binary sits near chance (54–56%)**, consistent with the small effect sizes between pain/no-pain features (largest Cohen's d ≈ 0.27 on EDA std).
+- **PMCD 3-class reaches 43%** (above 33.3% chance), with the strongest signal on Severe — physiologically the most distinct class.
+- **Semantic > raw**: +6 pts accuracy and +22 pts Macro F1 on PMED binary, driven entirely by removing prediction bias.
+- **Few-shot k=3 > zero-shot > k=5**: three demonstrations are enough; more did not help.
+- **Limitations**: not LOSO, small held-out sets (100 PMED / 90 PMCD), and the LLM sees extracted features rather than raw waveforms.
+
 ## Results — LLM Fine-Tuning Experiments
 
 All Qwen3-4B runs below are LoRA fine-tuning on top of `Qwen3-4B-Instruct`. Two dataset variants are compared, and they differ in several ways — not only in the output format:
