@@ -165,3 +165,16 @@ PMCD/dataset/np-dataset/
 .vscode/
 .claude/
 .Rhistory
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
