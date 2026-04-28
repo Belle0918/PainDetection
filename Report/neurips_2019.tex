@@ -19,6 +19,12 @@
 \usepackage{multirow}
 \usepackage{xcolor}
 \usepackage{enumitem}
+\usepackage{fancyhdr}
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \fancyhead[R]{\textbf{Group 12}}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
 
 \title{Cross-Context Physiological Pain Recognition on the PainMonit Dataset}
 
@@ -40,6 +46,7 @@
 \begin{document}
 
 \maketitle
+\thispagestyle{firstpage}
 
 \begin{abstract}
 Self-reported pain scales do not work for patients who cannot communicate and cannot be used for continuous monitoring, so there is interest in inferring pain from physiological signals. We study this problem on the PainMonit Database (N=101), which contains both a controlled experimental heat-pain subset (PMED) and a clinical physiotherapy subset (PMCD). On the same subject-independent protocol we compare classical feature-based classifiers (RF / SVM), an early-fusion CNN, an attention-fusion model, a CrossMod-Transformer adapted from \citet{farmani2025crossmod}, a PMED$\to$PMCD transfer pipeline, and four LLM-based setups on Qwen3-4B and Phi-4-mini (zero-shot prompting, supervised fine-tuning with CoT, GRPO/SRPO reinforcement learning, and a frozen-backbone classification head). Which model wins depends on the data regime. On clinical PMCD, the 4.6M-parameter CrossMod-Transformer reaches Macro F1 = 0.594, beating every other model including the 4B-parameter LLM. On experimental PMED, the Qwen3-4B classification head reaches Macro F1 = 0.649 and AUC = 0.940, well ahead of every specialised fusion model. Cross-context transfer is weaker than in-domain training for every method we tried: RF collapses to 0.366 F1, and even the LLM drops by about 0.05 F1 from PMED$\to$PMCD. The same LLM classification head also beats generative SFT / GRPO / SRPO on the same backbone, and Phi-4-mini collapses on PMCD under an otherwise identical pipeline. Taken together, these results point to a trade-off between narrow inductive bias and large-scale priors that depends on the label regime and on how much inter-subject variability the data contains.
@@ -400,6 +407,8 @@ PMED binary (raw) & Few-shot $k{=}3$ & 0.480 & 0.340 \\
 \end{table}
 
 \subsection{LLM Ablations}
+
+\paragraph{LLM pipeline baseline.} As an internal starting point for the LLM-based methods, we first ran a minimal Qwen3-4B + LoRA recipe on the v1 dataset with a single-word target (no CoT, no classification head, no subject-level normalisation). This baseline reaches Macro F1 = 0.378 on PMED, 0.474 on PMCD, and 0.436 on the PMED$\to$PMCD transfer setting. The headline clf\_head pipeline reported in this paper (v2 dataset, subject-level z-scored features, CoT target during SFT, frozen backbone with linear classification head) improves PMED Macro F1 by $+0.27$ ($0.378\!\to\!0.649$) and accuracy by $+0.48$ ($0.378\!\to\!0.858$), while PMCD stays roughly flat ($0.474\!\to\!0.464$) and PMED$\to$PMCD transfer drops slightly ($0.436\!\to\!0.418$, but recall improves). The dataset-variant paragraph below isolates the v1$\to$v2 contribution under the clf\_head pipeline; the comparison here additionally folds in the move from generative output to the classification head.
 
 \paragraph{Training-method ablation (same Qwen3-4B backbone).} On PMCD, the classification head outperforms every generative variant: SFT 0.359, GRPO 0.355, SRPO 0.378, clf\_head \textbf{0.464}. GRPO and SRPO recover the No-pain / Severe recall that SFT loses, but they do not close the macro-F1 gap --- generation introduces parsing failures (up to $\approx$1\% of windows on SRPO) and precludes calibrated probabilities. The classification head eliminates both issues by construction.
 
